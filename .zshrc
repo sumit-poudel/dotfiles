@@ -8,15 +8,6 @@ fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
-# my scripts path
-export PATH="$HOME/scripts:$PATH"
-
-# Jetbrains path
-export PATH="$HOME/.local/share/JetBrains/Toolbox/scripts:$PATH"
-
-# go Packages
-export PATH="$HOME/go/bin:$PATH"
-
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -24,7 +15,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -33,7 +24,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
-  CASE_SENSITIVE="false"
+# CASE_SENSITIVE="true"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
@@ -86,7 +77,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git sudo)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -118,15 +109,22 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+bindkey -v
+eval $(thefuck --alias)
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-extract/extract.plugin.zsh
+source /usr/share/zsh/plugins/zsh-z/zsh-z.plugin.zsh
 
 # Enable alias expasion before completion
 setopt complete_aliases
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-bindkey -v
 
 #alias
+alias fk=fuck
 alias la="eza -a --color=always --group-directories-first --icons"
 alias ls="eza -l --color=always --group-directories-first --icons"
 alias lsa="eza -al --color=always --group-directories-first --icons"
@@ -135,4 +133,3 @@ alias pg="ping -c 5 google.com"
 alias clock="clock.sh"
 alias zed="zed-editor"
 alias yeet="sudo pacman -Rns"
-alias cat="bat"

@@ -44,8 +44,6 @@ window#waybar {
 #clock,
 #battery,
 #pulseaudio,
-#bluetooth,
-#network,
 #temperature,
 #cpu,
 #memory,
@@ -63,11 +61,6 @@ window#waybar {
 
 #backlight {
     border-radius: 10px 0px 0px 10px;
-}
-
-#tray {
-    border-radius: 10px;
-    margin-right: 10px;
 }
 
 #workspaces {
@@ -101,10 +94,8 @@ window#waybar {
     font-size: 1rem;
 }
 
-#network {
-    color:  #a6adc8;
+#tray {
     border-radius: 10px 0px 0px 10px;
-
 }
 
 #pulseaudio {
