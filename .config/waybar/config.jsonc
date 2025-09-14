@@ -22,7 +22,8 @@
         "battery",
         "backlight",
         "pulseaudio",
-        "pulseaudio#microphone"
+        "pulseaudio#microphone",
+        "custom/logout"
     ],
     
     "hyprland/workspaces": {
@@ -45,7 +46,7 @@
     },
 
     "clock": {
-        "format": "{:%a %d-%b-%y %I:%M %p}",
+        "format": "{:%a %d <span color='#89b4fa' weight='900' >%I:%M</span> %p %b}",
         "interval": 1,
         "rotate": 0,
         "tooltip-format": "<tt>{calendar}</tt>",
@@ -133,9 +134,15 @@
         "format-source": " {volume}%",
         "format-source-muted": "  Muted",
         "on-click": "pavucontrol",
-        "on-scroll-down": "pamixer --default-source -i 5",
-        "on-scroll-up": "pamixer --default-source -d 5",
+        "on-scroll-down": "pamixer --default-source -i 1",
+        "on-scroll-up": "pamixer --default-source -d 1",
         "scroll-step": 5
+    },
+    
+    "custom/logout":{
+        "format": "⏻", 
+        "tooltip": "Logout Menu",
+        "on-click": "wlogout"
     },
 
     "memory": {
