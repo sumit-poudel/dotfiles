@@ -20,8 +20,8 @@
         "tray",
 	"custom/fan",
         "battery",
-        "backlight",
-        "pulseaudio",
+	"group/light",
+	"group/audio",
         "pulseaudio#microphone",
         "custom/logout"
     ],
@@ -49,7 +49,8 @@
         "format": "{:%a %d <span color='#89b4fa' weight='900' >%I:%M</span> %p %b}",
         "interval": 1,
         "rotate": 0,
-        "tooltip-format": "<tt>{calendar}</tt>",
+        "format-alt": "{:%A \udb80\udced %d\u00b7%b\u00b7%Y}",
+        "tooltip-format": "<span>{calendar}</span>",
         "calendar": {
             "mode": "month",
             "mode-mon-col": 3,
@@ -61,7 +62,14 @@
                 "today": "<span color='#a6adc8'><b>{}</b></span>",
                 "days": "<span color='#555869'><b>{}</b></span>"
             }
-        }
+        },
+      "actions": {
+      "on-click-right": "mode",
+      "on-click-forward": "tz_up",
+      "on-click-backward": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
     },
 
     "wlr/taskbar": {
@@ -81,6 +89,35 @@
 		"Foot Server": "Terminal"
 	}
 },
+     "group/audio":{
+        "orientation":"inherit",
+	    "drawer": {
+      "transition-duration": 500,
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "pulseaudio",
+      "pulseaudio/slider"
+    ]
+    },
+    "group/light":{
+        "orientation":"inherit",
+	    "drawer": {
+      "transition-duration": 500,
+      "transition-right-to-left": false
+    },
+    "modules": [
+      "backlight",
+      "backlight/slider"
+    ]
+    },
+
+     "backlight/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "horizontal",
+    "device": "intel_backlight"
+  }, 
 
     "backlight": {
         "device": "intel_backlight",
@@ -88,7 +125,8 @@
         "format-icons": ["󰃞", "󰃟", "󰃠"],
         "on-scroll-down": "brightnessctl set 1%+",
         "on-scroll-up": "brightnessctl set 1%-",
-        "min-length": 6
+        "min-length": 6,
+	"tooltip": false
     },
 
    "custom/fan": {
@@ -108,6 +146,12 @@
         "format-plugged": " {capacity}%",
         "format-alt": "{time} {icon}",
         "format-icons": ["󰂃", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+
+    "pulseaudio/slider":{
+    "min": 0,
+    "max": 100,
+    "orientation": "horizontal"
     },
 
     "pulseaudio": {
