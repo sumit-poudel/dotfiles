@@ -10,8 +10,7 @@
         "memory",
 	"temperature",
         "cpu",
-        "hyprland/workspaces",
-	"wlr/taskbar"
+	"group/tskbar"
     ],
     "modules-center": [
         "clock"
@@ -28,6 +27,7 @@
     
     "hyprland/workspaces": {
         "disable-scroll": true,
+        "color":"inherit",
         "all-outputs": true,
         "on-click": "activate"
     },
@@ -75,6 +75,7 @@
     "wlr/taskbar": {
 	"format": "{icon}",
 	"icon-size": 20,
+        "color":"inherit",
 	"tooltip-format": "{title}",
 	"on-click": "activate",
 	"on-click-middle": "close",
@@ -89,6 +90,15 @@
 		"Foot Server": "Terminal"
 	}
 },
+
+    "group/tskbar":{
+      "orientation":"inherit",
+      "modules":[
+	 "hyprland/workspaces",
+	"wlr/taskbar"
+      ]
+    },
+
      "group/audio":{
         "orientation":"inherit",
 	    "drawer": {
@@ -116,11 +126,11 @@
     "min": 0,
     "max": 100,
     "orientation": "horizontal",
-    "device": "intel_backlight"
+    "device": "amdgpu_bl1"
   }, 
 
     "backlight": {
-        "device": "intel_backlight",
+        "device": "amdgpu_bl1",
         "format": "{icon} {percent}%",
         "format-icons": ["󰃞", "󰃟", "󰃠"],
         "on-scroll-down": "brightnessctl set 1%+",
@@ -155,7 +165,7 @@
     },
 
     "pulseaudio": {
-        "format": "{icon}  {volume}%",
+        "format": "{icon} {volume}%",
         "tooltip": false,
         "format-muted": "  Muted",
         "on-click": "pavucontrol",
@@ -175,8 +185,8 @@
 
     "pulseaudio#microphone": {
         "format": "{format_source}",
-        "format-source": " {volume}%",
-        "format-source-muted": "  Muted",
+        "format-source": "",
+        "format-source-muted": " ",
         "on-click": "pavucontrol",
         "on-scroll-down": "pamixer --default-source -i 1",
         "on-scroll-up": "pamixer --default-source -d 1",
