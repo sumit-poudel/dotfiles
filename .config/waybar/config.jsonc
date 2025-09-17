@@ -6,7 +6,11 @@
   "passthrough": false,
   "gtk-layer-shell": true,
   "height": 0,
-  "modules-left": ["clock", "group/tskbar"],
+  "modules-left": [
+    "clock",
+    "group/stats",
+    "group/tskbar"
+  ],
  "modules-center": ["hyprland/window"],
   "modules-right": [
     "tray",
@@ -17,6 +21,10 @@
   ],
 
   // groups
+  "group/stats": {
+    "orientation": "inherit",
+    "modules": ["memory","cpu","temperature"]
+  },
   "group/extras": {
     "orientation": "inherit",
     "modules": ["custom/fan", "battery"]
@@ -29,7 +37,6 @@
     "orientation": "inherit",
     "modules": ["group/speaker", "pulseaudio#microphone"]
   },
-
   "group/speaker": {
     "orientation": "inherit",
     "drawer": {
@@ -48,6 +55,41 @@
   },
 
   // modules
+    "memory": {
+    "states": {
+      "c": 90,
+      "h": 60,
+      "m": 30
+    },
+    "interval": 30,
+    "format": "\udb83\udf86 {used}GB",
+    "rotate": 0,
+    "format-m": "\udb83\udf85 {used}GB",
+    "format-h": "\udb81\udcc5 {used}GB",
+    "format-c": "\uf421 {used}GB",
+    "format-alt": "\udb83\udf86 {percentage}%",
+    "max-length": 10,
+    "tooltip": true,
+    "tooltip-format": "\udb83\udf86 Memory usage: {percentage}%\n\ue266 Used: {used:0.2f}GB / {total:0.2f}GB\n\uf85a Available: {avail:0.2f}GB\n\uf233 Swap used: {swapUsed:0.2f}GB / {swapTotal:0.2f}GB ({swapPercentage}%)"
+  },
+    "cpu": {
+        "interval": 10,
+        "format": "󰍛 {usage}%",
+        "format-alt": "{icon0}{icon1}{icon2}{icon3}",
+        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
+    },
+   "temperature": {
+    "critical-threshold": 85,
+    "warning-threshold": 70,
+    "interval": 2,
+    "format": " {temperatureC}°C",
+    "format-warning": "<span foreground='#fab387'></span> <span foreground='#fab387'>{temperatureC}°C</span>",
+    "format-critical": "<span foreground='#f38ba8'></span> <span foreground='#f38ba8'>{temperatureC}°C</span>",
+    "tooltip": true,
+    "tooltip-format": "CPU Temperature: {temperatureC}°C\nIntel(R) Core(TM) i7-10510U",
+    "max-length": 12,
+    "min-length": 2
+  },
   "hyprland/workspaces": {
     "disable-scroll": true,
     "color": "inherit",

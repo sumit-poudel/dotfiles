@@ -40,17 +40,23 @@ window#waybar {
     border-radius: 10px;
 }
 
+#cpu,
+#temperature,
+#memory
 #window,
 #clock,
 #battery,
 #custom-fan,
 #tskbar,
+#stats,
+#light,
+#audio,
 #custom-logout,
 #backlight-slider,
 #pulseaudio,
 #pulseaudio-slider,
 #tray{
-    padding: 0px 10px;
+    padding: 0px 7px;
     margin: 3px 0px 3px 0px;
   /*  margin-top: 5px; */
    /* border: 1px solid #181825; */
@@ -75,10 +81,17 @@ window#waybar {
     border-radius: 10px;
 }
 
+#stats {
+    background: #709775;
+    color: #1e1e2e;
+    margin-left: 10px;
+    border-radius: 10px;
+}
+
 #light {
     color:#1e1e2e;
     background:#89b4fa;
-    margin: 3px 10px 3px 10px;
+    margin-left: 10px;
     border-radius: 10px;
 }
 #extras {
@@ -90,7 +103,7 @@ window#waybar {
 #audio {
     color:#1e1e2e;
     background: #91BBB8;
-    margin: 3px 0;
+    margin-left: 10px;
     border-radius: 10px;
 }
 
