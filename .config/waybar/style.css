@@ -65,8 +65,7 @@ window#waybar {
 
 #window {
     border-radius: 10px;
-    margin-left: 60px;
-    margin-right: 60px;
+    min-width: 0px;
 }
 
 #clock {

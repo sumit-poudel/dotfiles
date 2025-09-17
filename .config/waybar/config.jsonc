@@ -57,7 +57,7 @@
   "hyprland/window": {
         "format": "󰣇 {}",
         "on-click-right": "hyprctl dispatch killactive",
-        "max-length": 100
+        "max-length": 40
     },
   "tray": {
     "icon-size": 20,
