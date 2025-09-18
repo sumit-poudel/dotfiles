@@ -21,14 +21,6 @@ button {
     margin: 15px;
 }
 
-button:active,
-button:hover {
-    background-color: #cdd6f4;
-}
-
-button:focus {
-    background-color: #cdd6f4;
-}
 #lock {
     background-image: image(url("/home/sumit/.config/wlogout/assets/lock.png"));
 }
@@ -36,6 +28,7 @@ button:focus {
 #lock:focus {
     background-image: image(url("/home/sumit/.config/wlogout/assets/lock-hover.png"));
     color: #11111b;
+    background-color: #5F81A9;
 }
 
 #logout {
@@ -45,6 +38,7 @@ button:focus {
 #logout:focus {
     background-image: image(url("/home/sumit/.config/wlogout/assets/logout-hover.png"));
     color: #11111b;
+    background-color: #909775;
 }
 
 #exit {
@@ -54,6 +48,7 @@ button:focus {
 #exit:focus {
     background-image: image(url("/home/sumit/.config/wlogout/assets/logout-hover.png"));
     color: #11111b;
+    background-color: #89b4fa;
 }
 
 #suspend {
@@ -63,6 +58,7 @@ button:focus {
 #suspend:focus {
     background-image: image(url("/home/sumit/.config/wlogout/assets/sleep-hover.png"));
     color: #11111b;
+    background-color: #b67b69;
 }
 
 #shutdown {
@@ -72,6 +68,7 @@ button:focus {
 #shutdown:focus {
     background-image: image(url("/home/sumit/.config/wlogout/assets/power-hover.png"));
     color: #11111b;
+    background-color: #91bbb8;
 }
 
 #reboot {
@@ -81,5 +78,6 @@ button:focus {
 #reboot:focus {
     background-image: image(url("/home/sumit/.config/wlogout/assets/restart-hover.png"));
     color: #11111b;
+    background-color: #bb91b5;
 }
 

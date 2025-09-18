@@ -82,12 +82,17 @@ window#waybar {
 }
 
 #stats {
-    background: #709775;
+    background-color: #709775;
     color: #1e1e2e;
     margin-left: 10px;
     border-radius: 10px;
 }
-
+#temperature.critical {
+    color: #f38ba8;
+}
+#temperature.warning {
+    color: #fab387;
+}
 #light {
     color:#1e1e2e;
     background:#89b4fa;
