@@ -1,0 +1,15 @@
+[Icons]
+Theme=Tela-circle-dracula
+
+[KDE]
+ShowDeleteCommand=true
+
+[KShortcutsDialog Settings]
+Dialog Size=600,480
+
+[PreviewSettings]
+EnableRemoteFolderThumbnail=false
+MaximumRemoteSize=0
+
+[UiSettings]
+ColorScheme=catppuccin-mocha-rosewater
