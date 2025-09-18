@@ -52,6 +52,8 @@ window#waybar {
 #light,
 #audio,
 #custom-logout,
+#custom-notification,
+#noti,
 #backlight-slider,
 #pulseaudio,
 #pulseaudio-slider,
@@ -112,10 +114,9 @@ window#waybar {
     border-radius: 10px;
 }
 
-#custom-logout{
+#noti{
     color:#1e1e2e;
     background: #bb91b5;
-    padding-right: 13px;
     border-radius: 10px;
     margin: 3px 3px 3px 10px;
 }
