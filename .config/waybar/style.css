@@ -42,7 +42,7 @@ window#waybar {
 
 #cpu,
 #temperature,
-#memory
+#memory,
 #window,
 #clock,
 #battery,
@@ -89,11 +89,9 @@ window#waybar {
     margin-left: 10px;
     border-radius: 10px;
 }
-#temperature.critical {
-    color: #f38ba8;
-}
+#temperature.critical, 
 #temperature.warning {
-    color: #fab387;
+    font-weight: bolder;
 }
 #light {
     color:#1e1e2e;
