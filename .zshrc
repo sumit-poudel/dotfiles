@@ -1,4 +1,12 @@
 if command -v fastfetch >/dev/null; then
+    cat <<'SUMIT'
+███████╗██╗   ██╗███╗   ███╗██╗████████╗
+██╔════╝██║   ██║████╗ ████║██║╚══██╔══╝
+███████╗██║   ██║██╔████╔██║██║   ██║   
+╚════██║██║   ██║██║╚██╔╝██║██║   ██║   
+███████║╚██████╔╝██║ ╚═╝ ██║██║   ██║   
+╚══════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝   ╚═╝   
+SUMIT
     fastfetch
 fi
 # If you come from bash you might have to change your $PATH.
@@ -107,6 +115,7 @@ source $ZSH/oh-my-zsh.sh
 # Enable completion system
 autoload -Uz compinit
 compinit
+setopt complete_aliases
 
 bindkey -v
 eval $(thefuck --alias)
