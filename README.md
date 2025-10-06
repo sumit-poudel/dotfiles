@@ -1,2 +1,2 @@
 # yesto hunxa : )
-  ![Visual](./assets/look.png)
+  ![Visual](./assets/look2.png)
