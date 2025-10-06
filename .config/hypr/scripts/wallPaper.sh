@@ -31,6 +31,10 @@ case "$1" in
     prev_index=$(( (current_index - 1 + count) % count ))
     wallpaper="${wallpapers[$prev_index]}"
     ;;
+  --sync)
+    wallpaper=$(<"$STATE_FILE")
+    matugen image "$wallpaper"
+    ;;
   --restore)
     if [[ -f "$STATE_FILE" ]]; then
       wallpaper=$(<"$STATE_FILE")

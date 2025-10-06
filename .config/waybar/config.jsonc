@@ -17,20 +17,13 @@
     "group/extras",
     "group/light",
     "group/audio",
-    "group/noti",
+    "custom/notification"
   ],
 
   // groups
   "group/stats": {
     "orientation": "inherit",
     "modules": ["memory","cpu","temperature"]
-  },
- "group/noti": {
-    "orientation": "inherit",
-    "modules": [
-    "custom/notification",
-    "custom/logout"
-    ]
   },
   "group/extras": {
     "orientation": "inherit",
@@ -93,7 +86,7 @@
     "format-warning": "<span color='#F6E96B'> {temperatureC}</span>°C",
     "format-critical": "<span color='#E50046'> {temperatureC}</span>°C",
     "tooltip": true,
-    "tooltip-format": "CPU Temperature: {temperatureC}°C\nIntel(R) Core(TM) i7-10510U",
+    "tooltip-format": "CPU Temperature: {temperatureC}°C",
     "max-length": 12,
     "min-length": 2
   },
@@ -162,7 +155,7 @@
   },
   "backlight": {
     "device": "amdgpu_bl1",
-    "format": "{icon} {percent}%",
+    "format": "{icon}  {percent}%",
     "format-icons": ["󰃞", "󰃟", "󰃠"],
     "on-scroll-down": "brightnessctl set 1%+",
     "on-scroll-up": "brightnessctl set 1%-",
@@ -201,7 +194,7 @@
     "orientation": "horizontal"
   },
   "pulseaudio": {
-    "format": "{icon} {volume}%",
+    "format": "{icon}  {volume}%",
     "tooltip": false,
     "format-muted": "  Muted",
     "on-click": "pavucontrol",
@@ -246,10 +239,5 @@
     "on-click": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw",
     "escape": true
-  },
-  "custom/logout": {
-    "format": "⏻",
-    "tooltip": "Logout Menu",
-    "on-click": "wlogout"
   }
 }

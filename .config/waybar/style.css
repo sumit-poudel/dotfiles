@@ -1,171 +1,164 @@
+@import "colors.css";
+
 * {
     border: none;
     border-radius: 0;
-    font-family: JetBrainsMono Nerd Font, monospace;
-    font-weight: bold;
-    font-size: 14px;
+    font-family: "FiraCode Nerd Font";
+    font-weight: 600;
+    font-size: 12px;
     min-height: 0;
 }
 
+/* Base Bar */
 window#waybar {
-    background: rgba(21, 18, 27, 0);
-    color: #cdd6f4;
+    background: transparent;
+    color: @on_surface;
 }
 
+/* Workspaces */
 #workspaces button {
-    padding: 5px;
-    color: #555869;
-    margin-right: 5px;
+    color: @surface;
+    background: transparent;
+    padding: 2px 4px;
+    margin-right: 2px;
+    border-radius: 6px;
+    transition: background 0.2s ease, color 0.2s ease;
 }
 
-#workspaces button.active {
-    color: #a6adc8;
-}
-
+#workspaces button.active,
 #workspaces button.focused {
-    color: #a6adc8;
-    background: #D18572;
-    border-radius: 10px;
+    background: @primary_container;
+    color: @on_primary_container;
 }
 
 #workspaces button.urgent {
-    color: #11111b;
-    background: #a6e3a1;
-    border-radius: 10px;
+    color: @on_error_container;
+    background: @error_container;
 }
 
 #workspaces button:hover {
-    background: #cdd6f4;
-    color: #11111b; 
-    border-radius: 10px;
+    background: @surface_container_high;
+    color: @on_surface;
 }
 
+/* General Module Styling */
 #cpu,
 #temperature,
 #memory,
 #window,
 #clock,
 #battery,
-#custom-fan,
-#tskbar,
-#stats,
 #network,
 #light,
 #audio,
-#custom-logout,
+#tray,
+#stats,
+#custom-fan,
 #custom-notification,
-#noti,
 #backlight-slider,
 #pulseaudio,
 #pulseaudio-slider,
-#tray{
-    padding: 0px 7px;
-    margin: 3px 0px 3px 0px;
-  /*  margin-top: 5px; */
-   /* border: 1px solid #181825; */
+#extras,
+#tskbar {
+    color: @surface;
+    border-radius: 6px;
+    padding: 2px 4px;
+    margin: 2px 2px;
 }
 
-#tskbar{
-    background: #1e1e1e;
-	border-radius: 10px;
-        padding: 0px 5px;
-        margin-left: 10px;
-}
-
-#window {
-    border-radius: 10px;
-    min-width: 0px;
-}
-
+/* Specific Modules */
 #clock {
-    background: #5F81A9;
-    color: #1e1e2e;
-    margin-left: 3px;
-    border-radius: 10px;
+    background: @primary_container;
+    color: @on_primary_container;
 }
 
-#stats {
-    background-color: #709775;
-    color: #1e1e2e;
-    margin-left: 10px;
-    border-radius: 10px;
+#stats,
+#custom-notification,
+#temperature,
+#audio,
+#light,
+#extras,
+#tskbar {
+    background-color: @primary;
+    color: @surface;
 }
-#temperature.critical, 
+
 #temperature.warning {
-    font-weight: bolder;
-}
-#light {
-    color:#1e1e2e;
-    background:#89b4fa;
-    margin-left: 10px;
-    border-radius: 10px;
-}
-#extras {
-    color:#1e1e2e;
-    background: #b67b69;
-    margin: 3px 0;
-    border-radius: 10px;
-}
-#audio {
-    color:#1e1e2e;
-    background: #91BBB8;
-    margin-left: 10px;
-    border-radius: 10px;
+    color: @on_tertiary_container;
+    font-weight: 600;
 }
 
-#noti{
-    color:#1e1e2e;
-    background: #bb91b5;
-    border-radius: 10px;
-    margin: 3px 3px 3px 10px;
-}
-slider {
-    min-height: 0px;
-    min-width: 0px;
-    border-radius: 50%;
-    opacity: 0;
-    border: 2px solid #1e1e1e;
-    background-image: none;
-    box-shadow: none;
-}
-trough {
-    min-height: 10px;
-    min-width: 80px;
-    border: 2px solid #1e1e1e;
-    background: #a6adc8;
-    border-radius: 5px;
-}
-highlight {
-    min-width: 10px;
-    border-radius: 5px;
-    background: #D18572;
+#temperature.critical {
+    color: @on_error_container;
+    font-weight: 600;
 }
 
-#tray {
-    background: #1e1e2e;
-    border-radius: 10px;
-    margin-right: 10px;
+#custom-notification {
+    padding: 0 6px;
 }
 
+/* Taskbar */
 #taskbar button {
     box-shadow: none;
-    text-shadow: none;
-    padding: 0em;
-    margin-top: 0.3em;
-    margin-bottom: 0.3em;
-    margin-left: 0em;
-    padding-left: 0.3em;
-    padding-right: 0.3em;
-    margin-right: 0em;
-    transition: all 0.3s ease;
+    background: transparent;
+    padding: 0.2em 0.4em;
+    margin: 0 0.1em;
+    transition: all 0.2s ease;
+    border-radius: 6px;
+    color: @on_surface_variant;
 }
 
 #taskbar button.active {
-    background: #9393b8;
-    border-radius: 10px;
-    margin-left: 0.3em;
-    padding-left: 1.2em;
-    padding-right: 1.2em;
-    margin-right: 0.3em;
-    transition: all 0.3s ease;
+    background: @primary_container;
+    color: @on_primary_container;
 }
+
+/* Sliders */
+slider {
+    min-height: 0;
+    min-width: 0;
+    opacity: 0;
+    border: 2px solid @primary;
+    border-radius: 50%;
+    background: @surface;
+    box-shadow: none;
+}
+
+trough {
+    min-height: 10px;
+    min-width: 80px;
+    border: 2px solid @outline_variant;
+    background: @surface_container_high;
+    border-radius: 5px;
+}
+
+highlight {
+    min-width: 10px;
+    border-radius: 5px;
+    background: @primary;
+}
+
+/* Tray */
+#tray {
+    background: @primary_container;
+    border-radius: 6px;
+    margin-right: 5px;
+}
+
+/* Window */
+#window {
+    min-width: 0;
+    border-radius: 6px;
+}
+
+/* Extras & Taskbar compact */
+#tskbar {
+    padding: 0 3px;
+    margin-left: 5px;
+}
+
+#extras {
+    padding: 2px 4px;
+    margin: 2px 2px;
+}
+
