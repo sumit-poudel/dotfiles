@@ -30,9 +30,9 @@
         },
         {
             "type": "command",
-            "key": "│ {$3}{$1}  mem   ",
+            "key": "│ \uefc5 mem   ",
             "text": "free -m | awk 'NR==2{printf \"%.2f GiB / %.2f GiB\",$3/1024,$2/1024}'",
-            "format": "{$3}{>22}{$1} │"
+            "format": "{>22}  │"
         },
         {
             "type": "packages",
@@ -53,8 +53,8 @@
         },
         {
             "type": "os",
-            "key": "│ {$4}󰻀{$1}  distro",
-            "format": "{$4}{pretty-name>22}{$1} │"
+            "key": "│ {$2}󰻀{$1}  distro",
+            "format": "{$2}{pretty-name>22}{$1} │"
         },
         {
             "type": "custom",

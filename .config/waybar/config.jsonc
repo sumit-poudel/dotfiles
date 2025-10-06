@@ -9,7 +9,7 @@
   "modules-left": [
     "clock",
     "group/stats",
-    "group/tskbar"
+    "hyprland/workspaces"
   ],
  "modules-center": ["hyprland/window"],
   "modules-right": [
@@ -28,10 +28,6 @@
   "group/extras": {
     "orientation": "inherit",
     "modules": ["custom/fan", "network","battery"]
-  },
-  "group/tskbar": {
-    "orientation": "inherit",
-    "modules": ["hyprland/workspaces", "wlr/taskbar"]
   },
   "group/audio": {
     "orientation": "inherit",
@@ -94,7 +90,11 @@
     "disable-scroll": true,
     "color": "inherit",
     "all-outputs": true,
-    "on-click": "activate"
+    "format": "{icon}",
+    "format-icons": {
+        "default" : "\uebb5",
+        "active": "\udb83\udec2"
+    }
   },
   "hyprland/window": {
         "format": "󰣇 {}",
@@ -129,22 +129,6 @@
       "on-click-backward": "tz_down",
       "on-scroll-up": "shift_up",
       "on-scroll-down": "shift_down"
-    }
-  },
-  "wlr/taskbar": {
-    "format": "{icon}",
-    "icon-size": 20,
-    "color": "inherit",
-    "tooltip-format": "{title}",
-    "on-click": "activate",
-    "on-click-middle": "close",
-    "ignore-list": ["Alacritty"],
-    "app_ids-mapping": {
-      "firefoxdeveloperedition": "firefox-developer-edition"
-    },
-    "rewrite": {
-      "Firefox Web Browser": "Firefox",
-      "Foot Server": "Terminal"
     }
   },
   "backlight/slider": {

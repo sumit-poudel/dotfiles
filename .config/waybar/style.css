@@ -17,28 +17,20 @@ window#waybar {
 
 /* Workspaces */
 #workspaces button {
+    padding: 0px 2px;
+    margin: 2px 1px;
     color: @surface;
-    background: transparent;
-    padding: 2px 4px;
-    margin-right: 2px;
-    border-radius: 6px;
-    transition: background 0.2s ease, color 0.2s ease;
+    font-size: 14px;
+    font-weight: bolder;
 }
 
 #workspaces button.active,
 #workspaces button.focused {
-    background: @primary_container;
-    color: @on_primary_container;
+    color: @surface;
 }
 
 #workspaces button.urgent {
     color: @on_error_container;
-    background: @error_container;
-}
-
-#workspaces button:hover {
-    background: @surface_container_high;
-    color: @on_surface;
 }
 
 /* General Module Styling */
@@ -58,8 +50,8 @@ window#waybar {
 #backlight-slider,
 #pulseaudio,
 #pulseaudio-slider,
-#extras,
-#tskbar {
+#workspaces,
+#extras {
     color: @surface;
     border-radius: 6px;
     padding: 2px 4px;
@@ -72,45 +64,23 @@ window#waybar {
     color: @on_primary_container;
 }
 
+#window {
+    color: white;
+}
+
 #stats,
 #custom-notification,
 #temperature,
 #audio,
 #light,
 #extras,
-#tskbar {
+#workspaces {
     background-color: @primary;
     color: @surface;
 }
 
-#temperature.warning {
-    color: @on_tertiary_container;
-    font-weight: 600;
-}
-
-#temperature.critical {
-    color: @on_error_container;
-    font-weight: 600;
-}
-
 #custom-notification {
     padding: 0 6px;
-}
-
-/* Taskbar */
-#taskbar button {
-    box-shadow: none;
-    background: transparent;
-    padding: 0.2em 0.4em;
-    margin: 0 0.1em;
-    transition: all 0.2s ease;
-    border-radius: 6px;
-    color: @on_surface_variant;
-}
-
-#taskbar button.active {
-    background: @primary_container;
-    color: @on_primary_container;
 }
 
 /* Sliders */
