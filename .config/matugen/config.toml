@@ -9,3 +9,12 @@ post_hook = 'pkill -SIGUSR2 waybar'
 input_path = './templates/kitty-colors.conf'
 output_path = '~/.config/kitty/colors.conf'
 post_hook = 'pkill -SIGUSR1 kitty'
+
+[templates.cava]
+input_path = './templates/cava-colors.ini'
+output_path = '~/.config/cava/themes/your-theme'
+post_hook = "pkill -USR1 cava"
+
+[templates.btop]
+input_path = './templates/btop.theme'
+output_path = '~/.config/btop/themes/matugen.theme'
