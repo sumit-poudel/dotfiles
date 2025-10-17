@@ -24,3 +24,11 @@ post_hook = "pkill -USR1 cava"
 [templates.btop]
 input_path = './templates/btop.theme'
 output_path = '~/.config/btop/themes/matugen.theme'
+
+[templates.alacritty]
+input_path = './templates/alacritty.toml'
+output_path = '~/.config/alacritty/colors.toml'
+
+[templates.vesktop]
+input_path = './templates/midnight-discord.css' 
+output_path = '~/.config/vesktop/themes/midnight-discord.css'
