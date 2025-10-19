@@ -5,7 +5,7 @@ BRIGHTNESS=$(brightnessctl get)
 MAX=$(brightnessctl max)
 PERCENT=$(( BRIGHTNESS * 100 / MAX ))
 
-notify-send -u low \
+notify-send -e -u low \
     -h int:value:$PERCENT \
     -h string:synchronous:brightness \
     " Brightness" "${PERCENT}%"

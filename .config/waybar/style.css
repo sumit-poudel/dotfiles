@@ -37,7 +37,6 @@ window#waybar {
 #cpu,
 #temperature,
 #memory,
-#window,
 #clock,
 #battery,
 #network,
@@ -51,6 +50,8 @@ window#waybar {
 #pulseaudio,
 #pulseaudio-slider,
 #workspaces,
+#mpris,
+#cava,
 #extras {
     color: @surface;
     border-radius: 6px;
@@ -64,16 +65,14 @@ window#waybar {
     color: @on_primary_container;
 }
 
-#window {
-    color: white;
-}
-
 #stats,
+#mpris,
 #custom-notification,
 #temperature,
 #audio,
 #light,
 #extras,
+#cava,
 #workspaces {
     background-color: @primary;
     color: @surface;
@@ -81,6 +80,7 @@ window#waybar {
 
 #custom-notification {
     padding: 0 6px;
+    padding-right: 9px;
 }
 
 /* Sliders */
@@ -115,11 +115,6 @@ highlight {
     margin-right: 5px;
 }
 
-/* Window */
-#window {
-    min-width: 0;
-    border-radius: 6px;
-}
 
 /* Extras & Taskbar compact */
 #tskbar {
