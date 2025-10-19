@@ -45,13 +45,13 @@ window#waybar {
 #tray,
 #stats,
 #custom-fan,
+#custom-music,
 #custom-notification,
 #backlight-slider,
 #pulseaudio,
 #pulseaudio-slider,
 #workspaces,
 #mpris,
-#cava,
 #extras {
     color: @surface;
     border-radius: 6px;
@@ -71,8 +71,10 @@ window#waybar {
 #temperature,
 #audio,
 #light,
+#custom-music.Paused,
+#custom-music.Playing,
+#custom-music.Stopped,
 #extras,
-#cava,
 #workspaces {
     background-color: @primary;
     color: @surface;
