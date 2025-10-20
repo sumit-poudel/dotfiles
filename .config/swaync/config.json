@@ -1,79 +1,117 @@
 {
-    "$schema": "/etc/xdg/swaync/configSchema.json",
-    "positionX": "right",
-    "positionY": "top",
-    "cssPriority": "user",
-    "control-center-width": 450,
-    "fit-to-screen": true,
+  "$schema": "/etc/xdg/swaync/configSchema.json",
+  "positionX": "right",
+  "positionY": "top",
+  "cssPriority": "user",
+  "control-center-width": 400,
+  "control-center-margin-top": 2,
+  "control-center-margin-right": 1,
 
-    "notification-window-width": 400,
-    "notification-icon-size": 40,
-    "notification-body-image-height": 500,
-    "notification-body-image-width": 500,
-    "notification-inline-replies": true,
-    "notification-2fa-action": false,
+  "notification-window-width": 400,
+  "notification-icon-size": 48,
+  "notification-body-image-height": 160,
+  "notification-body-image-width": 200,
+
+  "timeout": 4,
+  "timeout-low": 2,
+  "timeout-critical": 6,
   
-    "timeout": 4,
-    "timeout-low": 4,
-    "timeout-critical": 6,
-    
-    "keyboard-shortcuts": true,
-    "image-visibility": "when-available",
-    "transition-time": 200,
-    "hide-on-clear": false,
-    "hide-on-action": false,
-    "script-fail-notify": true,
-
-    "widgets": [
-      "mpris",
-      "dnd",
-      "notifications",
-      "buttons-grid"
-    ],
-   
-    "widget-config": {
-        "dnd": {
-            "text": "Do not disturb"
+  "fit-to-screen": true,
+  "keyboard-shortcuts": true,
+  "image-visibility": "when-available",
+  "transition-time": 200,
+  "hide-on-clear": false,
+  "hide-on-action": false,
+  "script-fail-notify": true,
+  "scripts": {
+    "example-script": {
+      "exec": "echo 'Do something...'",
+      "urgency": "Normal"
+    }
+  },
+  "notification-visibility": {
+    "example-name": {
+      "state": "visible",
+      "urgency": "Low",
+      "app-name": "Spotify"
+    }
+  },
+  "widgets": [
+    "label",
+    "buttons-grid",
+    "volume",
+    "backlight",
+    "mpris",
+    "title",
+    "dnd",
+    "notifications"
+  ],
+  "widget-config": {
+    "title": {
+      "text": "Notifications",
+      "clear-all-button": true,
+      "button-text": " 󰎟 "
+    },
+    "dnd": {
+      "text": "Do not disturb"
+    },
+    "label": {
+      "max-lines": 1,
+      "text": "󰬚󰬞󰬈󰬠󰬕󰬊"
+    },
+    "mpris": {
+      "image-size": 96,
+      "image-radius": 12
+    },
+    "volume": {
+      "label": "󰕾 ",
+      "show-per-app": false
+    },
+    "backlight": {
+      "label": "󰃟 ",
+      "device": "amdgpu_bl2"
+    },
+    "buttons-grid": {
+      "actions": [
+        {
+          "label": "󰖁",
+          "command": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+          "type": "toggle"
         },
-
-        "mpris": {
-            "image-size": 106,
-            "image-radius": 1000
+        {
+          "label": "󰍭",
+          "command": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+	  "type": "toggle"
         },
-
-        "buttons-grid": {
-            "actions": [
-                {
-                    "label": "󰌪",
-                    "type": "toggle",
-                    "command": "bash -c $HOME/.config/swaync/scripts/quiet.sh",
-                    "update-command": "bash -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && $HOME/.config/swaync/scripts/update_quiet.sh'"
-                },
-                {
-                    "label": "",
-                    "type": "toggle",
-                    "command": "bash -c $HOME/.config/swaync/scripts/inhibit.sh",
-                    "update-command": "bash -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && $HOME/.config/swaync/scripts/update_inhibit.sh'"
-                },
-                {
-                    "label": "",
-                    "type": "toggle",
-                    "command": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
-                    "update-command": "bash -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && $HOME/.config/swaync/scripts/update_mic.sh'"
-                },
-                {
-                    "label": "",
-                    "command": "hyprctl dispatch exec kitty -- -e btop"
-                },
-                {
-                    "label": "󰢮",
-                    "command": "hyprctl dispatch exec kitty -- -e nvidia-smi -l 1"
-                },
-                {
-                    "label": "",
-                    "command": "hyprctl dispatch exec nwg-look"
-                }
-            ]
-        }
+        {
+          "label": "󰤨",
+          "command": "nm-connection-editor"
+        },
+        {
+          "label": "󰂯",
+          "command": "blueman-manager"
+        },
+        {
+          "label": "",
+          "command": "nwg-look"
+        },
+        { 
+          "label": "󰻂",
+          "command": "obs"
+        },
+	{
+	  "label": "󰌾",
+	  "command": "hyprlock"
+	},
+	{
+	  "label":"󰜉",
+	  "command": "reboot"
+	},
+	{
+	  "label":"󰐥",
+	  "command": "shutdown now"
+	}
+      ]
     }
   }
+}
