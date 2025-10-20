@@ -3,7 +3,7 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: "FiraCode Nerd Font";
+    font-family: "FiraCode Nerd Font", monospace;
     font-weight: 600;
     font-size: 12px;
     min-height: 0;
@@ -71,15 +71,12 @@ window#waybar {
 #temperature,
 #audio,
 #light,
-#custom-music.Paused,
-#custom-music.Playing,
-#custom-music.Stopped,
+#custom-music,
 #extras,
 #workspaces {
     background-color: @primary;
     color: @surface;
 }
-
 #custom-notification {
     padding: 0 6px;
     padding-right: 9px;
