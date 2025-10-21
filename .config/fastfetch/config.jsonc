@@ -28,18 +28,26 @@
             "format": "{>22} │"
         },
         {
+    "type": "command",
+    "key": "│ 󰔚  os age",
+    "keyColor": "34",
+    "outputColor": "34",
+    "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days",
+    "format": "{#1}{>22}{#} │"
+        },
+        {
+            "type": "command",
+            "key": "│ \uefc5  memory",
+            "keyColor": "83;2;0;0;0",
+            "text": "free -m | awk 'NR==2{printf \"%.2f GiB / %.2f GiB\",$3/1024,$2/1024}'",
+            "format": "{>22} │"
+        },
+        {
             "type": "shell",
             "key": "│   shell ",
             "format": "{#1}{pretty-name>22}{#} │",
             "keyColor": "34",
             "outputColor": "34"
-        },
-        {
-            "type": "command",
-            "key": "│ \uefc5 mem   ",
-            "keyColor": "83;2;0;0;0",
-            "text": "free -m | awk 'NR==2{printf \"%.2f GiB / %.2f GiB\",$3/1024,$2/1024}'",
-            "format": "{>22}  │"
         },
         {
             "type": "packages",
