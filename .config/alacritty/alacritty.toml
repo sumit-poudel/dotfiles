@@ -17,7 +17,7 @@ save_to_clipboard = true
 [window]
 decorations = "none"
 dynamic_title = true
-opacity = 0.75 
+opacity = 1 
 dynamic_padding = true
 
 [window.padding]
@@ -35,9 +35,3 @@ hide_when_typing = true
 [scrolling]
 history = 10000
 multiplier = 3
-[env]
-TERM = "xterm-256color"
-[bell]
-animation = "Linear"
-duration = 0
-command = { program = "paplay", args = ["/usr/share/sounds/freedesktop/stereo/dialog-error.oga"] }
