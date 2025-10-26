@@ -77,7 +77,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git sudo react-native node)
+plugins=(git sudo node npm react-native node)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -136,3 +136,5 @@ alias clock="clock.sh"
 alias zed="zed-editor"
 alias yeet="sudo pacman -Rns"
 alias plz="sudo"
+alias s="pacman -Ss"
+alias xampp="sudo /opt/lampp/xampp"
