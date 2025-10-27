@@ -13,7 +13,7 @@ if [ "$HYPRGAMEMODE" = 1 ] ; then
         keyword general:border_size 1;\
         keyword decoration:rounding 0"
     hyprctl notify 1 5000 "rgb(40a02b)" "Gamemode [ON]"
-    exit
+    exit 0
 else
     hyprctl notify 1 5000 "rgb(d20f39)" "Gamemode [OFF]"
     hyprctl reload
