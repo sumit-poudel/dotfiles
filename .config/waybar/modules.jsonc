@@ -87,9 +87,9 @@
     }
   },
   "mpris": {
-    "interval": 1,
     "format": "{status_icon} {dynamic}",
     "format-paused": "{status_icon} <i>{dynamic}</i>",
+    "player": ["mpd"],
     "on-click": "playerctl play-pause",
     "on-scroll-up": "playerctl next",
     "on-scroll-down": "playerctl previous",
@@ -103,7 +103,7 @@
   "custom/music": {
     "format": "{text}",
     "tooltip": false,
-    "exec": "~/.config/waybar/script/caway.sh",
+    "exec": "~/.config/waybar/script/caway.sh $WAYBAR_MONITOR",
     "return-type": "text"
 },
   "tray": {
@@ -154,7 +154,7 @@
   "custom/fan": {
     "format": "󰈐",
     "tooltip-format": "Fan Boost",
-    "on-click": "kitty -e ~/.config/waybar/script/fanboost.sh"
+    "on-click": "alacritty --title 'fan' -e ~/.config/waybar/script/fanboost.sh"
   },
   "network": {
 	"format-wifi": "{bandwidthTotalBytes}",

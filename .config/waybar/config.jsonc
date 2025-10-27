@@ -5,14 +5,12 @@
     "modules-left": [
     "clock",
     "hyprland/workspaces",
-    "mpris"
   ],
     "modules-center": [],
     "modules-right": [
-    "custom/music",
     "tray",
-    "group/extras",
     "group/audio",
+    "group/extras",
     "custom/notification"
   ],
     "include": ["~/.config/waybar/modules.jsonc"],
@@ -29,11 +27,11 @@
   ],
     "modules-center": [],
     "modules-right": [
-    "custom/music",
     "tray",
-    "group/extras",
-    "group/light",
+    "custom/music",
     "group/audio",
+    "group/light",
+    "group/extras",
     "custom/notification"
   ],
     "include": ["~/.config/waybar/modules.jsonc"],
