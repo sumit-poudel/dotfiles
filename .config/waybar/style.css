@@ -3,7 +3,7 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: "FiraCode Nerd Font", monospace;
+    font-family: "FiraCode Nerd Font Propo","JetBrainsMono NFP";
     font-weight: 600;
     font-size: 12px;
     min-height: 0;
@@ -44,6 +44,7 @@ window#waybar {
 #audio,
 #tray,
 #stats,
+#custom-arch,
 #custom-fan,
 #custom-music,
 #custom-notification,
@@ -60,12 +61,13 @@ window#waybar {
 }
 
 /* Specific Modules */
-#clock {
+#custom-arch {
     background: @primary_container;
     color: @on_primary_container;
 }
 
 #stats,
+#clock,
 #mpris,
 #custom-notification,
 #temperature,
@@ -77,9 +79,9 @@ window#waybar {
     background-color: @primary;
     color: @surface;
 }
-#custom-notification {
-    padding: 0 6px;
-    padding-right: 9px;
+#custom-notification, #custom-arch {
+    font-size: 16px;
+    min-width: 1rem;
 }
 
 /* Sliders */

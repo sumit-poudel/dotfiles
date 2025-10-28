@@ -37,6 +37,12 @@
   },
 
   // modules
+  "custom/arch": {
+    "format": "󰣇",
+    "justify": "center",
+    "tooltip": false,
+    "on-click": "walker"
+  },
     "memory": {
     "states": {
       "c": 90,
@@ -171,7 +177,7 @@
       "warning": 30,
       "critical": 20
     },
-    "format": "{icon} {capacity}%",
+    "format": "{capacity}% {icon}",
     "format-charging": " {capacity}%",
     "format-plugged": " {capacity}%",
     "format-alt": "{time} {icon}",
@@ -212,6 +218,7 @@
    "custom/notification": {
     "tooltip": false,
     "format": "{icon}",
+    "justify": "center",
     "format-icons": {
       "notification": "<span foreground='red'><sup></sup></span>",
       "none": "",

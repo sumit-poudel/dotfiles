@@ -3,6 +3,7 @@
     "output": ["HDMI-A-1"],
     "position": "top",
     "modules-left": [
+    "custom/arch",
     "clock",
     "hyprland/workspaces",
   ],
@@ -20,6 +21,7 @@
     "position": "top",
     "persist": true,
     "modules-left": [
+    "custom/arch",
     "clock",
     "group/stats",
     "hyprland/workspaces",
