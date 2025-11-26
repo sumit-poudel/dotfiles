@@ -3,7 +3,6 @@
 * Generated with Matugen
 */
 @define-color blur_background rgba(19, 19, 24, 0);
-@define-color blur_background8 rgba(19, 19, 24, 1);
 
     @define-color background #131318;
 
@@ -104,3 +103,4 @@
     @define-color tertiary_fixed #ffd8eb;
 
     @define-color tertiary_fixed_dim #e9b9d2;
+

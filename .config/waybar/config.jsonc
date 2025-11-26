@@ -96,8 +96,8 @@
         "drawer": {
             "transition-duration": 600,
             "children-class": "not-power",
-            "transition-to-left": true
-            //  "click-to-reveal": true
+            "transition-to-left": true,
+            "click-to-reveal": true
         },
         "modules": [
             "custom/menu",
@@ -124,17 +124,21 @@
         "rotate": 90
     },
     "hyprland/workspaces": {
+        "disable-scroll": false,
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+	"on-scroll-down": "hyprctl dispatch workspace e-1",
+	"all-outputs": true,
+	"active-only": false,
+	"on-click": "activate",
         "format": "{icon}",
         "format-icons": {
             "default": "",
             "active": ""
-            //"default": "○",
-            //"active": "⦿"
         }
     },
     "clock": {
-        "format": "{:%I\n%M\n%S}",
-        "interval": 1,
+        "format": "{:%I\n%M\n%a}",
+	"justify":"center",
         "rotate": 0,
         "on-click": "/usr/local/bin/ags -t ActivityCenter",
         "tooltip-format": "<tt>{calendar}</tt>",
@@ -164,6 +168,7 @@
             "critical": 20
         },
         "format": "{icon}",
+        "tooltip-format": "{capacity}%",
         "rotate": 0,
         "justify": "center",
         "format-charging": "󱐋",
@@ -173,7 +178,7 @@
         "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
     },
     "backlight": {
-        "device": "intel_backlight",
+        "device": "amdgpu_bl1",
         "rotate": 0,
         "justify":"center",
         "format": "{icon}",
@@ -240,7 +245,7 @@
         ],
         "rotate": 0,
         "format-ethernet": "󰈀 ",
-        "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
+        "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>\nSpeed: <b>{bandwidthUpBytes} / {bandwidthDownBytes}</b>",
         "format-linked": "󰈀 {ifname} (No IP)",
         "format-disconnected": "",
         "tooltip-format-disconnected": "Disconnected",
@@ -248,12 +253,15 @@
         "interval": 2
     },
     "bluetooth": {
-        "format": "󰂲",
+        "format": "",
+        "format-no-controller": "",
+        "format-disabled": "󰂲",
+        "format-off": "󰂲",
+        "format-on": "",
         "format-connected": "󰂱",
-        "format-disconnected": "",
         // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
-        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format": "{controller_alias}\t{controller_address}\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n{num_connections} connected\n{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
         "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
         "on-click": "blueman-manager"
@@ -281,7 +289,7 @@
         "format": "{format_source}",
         "rotate": 0,
         "format-source": "",
-        "format-source-muted": " ",
+        "format-source-muted": "",
         "on-click": "pamixer --default-source --toggle-mute",
         "on-scroll-down": "pamixer --default-source -i 1",
         "on-scroll-up": "pamixer --default-source -d 1",
