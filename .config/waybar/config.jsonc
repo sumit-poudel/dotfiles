@@ -14,26 +14,12 @@
     "reload_style_on_change": true,
     // positions generated based on config.ctl //
     "modules-left": [
-        "custom/spacer",
-        "group/expand-4",
-        "custom/smallspacer",
-        "hyprland/workspaces",
-        "custom/spacer"
+        "group/top"
     ],
-    "modules-center": [],
+    "modules-center": ["mpris"],
     "modules-right": [
-        "group/expand",
-        "network",
-        "bluetooth",
-        "group/expand-3",
-        "group/expand-2",
-        "custom/smallspacer",
-        "clock",
-        "custom/spacer",
-        "battery",
-        "custom/notification",
-        "custom/spacer"
-    ],
+	    "group/bottom"
+            ],
     //modules
      "custom/arch": {
     "format": "󰣇",
@@ -91,6 +77,34 @@
         "rotate": 0,
         "spacing": 3
     },
+    "group/top":{
+        "orientation": "vertical",
+	"modules":[
+	"custom/spacer",
+        "group/expand-4",
+        "custom/smallspacer",
+        "hyprland/workspaces",
+        "custom/spacer"
+
+	]
+    },
+    "group/bottom":{
+        "orientation": "vertical",
+	"modules":[
+	"group/expand",
+        "network",
+        "bluetooth",
+        "group/expand-3",
+        "group/expand-2",
+        "custom/smallspacer",
+        "clock",
+        "custom/spacer",
+        "battery",
+        "custom/notification",
+        "custom/spacer"
+	]
+    },
+
     "group/expand": {
         "orientation": "vertical",
         "drawer": {
@@ -119,6 +133,19 @@
         "icon": false,
         "icon-size": 13
     },
+    "mpris": {
+	"format": "󰝚 {player_icon} {dynamic}",
+	"rotate": 270,
+	"format-paused": "󰝚 {status_icon} {dynamic}",
+	"max-length": 15,
+	"player-icons": {
+		"default": "󰏤",
+		"mpv": "󰝚"
+	},
+	"status-icons": {
+		"paused": "󰐊"
+	}
+},
     "custom/spacer": {
         "format": "|",
         "rotate": 90

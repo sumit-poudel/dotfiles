@@ -8,11 +8,28 @@
 }
 
 window#waybar {
-    background: @blur_background; 
-    border: 2px solid @tertiary;
+    /*background: @blur_background;*/
+    background: transparent;
     border-radius: 10px;
 }
 
+#top {
+	background: @background;
+	border-radius:10px 0px 0px 55px;
+	padding-bottom:10px;
+}
+
+#mpris{
+	background: @background;
+	padding: 20px 0px;
+	border-radius:35px 0px 0px 35px;
+}
+
+#bottom {
+	background: @background;
+	border-radius:55px 0px 0px 10px;
+	padding-top:10px;
+}
 
 tooltip{
     background: #1D2021;
@@ -26,11 +43,9 @@ tooltip{
 
 #workspaces {
     font-weight: normal;
-    background: rgba(23, 23, 23, 0.0);
     color: #2F302D;
     box-shadow: none;
     text-shadow: none;
-    border-radius: 9px;
     transition: 0.2s ease;
 }
 
@@ -155,6 +170,10 @@ tooltip{
     margin: 0px;
 }
 
+#custom-menu{
+    margin-top: 10px;
+}
+
 #custom-menu,
 #custom-arch {
     font-weight: normal;
@@ -223,47 +242,9 @@ tooltip{
     color: red;
 }
 
-
 #taskbar {
     padding: 0px;
 }
-
-#custom-r_end {
-    border-radius: 0px 7px 7px 0px;
-    margin-right: 1px;
-    padding-right: 3px;
-}
-
-#custom-l_end {
-    border-radius: 7px 0px 0px 7px;
-    margin-left: 1px;
-    padding-left: 3px;
-}
-
-#custom-sr_end {
-    border-radius: 0px;
-    margin-right: 1px;
-    padding-right: 3px;
-}
-
-#custom-sl_end {
-    border-radius: 0px;
-    margin-left: 1px;
-    padding-left: 3px;
-}
-
-#custom-rr_end {
-    border-radius: 0px 7px 7px 0px;
-    margin-right: 1px;
-    padding-right: 3px;
-}
-
-#custom-rl_end {
-    border-radius: 7px 0px 0px 7px;
-    margin-left: 1px;
-    padding-left: 3px;
-}
-
 
 /* Style for launchers */
 
