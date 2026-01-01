@@ -1,11 +1,9 @@
 if command -v fastfetch >/dev/null; then
     cat <<'SUMIT'
-███████╗██╗   ██╗███╗   ███╗██╗████████╗
-██╔════╝██║   ██║████╗ ████║██║╚══██╔══╝
-███████╗██║   ██║██╔████╔██║██║   ██║   
-╚════██║██║   ██║██║╚██╔╝██║██║   ██║   
-███████║╚██████╔╝██║ ╚═╝ ██║██║   ██║   
-╚══════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝   ╚═╝   
+                  _ __ 
+  ___ __ ____ _  (_) /_
+ (_-</ // /  ' \/ / __/
+/___/\_,_/_/_/_/_/\__/ 
 SUMIT
     fastfetch
 fi
@@ -79,7 +77,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git sudo)
+plugins=(git sudo node npm node)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -124,15 +122,30 @@ eval "$(zoxide init zsh)"
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-extract/extract.plugin.zsh
-
+source /usr/share/zsh/plugins/zsh-you-should-use/zsh-you-should-use.plugin.zsh
 
 #alias
+alias src="source ~/.zshrc"
+alias esrc="vim ~/.zshrc"
 alias fk=fuck
-alias la="eza -a --color=always --group-directories-first --icons"
-alias ls="eza -l --color=always --group-directories-first --icons"
+alias diff=icdiff
+alias py=python
+alias ls="eza -a --color=always --group-directories-first --icons"
+alias la="eza -l --color=always --group-directories-first --icons"
 alias lsa="eza -al --color=always --group-directories-first --icons"
 alias lt="eza -aT --color=always --group-directories-first --icons"
 alias pg="ping -c 5 google.com"
-alias clock="clock.sh"
-alias zed="zed-editor"
 alias yeet="sudo pacman -Rns"
+alias plz="sudo"
+alias pkgq="pacman -Qs"
+alias pkgs="paru -Ss"
+alias pkgu="paru -Syyu"
+alias vi="nvim"
+alias tsr="tsr.sh"
+
+# bun completions
+[ -s "/home/sumit/.bun/_bun" ] && source "/home/sumit/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
