@@ -124,15 +124,6 @@
         "format": "󰅃",
         "rotate": 0
     },
-    "hyprland/window": {
-        //"format": "{}"   // <--- these is the default value  
-        "format": "<span  weight='bold' >{class}</span>",
-        "on-click-right": "pkill waybar & hyprctl dispatch exec waybar",
-        "rotate": 90,
-        "max-length": 120,
-        "icon": false,
-        "icon-size": 13
-    },
     "mpris": {
 	"format": "󰝚 {player_icon} {dynamic}",
 	"rotate": 270,
@@ -151,23 +142,35 @@
         "rotate": 90
     },
     "hyprland/workspaces": {
-        "disable-scroll": false,
-        "on-scroll-up": "hyprctl dispatch workspace e+1",
-	"on-scroll-down": "hyprctl dispatch workspace e-1",
-	"all-outputs": true,
 	"active-only": false,
+	"all-outputs": true,
+	"format": "{icon}",
+	"rotate": 180,
 	"on-click": "activate",
-        "format": "{icon}",
-        "format-icons": {
-            "default": "",
-            "active": ""
-        }
-    },
+	"on-scroll-up": "hyprctl dispatch workspace e+1",
+	"on-scroll-down": "hyprctl dispatch workspace e-1",
+	"format": "{icon}",
+	"format-icons": {
+            "active": "<span font='12'>󰮯</span>",
+            "empty": "<span font='8'></span>",
+            "default": "󰊠",
+		},
+	},
+    "power-profiles-daemon": {
+  "format": "{icon}",
+  "justify":"center",
+  "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+  "tooltip": true,
+  "format-icons": {
+    "default": "",
+    "performance": "",
+    "balanced": "",
+    "power-saver": ""
+  }
+},
     "clock": {
         "format": "{:%I\n%M\n%a}",
 	"justify":"center",
-        "rotate": 0,
-        "on-click": "/usr/local/bin/ags -t ActivityCenter",
         "tooltip-format": "<tt>{calendar}</tt>",
         "calendar": {
             "mode": "month",
@@ -196,7 +199,6 @@
         },
         "format": "{icon}",
         "tooltip-format": "{capacity}%",
-        "rotate": 0,
         "justify": "center",
         "format-charging": "󱐋",
         "format-plugged": "󰂄",
@@ -257,6 +259,7 @@
         },
         "modules": [
         "custom/arch",
+	"power-profiles-daemon",
         "cpu",
         "memory"
         ]

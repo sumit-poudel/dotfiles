@@ -10,7 +10,6 @@
 window#waybar {
     /*background: @blur_background;*/
     background: transparent;
-    border-radius: 10px;
 }
 
 #top {
@@ -48,7 +47,6 @@ tooltip{
     text-shadow: none;
     transition: 0.2s ease;
 }
-
 
 #workspaces button {
     font-weight: normal;
@@ -143,15 +141,15 @@ tooltip{
     background: rgba(22, 19, 32, 0.0);
 }
 
-#cpu {
+#cpu, #memory{
     font-weight: normal;
     font-size: 22px;
     margin-top: 4px;
 }
 
-#memory {
+#power-profiles-daemon{
     font-weight: normal;
-    font-size: 22px;
+    font-size: 16px;
     margin-top: 4px;
 }
 
