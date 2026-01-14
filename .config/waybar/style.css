@@ -213,9 +213,10 @@ tooltip{
 
 #backlight-slider slider,
 #pulseaudio-slider slider {
-    background: #A1BDCE;
-    background-color: transparent;
+    background: @primary;
     box-shadow: none;
+    min-width: 1px;
+    min-height: 1px;
 }
 
 #backlight-slider trough,
