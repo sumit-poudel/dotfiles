@@ -1,0 +1,13 @@
+[config]
+version_check = false
+
+# for btop
+[templates.btop]
+input_path = './templates/btop.theme'
+output_path = '~/.config/btop/themes/matugen.theme'
+
+[templates.nvim-base16]
+input_path = "~/.config/nvim/lua/config/matugen-template.lua"
+output_path = "~/.config/nvim/colors/matugen.lua"
+post_hook = 'pkill -SIGUSR1 nvim'
+

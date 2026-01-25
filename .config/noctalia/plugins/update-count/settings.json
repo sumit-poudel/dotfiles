@@ -1,0 +1,8 @@
+{
+  "updateIntervalMinutes": 300,
+  "updateTerminalCommand": "kitty -e --title \"floaterm\"",
+  "currentIconName": "cloud-download",
+  "hideOnZero": true,
+  "customCmdGetNumUpdates": "paru -Quq 2>/dev/null | wc -l",
+  "customCmdDoSystemUpdate": "paru -Syu"
+}
