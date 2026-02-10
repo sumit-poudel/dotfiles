@@ -1,0 +1,5 @@
+// ────────────── Startup Applications ──────────────
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous#spawn-sh-at-startup
+
+    spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1 &" // Polkit
+    spawn-at-startup "swayidle -w timeout 150 'notify-send -e \"victu\" \"You are idle!(҂⌣̀_⌣́)\" && brightnessctl -s set 10' resume 'notify-send -e \"victu\" \"Welcome back ( ˘͈ ᵕ ˘͈♡)\" && brightnessctl -r' timeout 295 'notify-send -e \"victu\" \"I am locking up!(҂⌣̀_⌣́)\"' timeout 300 'qs -c noctalia-shell ipc call lockScreen lock' timeout 1200 'systemctl suspend' before-sleep 'qs -c noctalia-shell ipc call lockScreen lock'"
