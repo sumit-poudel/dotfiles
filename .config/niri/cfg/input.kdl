@@ -2,6 +2,8 @@
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Input
 
 input {
+    mod-key "Alt"
+    mod-key-nested "Super"
     keyboard {
         xkb {
             layout "us" // Use the American keyboard layout
@@ -11,8 +13,12 @@ input {
     }
 
     touchpad {
+	dwt
         tap // Enable tap-to-click
         natural-scroll // Enable natural (macOS-style) scrolling
+	accel-profile "flat"
+	accel-speed 0.2
+	scroll-factor 0.4
     }
 
     focus-follows-mouse // Automatically focus windows under the mouse pointer

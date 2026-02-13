@@ -8,6 +8,7 @@
         XDG_SESSION_TYPE "wayland"
         XDG_CURRENT_DESKTOP "niri"
         QT_QPA_PLATFORMTHEME "qt5ct"
+	_JAVA_AWT_WM_NONREPARENTING "1"
     }
 
     debug {
