@@ -48,7 +48,10 @@ boot.kernelParams = [ "nvidia_drm.modeset=1" "nvidia_drm.fbdev=1" ];
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
-  networking.networkmanager.enable = true;
+  networking.networkmanager = {
+    enable = true;
+    wifi.backend = "iwd";
+  };
 
   # Set your time zone.
   time.timeZone = "Asia/Kathmandu";
@@ -65,6 +68,7 @@ boot.kernelParams = [ "nvidia_drm.modeset=1" "nvidia_drm.fbdev=1" ];
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.sumit = {
     isNormalUser = true;
+    shell = pkgs.zsh;
     description = "sumit poudel";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [];
@@ -75,37 +79,54 @@ boot.kernelParams = [ "nvidia_drm.modeset=1" "nvidia_drm.fbdev=1" ];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # List packages installed in system profile. To search, run:
   # $ nix search wget
+  environment.shells = [ pkgs.zsh ];    
   environment.systemPackages = with pkgs; [
    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
    wget
+   curl
    niri
+   fastfetch
    btop
    nvtopPackages.full
    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
    nvidia-vaapi-driver
    xwayland-satellite
    nvidia-modprobe
+   vulkan-loader
+   vulkan-tools
    alacritty
    kitty
    git
    firefox
    vscode
-   zed
+   zed-editor
   ];
+
+  fonts.packages = with pkgs; [
+  nerd-fonts.fira-code
+  nerd-fonts.droid-sans-mono
+  ];   
 
   programs = {
     nix-ld.enable = true;
     niri.enable = true;
+    fish.enable = true;
+    zsh.enable = true;
     xwayland.enable = true;
 
     steam = {
       enable = true;
     };
   };
-
+ 
 hardware.graphics={
-	enable = true;
-	enable32Bit = true;
+    enable = true;
+    enable32Bit = true;
+    extraPackages = with pkgs; [
+    nvidia-vaapi-driver # Bridges NVIDIA to the Browser
+    libva-vdpau-driver
+    libvdpau-va-gl
+  ];
 };
 hardware.bluetooth.enable = true;
   hardware.nvidia = {
@@ -155,18 +176,21 @@ environment.variables = {
     NVD_BACKEND = "direct";
     QT_QPA_PLATFORM = "wayland";
     SDL_VIDEODRIVER = "wayland";
+    ELECTRON_OZONE_PLATFORM_HINT = "auto";
     #__GLX_VENDOR_LIBRARY_NAME = "mesa";
     NIXOS_OZONE_WL = "1";
     # These two are vital for NVIDIA stability on Wayland
     GBM_BACKEND = "nvidia-drm";
+    LIBVA_DRIVER_NAME = "nvidia";
     __GL_GSYNC_ALLOWED = "0"; # Often helps with flickering
     __GL_VRR_ALLOWED = "0";
+    WLR_NO_HARDWARE_CURSORS = "1";
 };
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+   networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
