@@ -1,7 +1,8 @@
     prefer-no-csd
-    screenshot-path null
+    screenshot-path "~/Pictures/screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png" 
 
     environment {
+        DISPLAY ":0"
         ELECTRON_OZONE_PLATFORM_HINT "wayland"
         XDG_CURRENT_DESKTOP "niri"
         QT_QPA_PLATFORMTHEME "qt5ct"

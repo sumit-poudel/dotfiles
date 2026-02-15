@@ -130,10 +130,9 @@ alias esrc="vim ~/.zshrc"
 alias fk=fuck
 alias diff=icdiff
 alias py=python
-alias ls="eza -a --color=always --group-directories-first --icons"
-alias la="eza -l --color=always --group-directories-first --icons"
-alias lsa="eza -al --color=always --group-directories-first --icons"
-alias lt="eza -aT --color=always --group-directories-first --icons"
+alias ls="eza -G --color=always --group-directories-first --icons"
+alias la="eza -la --color=always --group-directories-first --icons"
+alias tree="eza -aT --color=always --group-directories-first --icons"
 alias pg="ping -c 5 google.com"
 alias yeet="sudo pacman -Rns"
 alias plz="sudo"
