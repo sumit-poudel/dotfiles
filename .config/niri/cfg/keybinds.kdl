@@ -10,7 +10,7 @@ binds {
     Mod+Space                            hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
     Super+Space                          hotkey-overlay-title="Open Setting: noctalia settings" { spawn-sh "qs -c noctalia-shell ipc call settings toggle"; }
 
-    Mod+B                                hotkey-overlay-title="Open Browser: thorium" { spawn "thorium-browser"; }
+    Mod+B                                hotkey-overlay-title="Open Browser: brave" { spawn "brave"; }
     Super+B                               { spawn "zen-browser"; }
 
     Super+Mod+L                          hotkey-overlay-title="Lock Screen: noctalia lock" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }

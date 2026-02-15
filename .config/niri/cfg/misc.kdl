@@ -2,13 +2,21 @@
     screenshot-path null
 
     environment {
-        ELECTRON_OZONE_PLATFORM_HINT "auto"
-        QT_QPA_PLATFORM "wayland"
-        QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
-        XDG_SESSION_TYPE "wayland"
+        ELECTRON_OZONE_PLATFORM_HINT "wayland"
         XDG_CURRENT_DESKTOP "niri"
         QT_QPA_PLATFORMTHEME "qt5ct"
 	_JAVA_AWT_WM_NONREPARENTING "1"
+	XDG_SESSION_TYPE "wayland"
+    	NVD_BACKEND "direct"
+    	QT_QPA_PLATFORM "wayland"
+    	SDL_VIDEODRIVER "wayland"
+    	ELECTRON_OZONE_PLATFORM_HINT "auto"
+    	__GLX_VENDOR_LIBRARY_NAME "nvidia"
+    	GBM_BACKEND "nvidia-drm"
+    	LIBVA_DRIVER_NAME "nvidia"
+    	__GL_GSYNC_ALLOWED "0" // Often helps with flickering
+    	__GL_VRR_ALLOWED "0"
+    	WLR_NO_HARDWARE_CURSORS "1"
     }
 
     debug {
