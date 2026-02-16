@@ -8,7 +8,7 @@ binds {
     Mod+C                                hotkey-overlay-title="Open codeEditor: Zed Editor" { spawn "zeditor"; }
 
     Mod+Space                            hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
-    Super+Space                          hotkey-overlay-title="Open Setting: noctalia settings" { spawn-sh "qs -c noctalia-shell ipc call settings toggle"; }
+    Super+Space                          hotkey-overlay-title="Open Setting: noctalia controlCenter" { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
 
     Mod+B                                hotkey-overlay-title="Open Browser: brave" { spawn "brave"; }
     Super+B                               { spawn "zen-browser"; }

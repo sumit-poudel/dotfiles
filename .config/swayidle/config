@@ -1,0 +1,6 @@
+timeout 100 'notify-send -e "victu" "You are idle!(҂⌣̀_⌣́)" && brightnessctl -s set 10' resume 'notify-send -e "victu" "Welcome back ( ˘͈ ᵕ ˘͈♡)" && brightnessctl -r'
+timeout 250 'notify-send -e "victu" "I am locking up!(҂⌣̀_⌣́)" && qs -c noctalia-shell ipc --any-display call lockScreen lock'
+timeout 1200 'systemctl suspend'
+before-sleep 'notify-send -e "victuu" "ꍞ(¦ 3[▓▓]"'
+after-resume 'notify-send -e "victuu" "♡´･ᴗ･`♡"'
+lock 'notify-send -e "victuu" "♡´･ᴗ･`♡"'

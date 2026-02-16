@@ -16,6 +16,13 @@
     	WLR_NO_HARDWARE_CURSORS "1"
     	}
 
+    cursor {
+      xcursor-theme "Bibata-Modern-Ice"
+      xcursor-size 30 
+      hide-when-typing
+      hide-after-inactive-ms 1000
+      }
+
     debug {
         // Allows notification actions and window activation from Noctalia.
         honor-xdg-activation-with-invalid-serial
