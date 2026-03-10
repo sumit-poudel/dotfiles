@@ -1,7 +1,8 @@
 binds {
 
     Super+Shift+H                        { show-hotkey-overlay; }
-    Super+R                allow-when-locked=false { spawn-sh "killall qs && qs -c noctalia-shell"; }
+    XF86Calculator                       { spawn "gnome-calculator"; }
+    XF86Launch2                          allow-when-locked=false { spawn-sh "killall qs && qs -c noctalia-shell"; }
 
     Mod+Return                           hotkey-overlay-title="Open Terminal: Alacritty" { spawn "alacritty"; }
     Super+Return                         hotkey-overlay-title="Open Terminal: Kitty" { spawn "kitty"; }
@@ -10,8 +11,8 @@ binds {
     Mod+Space                            hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
     Super+Space                          hotkey-overlay-title="Open Setting: noctalia controlCenter" { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
 
-    Mod+B                                hotkey-overlay-title="Open Browser: brave" { spawn "brave"; }
-    Super+B                               { spawn "zen-browser"; }
+    Mod+B                                hotkey-overlay-title="Open Browser " { spawn "vivaldi"; }
+    Super+B                               { spawn "waterfox"; }
 
     Super+Mod+L                          hotkey-overlay-title="Lock Screen: noctalia lock" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
 
@@ -23,6 +24,7 @@ binds {
 
     Super+E                              hotkey-overlay-title="File Manager: Nautilus" { spawn "nautilus"; }
     Mod+E                                hotkey-overlay-title="File Manager: Yazi" { spawn "kitty" "-e" "yazi"; }
+    Super+G                              { spawn "kitty" "-e" "rmpc"; }
 
     // ─── Media Controls ───
     XF86AudioRaiseVolume                allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume increase"; }
@@ -114,9 +116,9 @@ binds {
     Mod+O                               { expel-window-from-column; }
 
     // ─── Screenshots ───
-    Print                               { screenshot; }
-    Super+Shift+P                        { screenshot-screen; }
-    Super+P                              { screenshot-window; }
+    Print                               { screenshot-screen; }
+    Super+Shift+P                        { screenshot-window; }
+    Super+P                              { screenshot; }
 
     // ─── Emergency Escape Key ───
     Super+Escape                         allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }

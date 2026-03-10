@@ -4,6 +4,7 @@
     environment {
 	XDG_CURRENT_DESKTOP "niri"
     	XDG_SESSION_TYPE "wayland"
+	GDK_BACKEND "wayland"
     	DISPLAY ":0"
     	// Toolkit Support
     	QT_QPA_PLATFORM "wayland;xcb"
@@ -14,13 +15,14 @@
     	// Compatibility tweaks
     	NVD_BACKEND "direct"
     	WLR_NO_HARDWARE_CURSORS "1"
+	LIBVA_DRIVER_NAME "radeonsi"
     	}
 
     cursor {
       xcursor-theme "Bibata-Modern-Ice"
-      xcursor-size 30 
+      xcursor-size 24 
       hide-when-typing
-      hide-after-inactive-ms 1000
+      hide-after-inactive-ms 2000
       }
 
     debug {

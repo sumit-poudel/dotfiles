@@ -24,3 +24,16 @@ input {
     focus-follows-mouse // Automatically focus windows under the mouse pointer
     workspace-auto-back-and-forth // Enable workspace back & forth switching
 }
+gestures{
+    dnd-edge-view-scroll {
+        trigger-width 100
+        max-speed 3000
+    }
+    dnd-edge-workspace-switch {
+        trigger-height 100
+        max-speed 3000
+    }
+    hot-corners {
+        top-left
+    }
+}

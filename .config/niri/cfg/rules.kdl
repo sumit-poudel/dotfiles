@@ -1,8 +1,19 @@
     window-rule {
         geometry-corner-radius 10 // Set every window radius to 20
         clip-to-geometry true
+	open-maximized-to-edges false
     }
 
+    window-rule {
+	    match app-id="^waterfox$"
+	    match app-id="^vivaldi-stable$"
+	    open-maximized true
+    }
+
+    window-rule {
+	    match app-id="^org.gnome.Calculator$"
+	    open-floating true
+    }
     layer-rule {
         match namespace="^noctalia-wallpaper*"
         place-within-backdrop true
