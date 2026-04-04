@@ -13,6 +13,9 @@ setopt NO_CASE_GLOB
 
 # Plugins
 zinit load zdharma-continuum/history-search-multi-word
+function zvm_after_init() {
+    bindkey '^F' history-search-multi-word
+}
 zinit ice wait lucid
 zinit light zsh-users/zsh-completions
 zinit light Aloxaf/fzf-tab          # now compinit is already done
@@ -32,7 +35,7 @@ zinit ice as"command" from"gh-r" \
 zinit light starship/starship
 
 # Zoxide
-zinit ice wait"2" as"command" from"gh-r" lucid \
+zinit ice wait"0" as"command" from"gh-r" lucid \
   mv"zoxide*/zoxide -> zoxide" \
   atclone"./zoxide init zsh > init.zsh" \
   atpull"%atclone" src"init.zsh" nocompile'!'
@@ -53,6 +56,14 @@ setopt SHARE_HISTORY HIST_IGNORE_DUPS HIST_IGNORE_SPACE
 
 # Alias
 alias pg="ping -c5 google.com"
+alias v="nvim"
+alias :q="exit"
+alias ..="cd .."
+alias ...="cd ../.."
+alias t='tmux'
+alias ts='tmux ls'
+alias tks='tmux kill-session'
+alias temps='sensors | grep -i temp'
 
 # Fastfetch banner
 if command -v fastfetch >/dev/null; then
@@ -64,3 +75,5 @@ if command -v fastfetch >/dev/null; then
 SUMIT
     fastfetch
 fi
+
+export PATH="$HOME/.local/bin:$PATH"

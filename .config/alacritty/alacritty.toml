@@ -1,6 +1,6 @@
-general.import = ["colors.toml"]
-
-general.live_config_reload = true
+[general]
+import = ["~/.config/alacritty/themes/noctalia.toml"]
+live_config_reload = true
 
 [cursor]
 blink_interval = 550
@@ -15,7 +15,7 @@ shape = "Block"
 save_to_clipboard = true
 
 [window]
-decorations = "none"
+decorations = "Full"
 dynamic_title = true
 opacity = 0.75
 blur = true

@@ -1,130 +1,130 @@
 binds {
 
-    Super+Shift+H                        { show-hotkey-overlay; }
-    XF86Calculator                       { spawn "gnome-calculator"; }
-    XF86Launch2                          allow-when-locked=false { spawn-sh "killall qs && qs -c noctalia-shell"; }
+  // ─── Spawns ───
+  XF86Calculator                       { spawn "gnome-calculator"; }
+  XF86Launch2                          allow-when-locked=false { spawn-sh "killall qs; qs -c noctalia-shell"; }
+  Mod+Return                           { spawn "alacritty"; }
+  Super+Return                         { spawn "kitty"; }
+  Mod+C                                { spawn "zeditor"; }
+  Mod+Space                            { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
+  Super+Space                          { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
+  Mod+B                                { spawn "brave"; }
+  Super+B                              { spawn "zen-browser"; }
+  Super+Mod+L                          { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
+  Super+Shift+S                        { spawn-sh "qs -c noctalia-shell ipc call wallpaper toggle"; }
+  Super+Comma                          { spawn-sh "qs -c noctalia-shell ipc call launcher emoji"; }
+  Super+Period                         { spawn-sh "qs -c noctalia-shell ipc call launcher clipboard"; }
+  Super+E                              { spawn "nautilus"; }
+  Mod+E                                { spawn "kitty" "-e" "yazi"; }
+  Super+G                              { spawn "kitty" "-e" "rmpc"; }
 
-    Mod+Return                           hotkey-overlay-title="Open Terminal: Alacritty" { spawn "alacritty"; }
-    Super+Return                         hotkey-overlay-title="Open Terminal: Kitty" { spawn "kitty"; }
-    Mod+C                                hotkey-overlay-title="Open codeEditor: Zed Editor" { spawn "zeditor"; }
+  // ─── Media Controls ───
+  XF86AudioRaiseVolume                allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume increase"; }
+  XF86AudioLowerVolume                allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume decrease"; }
+  XF86AudioMute                       allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume muteOutput"; }
+  XF86AudioMicMute                    allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume muteInput"; }
+  XF86AudioNext                       allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call media next"; }
+  XF86AudioPrev                       allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call media previous"; }
+  XF86AudioPlay                       allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call media playPause"; }
+  XF86AudioPause                      allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call media playPause"; }
 
-    Mod+Space                            hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
-    Super+Space                          hotkey-overlay-title="Open Setting: noctalia controlCenter" { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
+  // ─── Brightness Controls ───
+  XF86MonBrightnessUp                 allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call brightness increase"; }
+  XF86MonBrightnessDown               allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call brightness decrease"; }
 
-    Mod+B                                hotkey-overlay-title="Open Browser " { spawn "vivaldi"; }
-    Super+B                               { spawn "waterfox"; }
+  // ─── Window Movement and Focus ───
+  Super+Q                              { close-window; }
+  Mod+Backspace                       { close-window; }
 
-    Super+Mod+L                          hotkey-overlay-title="Lock Screen: noctalia lock" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
+  Mod+H                               { focus-column-left; }
+  Mod+L                               { focus-column-right; }
+  Mod+K                               { focus-window-up; }
+  Mod+J                               { focus-window-down; }
 
-    Super+Shift+Escape                   hotkey-overlay-title="Session Menu: noctalia sessionMenu" { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
-    Super+Shift+S                        hotkey-overlay-title="Wallpaper Menu: noctalia wallpaperMenu" { spawn-sh "qs -c noctalia-shell ipc call wallpaper toggle"; }
+  Mod+Shift+H                         { move-column-left; }
+  Mod+Shift+L                         { move-column-right; }
+  Mod+Shift+K                         { move-window-up; }
+  Mod+Shift+J                         { move-window-down; }
 
-    Super+Comma                          hotkey-overlay-title="Emoji Menu: noctalia emojiMenu" { spawn-sh "qs -c noctalia-shell ipc call launcher emoji"; }
-    Super+Period                         hotkey-overlay-title="Clip Board: noctalia clipBoard" { spawn-sh "qs -c noctalia-shell ipc call launcher clipboard"; }
+  Super+H                              { focus-column-first; }
+  Super+L                              { focus-column-last; }
 
-    Super+E                              hotkey-overlay-title="File Manager: Nautilus" { spawn "nautilus"; }
-    Mod+E                                hotkey-overlay-title="File Manager: Yazi" { spawn "kitty" "-e" "yazi"; }
-    Super+G                              { spawn "kitty" "-e" "rmpc"; }
+  Mod+Comma                           { focus-monitor-left; }
+  Mod+Period                          { focus-monitor-right; }
 
-    // ─── Media Controls ───
-    XF86AudioRaiseVolume                allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume increase"; }
-    XF86AudioLowerVolume                allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume decrease"; }
-    XF86AudioMute                       allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume muteOutput"; }
-    XF86AudioMicMute                    allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume muteInput"; }
-    XF86AudioNext                       allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call media next"; }
-    XF86AudioPrev                       allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call media previous"; }
-    XF86AudioPlay                       allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call media playPause"; }
-    XF86AudioPause                      allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call media playPause"; }
+  Mod+Shift+Comma                     { move-column-to-monitor-left; }
+  Mod+Shift+Period                    { move-column-to-monitor-right; }
 
-    // ─── Brightness Controls ───
-    XF86MonBrightnessUp                 allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call brightness increase"; }
-    XF86MonBrightnessDown               allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call brightness decrease"; }
+  Super+CTRL+WheelScrollDown           { focus-column-right; }
+  Super+CTRL+WheelScrollUp             { focus-column-left; }
+  Super+Mod+WheelScrollDown            { move-column-right; }
+  Super+Mod+WheelScrollUp              { move-column-left; }
 
-    // ─── Window Movement and Focus ───
-    Super+Q                              { close-window; }
-    Mod+Backspace                       { close-window; }
-    Mod+G                               { switch-preset-column-width; }
+  // ─── Workspace Switching ───
+  Mod+WheelScrollDown                cooldown-ms=150 { focus-workspace-down; }
+  Mod+WheelScrollUp                  cooldown-ms=150 { focus-workspace-up; }
+  Mod+Shift+WheelScrollDown           cooldown-ms=150 { move-column-to-workspace-down; }
+  Mod+Shift+WheelScrollUp             cooldown-ms=150 { move-column-to-workspace-up; }
 
-    Mod+H                               { focus-column-left; }
-    Mod+L                               { focus-column-right; }
-    Mod+K                               { focus-window-up; }
-    Mod+J                               { focus-window-down; }
+  Mod+N                                { focus-workspace-down; }
+  Mod+P                                { focus-workspace-up; }
+  Mod+Shift+N                          { move-column-to-workspace-down; }
+  Mod+Shift+P                          { move-column-to-workspace-up; }
 
-    Mod+Shift+H                         { move-column-left; }
-    Mod+Shift+L                         { move-column-right; }
-    Mod+Shift+K                         { move-window-up; }
-    Mod+Shift+J                         { move-window-down; }
+  Super+1                              { focus-workspace 1; }
+  Super+2                              { focus-workspace 2; }
+  Super+3                              { focus-workspace 3; }
+  Super+4                              { focus-workspace 4; }
+  Super+5                              { focus-workspace 5; }
+  Super+6                              { focus-workspace 6; }
+  Super+7                              { focus-workspace 7; }
+  Super+8                              { focus-workspace 8; }
+  Super+9                              { focus-workspace 9; }
 
-    Super+H                              { focus-column-first; }
-    Super+L                              { focus-column-last; }
+  Super+Shift+1                        { move-column-to-workspace 1; }
+  Super+Shift+2                        { move-column-to-workspace 2; }
+  Super+Shift+3                        { move-column-to-workspace 3; }
+  Super+Shift+4                        { move-column-to-workspace 4; }
+  Super+Shift+5                        { move-column-to-workspace 5; }
+  Super+Shift+6                        { move-column-to-workspace 6; }
+  Super+Shift+7                        { move-column-to-workspace 7; }
+  Super+Shift+8                        { move-column-to-workspace 8; }
+  Super+Shift+9                        { move-column-to-workspace 9; }
 
-    Mod+Comma                           { focus-monitor-left; }
-    Mod+Period                          { focus-monitor-right; }
+  Super+Tab                            { focus-workspace-previous; }
 
-    Mod+Shift+Comma                     { move-column-to-monitor-left; }
-    Mod+Shift+Period                    { move-column-to-monitor-right; }
+  // ─── Layout Controls ───
+  Mod+F                               { expand-column-to-available-width; }
+  Mod+A                               { center-column; }
+  Mod+bracketleft                     { set-column-width "-10%"; }
+  Mod+bracketright                    { set-column-width "+10%"; }
+  Mod+Shift+bracketleft               { set-window-height "-10%"; }
+  Mod+Shift+bracketright              { set-window-height "+10%"; }
 
-    // ─── Workspace Switching ───
-    Super+WheelScrollDown                cooldown-ms=150 { focus-workspace-down; }
-    Super+WheelScrollUp                  cooldown-ms=150 { focus-workspace-up; }
-    Super+CTRL+WheelScrollDown           cooldown-ms=150 { move-column-to-workspace-down; }
-    Super+CTRL+WheelScrollUp             cooldown-ms=150 { move-column-to-workspace-up; }
+  Mod+G                               { switch-preset-column-width; }
+  Mod+Shift+G                         { switch-preset-window-height;}
 
-    Super+Shift+WheelScrollDown          { focus-column-right; }
-    Super+Shift+WheelScrollUp            { focus-column-left; }
+  // ─── Modes ───
+  Super+W                              { toggle-window-floating; }
+  Super+F                              { fullscreen-window; }
+  Super+O                              repeat=false { toggle-overview; }
+  Mod+U                               { toggle-column-tabbed-display; }
+  Mod+I                               { consume-window-into-column; }
+  Mod+O                               { expel-window-from-column; }
 
-    Super+Mod+WheelScrollDown            { move-column-right; }
-    Super+Mod+WheelScrollUp              { move-column-left; }
+  // ─── Screenshots ───
+  Print                                { screenshot-screen; }
+  Super+Shift+P                        { screenshot-window; }
+  Super+P                              { screenshot; }
 
-    Super+J                          { focus-workspace-down; }
-    Super+K                          { focus-workspace-up; }
-    Super+1                              { focus-workspace 1; }
-    Super+2                              { focus-workspace 2; }
-    Super+3                              { focus-workspace 3; }
-    Super+4                              { focus-workspace 4; }
-    Super+5                              { focus-workspace 5; }
-    Super+6                              { focus-workspace 6; }
-    Super+7                              { focus-workspace 7; }
-    Super+8                              { focus-workspace 8; }
-    Super+9                              { focus-workspace 9; }
+  // ─── ColorPicker ───
+  Super+Shift+C                        { spawn-sh "hyprpicker | wl-copy && notify-send 'color copied'"; }
 
-    Super+Shift+1                        { move-column-to-workspace 1; }
-    Super+Shift+2                        { move-column-to-workspace 2; }
-    Super+Shift+3                        { move-column-to-workspace 3; }
-    Super+Shift+4                        { move-column-to-workspace 4; }
-    Super+Shift+5                        { move-column-to-workspace 5; }
-    Super+Shift+6                        { move-column-to-workspace 6; }
-    Super+Shift+7                        { move-column-to-workspace 7; }
-    Super+Shift+8                        { move-column-to-workspace 8; }
-    Super+Shift+9                        { move-column-to-workspace 9; }
+  // ─── Emergency Escape Key ───
+  Super+Escape                         allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
-    Super+Tab                            { focus-workspace-previous; }
-
-    // ─── Layout Controls ───
-    Mod+F                               { expand-column-to-available-width; }
-    Mod+A                               { center-column; }
-    Mod+bracketleft                    { set-column-width "-10%"; }
-    Mod+bracketright                   { set-column-width "+10%"; }
-    Mod+Shift+bracketleft              { set-window-height "-10%"; }
-    Mod+Shift+bracketright             { set-window-height "+10%"; }
-
-    // ─── Modes ───
-    Super+W                              { toggle-window-floating; }
-    Super+F                              { fullscreen-window; }
-    Mod+U                               { toggle-column-tabbed-display; }
-    Mod+I                               { consume-window-into-column; }
-    Mod+O                               { expel-window-from-column; }
-
-    // ─── Screenshots ───
-    Print                               { screenshot-screen; }
-    Super+Shift+P                        { screenshot-window; }
-    Super+P                              { screenshot; }
-
-    // ─── Emergency Escape Key ───
-    Super+Escape                         allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
-
-    // ─── Exit / Power ───
-    CTRL+ALT+Delete                     { quit; }
-    Super+Shift+L                        { power-off-monitors; }
-    Super+O                              repeat=false { toggle-overview; }
+  // ─── Exit / Power ───
+  CTRL+ALT+Delete                      { quit; }
+  Super+Shift+L                        { power-off-monitors; }
+  Super+Shift+Escape                   { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
 }
