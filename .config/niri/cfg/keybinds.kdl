@@ -2,12 +2,13 @@ binds {
 
   // ─── Spawns ───
   XF86Calculator                       { spawn "gnome-calculator"; }
-  XF86Launch2                          allow-when-locked=false { spawn-sh "killall qs; qs -c noctalia-shell"; }
+  XF86Launch2 allow-when-locked=false { spawn-sh "killall qs; qs -c noctalia-shell"; }
   Mod+Return                           { spawn "alacritty"; }
   Super+Return                         { spawn "kitty"; }
   Mod+C                                { spawn "zeditor"; }
   Mod+Space                            { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
   Super+Space                          { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
+  Super+I                              { spawn-sh "qs -c noctalia-shell ipc call settings toggle"; }
   Mod+B                                { spawn "brave"; }
   Super+B                              { spawn "zen-browser"; }
   Super+Mod+L                          { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
@@ -19,18 +20,18 @@ binds {
   Super+G                              { spawn "kitty" "-e" "rmpc"; }
 
   // ─── Media Controls ───
-  XF86AudioRaiseVolume                allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume increase"; }
-  XF86AudioLowerVolume                allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume decrease"; }
-  XF86AudioMute                       allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume muteOutput"; }
-  XF86AudioMicMute                    allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume muteInput"; }
-  XF86AudioNext                       allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call media next"; }
-  XF86AudioPrev                       allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call media previous"; }
-  XF86AudioPlay                       allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call media playPause"; }
-  XF86AudioPause                      allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call media playPause"; }
+  XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume increase"; }
+  XF86AudioLowerVolume allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume decrease"; }
+  XF86AudioMute allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume muteOutput"; }
+  XF86AudioMicMute allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume muteInput"; }
+  XF86AudioNext allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call media next"; }
+  XF86AudioPrev allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call media previous"; }
+  XF86AudioPlay allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call media playPause"; }
+  XF86AudioPause allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call media playPause"; }
 
   // ─── Brightness Controls ───
-  XF86MonBrightnessUp                 allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call brightness increase"; }
-  XF86MonBrightnessDown               allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call brightness decrease"; }
+  XF86MonBrightnessUp allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call brightness increase"; }
+  XF86MonBrightnessDown allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call brightness decrease"; }
 
   // ─── Window Movement and Focus ───
   Super+Q                              { close-window; }
@@ -61,10 +62,10 @@ binds {
   Super+Mod+WheelScrollUp              { move-column-left; }
 
   // ─── Workspace Switching ───
-  Mod+WheelScrollDown                cooldown-ms=150 { focus-workspace-down; }
-  Mod+WheelScrollUp                  cooldown-ms=150 { focus-workspace-up; }
-  Mod+Shift+WheelScrollDown           cooldown-ms=150 { move-column-to-workspace-down; }
-  Mod+Shift+WheelScrollUp             cooldown-ms=150 { move-column-to-workspace-up; }
+  Mod+WheelScrollDown cooldown-ms=150 { focus-workspace-down; }
+  Mod+WheelScrollUp cooldown-ms=150 { focus-workspace-up; }
+  Mod+Shift+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
+  Mod+Shift+WheelScrollUp cooldown-ms=150 { move-column-to-workspace-up; }
 
   Mod+N                                { focus-workspace-down; }
   Mod+P                                { focus-workspace-up; }
@@ -102,12 +103,12 @@ binds {
   Mod+Shift+bracketright              { set-window-height "+10%"; }
 
   Mod+G                               { switch-preset-column-width; }
-  Mod+Shift+G                         { switch-preset-window-height;}
+  Mod+Shift+G                         { switch-preset-window-height; }
 
   // ─── Modes ───
   Super+W                              { toggle-window-floating; }
   Super+F                              { fullscreen-window; }
-  Super+O                              repeat=false { toggle-overview; }
+  Super+O repeat=false { toggle-overview; }
   Mod+U                               { toggle-column-tabbed-display; }
   Mod+I                               { consume-window-into-column; }
   Mod+O                               { expel-window-from-column; }
@@ -121,7 +122,7 @@ binds {
   Super+Shift+C                        { spawn-sh "hyprpicker | wl-copy && notify-send 'color copied'"; }
 
   // ─── Emergency Escape Key ───
-  Super+Escape                         allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+  Super+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
   // ─── Exit / Power ───
   CTRL+ALT+Delete                      { quit; }

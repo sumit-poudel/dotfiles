@@ -2,38 +2,45 @@
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Input
 
 input {
-  mod-key "Alt"
-  mod-key-nested "Super"
-  keyboard {
-    xkb {
-      layout "us" // Use the American keyboard layout
-      options "caps:swapescape"
+    mod-key "Alt"
+    mod-key-nested "Super"
+    keyboard {
+        xkb {
+            layout "us" // Use the American keyboard layout
+            options "caps:swapescape"
+        }
+        numlock // Enable numlock on startup
     }
-    numlock // Enable numlock on startup
-  }
 
-  touchpad {
-    dwt
-    tap // Enable tap-to-click
-    natural-scroll // Enable natural (macOS-style) scrolling
-    accel-profile "flat"
-    accel-speed 0.2
-    scroll-factor 0.4
-  }
+    mouse {
+        accel-profile "flat"
+        accel-speed 0.2
+        natural-scroll
+        scroll-factor 0.4
+    }
 
-  focus-follows-mouse // Automatically focus windows under the mouse pointer
-  workspace-auto-back-and-forth // Enable workspace back & forth switching
+    touchpad {
+        dwt
+        tap
+        natural-scroll
+        accel-profile "adaptive"   // ← was "flat"; adaptive mimics Windows curve
+        accel-speed 0.0            // ← was 0.2; Windows default is neutral speed
+        scroll-factor 0.4
+    }
+
+    focus-follows-mouse // Automatically focus windows under the mouse pointer
+    workspace-auto-back-and-forth // Enable workspace back & forth switching
 }
 gestures {
-  dnd-edge-view-scroll {
-    trigger-width 100
-    max-speed 3000
-  }
-  dnd-edge-workspace-switch {
-    trigger-height 100
-    max-speed 3000
-  }
-  hot-corners {
-    top-left
-  }
+    dnd-edge-view-scroll {
+        trigger-width 100
+        max-speed 3000
+    }
+    dnd-edge-workspace-switch {
+        trigger-height 100
+        max-speed 3000
+    }
+    hot-corners {
+        top-left
+    }
 }
