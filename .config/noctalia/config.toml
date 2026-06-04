@@ -1,0 +1,310 @@
+# =============================================================================
+# 1. CORE SHELL & INTERFACE THEME
+# =============================================================================
+
+[shell]
+avatar_path = "/home/sumit/Pictures/avtar.jpeg"
+clipboard_history_max_entries = 20
+font_family = "FiraCode Nerd Font Mono"
+password_style = "random"
+settings_show_advanced = true
+telemetry_enabled = false
+time_format = "{:%H:%M %a}"
+
+[shell.panel]
+launcher_categories = false
+launcher_compact = true
+transparency_mode = "glass"
+
+[[shell.session.actions]]
+action = "shutdown"
+enabled = true
+shortcut = "1"
+variant = "destructive"
+
+[[shell.session.actions]]
+action = "reboot"
+enabled = true
+shortcut = "2"
+variant = "default"
+
+[[shell.session.actions]]
+action = "logout"
+enabled = true
+shortcut = "3"
+variant = "default"
+
+[[shell.session.actions]]
+action = "lock"
+enabled = true
+shortcut = "4"
+variant = "default"
+
+[[shell.session.actions]]
+action = "suspend"
+enabled = true
+shortcut = "5"
+variant = "default"
+
+[theme]
+builtin = "Tokyo-Night"
+community_palette = "m3-monochrome"
+mode = "dark"
+source = "wallpaper"
+wallpaper_scheme = "m3-monochrome"
+
+[theme.templates]
+builtin_ids = [
+  "alacritty",
+  "btop",
+  "cava",
+  "gtk3",
+  "gtk4",
+  "kcolorscheme",
+  "kitty",
+  "niri",
+  "qt",
+  "starship",
+]
+community_ids = ["neovim", "obsidian", "vscode", "zed", "yazi"]
+
+[wallpaper]
+directory = "~/Pictures/Wallpapers"
+
+[wallpaper.automation]
+order = "alphabetical"
+
+[wallpaper.default]
+path = "/home/sumit/Pictures/Wallpapers/darkMountain.png"
+
+[wallpaper.last]
+path = "/home/sumit/Pictures/Wallpapers/darkMountain.png"
+
+[wallpaper.monitors.HDMI-A-1]
+path = "/home/sumit/Pictures/Wallpapers/darkMountain.png"
+
+[wallpaper.monitors.eDP-1]
+path = "/home/sumit/Pictures/Wallpapers/darkMountain.png"
+
+[[wallpaper.favorite]]
+palette_source = "wallpaper"
+path = "/home/sumit/Pictures/Wallpapers/1387138.png"
+theme_mode = "light"
+wallpaper_scheme = "m3-monochrome"
+
+[[wallpaper.favorite]]
+palette_source = "wallpaper"
+path = "/home/sumit/Pictures/Wallpapers/1296335.jpg"
+theme_mode = "dark"
+wallpaper_scheme = "m3-monochrome"
+
+[[wallpaper.favorite]]
+builtin_palette = "Tokyo-Night"
+palette_source = "builtin"
+path = "/home/sumit/Pictures/Wallpapers/ayanami-rei.png"
+theme_mode = "dark"
+
+# =============================================================================
+# 2. PANEL BAR & PANEL WIDGETS
+# =============================================================================
+
+[bar]
+order = ["default"]
+
+[bar.default]
+background_opacity = 0.0
+capsule_border = "primary"
+capsule_padding = 7.0
+end = ["group:g2"]
+font_weight = 700
+margin_edge = 5
+margin_ends = 150
+shadow = false
+start = ["group:g1"]
+thickness = 30
+widget_spacing = 10
+
+[[bar.default.capsule_group]]
+border = "primary"
+fill = "surface_variant"
+id = "g1"
+members = ["launcher", "workspaces"]
+opacity = 1.0
+padding = 11.0
+
+[[bar.default.capsule_group]]
+border = "primary"
+fill = "surface_variant"
+id = "g2"
+members = ["tray", "bongocat", "notifications", "session"]
+opacity = 1.0
+padding = 7.0
+
+[widget.active_window]
+max_length = 150
+
+[widget.bongocat]
+audio_spectrum = true
+capsule_padding = 10.0
+scope = "shared"
+script = "scripts/bongocat.lua"
+tappy_mode = true
+type = "scripted"
+
+[widget.clock]
+capsule = true
+format = "{:%-I:%M %p | %d %a}"
+
+[widget.launcher]
+glyph = "radioactive"
+
+[widget.media]
+min_length = 150
+
+[widget.network]
+show_label = false
+
+[widget.notifications]
+color = "primary"
+
+[widget.spacer_2]
+type = "spacer"
+
+[widget.tray]
+drawer = true
+
+# =============================================================================
+# 3. DESKTOP & LOCKSCREEN WIDGETS
+# =============================================================================
+
+[desktop_widgets]
+enabled = false
+schema_version = 1
+widget_order = []
+
+[desktop_widgets.grid]
+cell_size = 16
+major_interval = 4
+visible = true
+
+[desktop_widgets.widget]
+
+[lockscreen]
+blurred_desktop = true
+
+[lockscreen_widgets]
+enabled = true
+schema_version = 1
+widget_order = [
+  "lockscreen-widget-0000000000000001",
+  "lockscreen-widget-0000000000000002",
+  "lockscreen-widget-0000000000000003",
+  "lockscreen-widget-0000000000000004",
+]
+
+[lockscreen_widgets.grid]
+cell_size = 16
+major_interval = 4
+visible = true
+
+[lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
+cx = 224.0
+cy = 200.0
+output = "HDMI-A-1"
+rotation = 0.0
+scale = 1.0
+type = "clock"
+
+[lockscreen_widgets.widget.lockscreen-widget-0000000000000002]
+cx = 976.0
+cy = 436.5
+output = "HDMI-A-1"
+rotation = 0.0
+scale = 0.95794790983200073
+type = "label"
+
+[lockscreen_widgets.widget.lockscreen-widget-0000000000000002.settings]
+description = "fmt.Println(\"Hello world\")"
+title = "Hello world"
+
+[lockscreen_widgets.widget.lockscreen-widget-0000000000000003]
+cx = 964.5
+cy = 216.0
+output = "HDMI-A-1"
+rotation = 0.0
+scale = 1.0
+type = "weather"
+
+[lockscreen_widgets.widget.lockscreen-widget-0000000000000004]
+cx = 302.0
+cy = 378.0
+output = "HDMI-A-1"
+rotation = 0.0
+scale = 1.0
+type = "sticker"
+
+[lockscreen_widgets.widget.lockscreen-widget-0000000000000004.settings]
+background_padding = 14.0
+background_radius = 22.0
+image_path = "/home/sumit/Pictures/avtar.jpeg"
+opacity = 1.0
+
+# =============================================================================
+# 4. HARDWARE, ENVIRONMENT, & INPUT CONTROLS
+# =============================================================================
+
+[brightness]
+enable_ddcutil = true
+
+[control_center]
+sidebar_section = "full"
+
+[[control_center.shortcuts]]
+type = "caffeine"
+
+[[control_center.shortcuts]]
+type = "notification"
+
+[[control_center.shortcuts]]
+type = "dark_mode"
+
+[[control_center.shortcuts]]
+type = "session"
+
+[idle]
+behavior_order = ["lock", "screen-off", "lock-and-suspend"]
+
+[idle.behavior.lock]
+action = "lock"
+enabled = true
+timeout = 600
+
+[idle.behavior.lock-and-suspend]
+action = "lock_and_suspend"
+enabled = true
+timeout = 900
+
+[idle.behavior.screen-off]
+action = "screen_off"
+enabled = true
+timeout = 660
+
+[keybinds]
+cancel = ["Escape"]
+down = ["Ctrl+j"]
+left = ["Ctrl+l"]
+right = ["Ctrl+h"]
+up = ["Ctrl+k"]
+validate = ["Return"]
+
+[location]
+address = "chitwan,Nepal"
+
+[nightlight]
+enabled = true
+
+[notification]
+position = "bottom_right"
+
+[osd]
+position = "bottom_right"

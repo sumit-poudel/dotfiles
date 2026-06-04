@@ -26,6 +26,6 @@ layout {
     inactive-color "#000000"
     }
   struts {
-    right -4
+      top -5
     }
 }

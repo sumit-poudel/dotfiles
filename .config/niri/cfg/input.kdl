@@ -15,8 +15,7 @@ input {
     mouse {
         accel-profile "flat"
         accel-speed 0.2
-        natural-scroll
-        scroll-factor 0.4
+        scroll-factor 1 
     }
 
     touchpad {
@@ -41,6 +40,6 @@ gestures {
         max-speed 3000
     }
     hot-corners {
-        top-left
+        off
     }
 }
