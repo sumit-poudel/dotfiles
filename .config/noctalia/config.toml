@@ -47,11 +47,8 @@ shortcut = "5"
 variant = "default"
 
 [theme]
-builtin = "Tokyo-Night"
-community_palette = "m3-monochrome"
-mode = "dark"
-source = "wallpaper"
-wallpaper_scheme = "m3-monochrome"
+community_palette = "Monochrome"
+source = "community"
 
 [theme.templates]
 builtin_ids = [
@@ -87,21 +84,15 @@ path = "/home/sumit/Pictures/Wallpapers/darkMountain.png"
 path = "/home/sumit/Pictures/Wallpapers/darkMountain.png"
 
 [[wallpaper.favorite]]
-palette_source = "wallpaper"
+community_palette = "Monochrome"
+palette_source = "community"
 path = "/home/sumit/Pictures/Wallpapers/1387138.png"
 theme_mode = "light"
-wallpaper_scheme = "m3-monochrome"
 
 [[wallpaper.favorite]]
-palette_source = "wallpaper"
-path = "/home/sumit/Pictures/Wallpapers/1296335.jpg"
-theme_mode = "dark"
-wallpaper_scheme = "m3-monochrome"
-
-[[wallpaper.favorite]]
-builtin_palette = "Tokyo-Night"
-palette_source = "builtin"
-path = "/home/sumit/Pictures/Wallpapers/ayanami-rei.png"
+community_palette = "Monochrome"
+palette_source = "community"
+path = "/home/sumit/Pictures/Wallpapers/darkMountain.png"
 theme_mode = "dark"
 
 # =============================================================================
@@ -115,14 +106,15 @@ order = ["default"]
 background_opacity = 0.0
 capsule_border = "primary"
 capsule_padding = 7.0
-end = ["group:g2"]
 font_weight = 700
-margin_edge = 5
 margin_ends = 150
 shadow = false
-start = ["group:g1"]
-thickness = 30
+thickness = 25
+scale = 0.90
 widget_spacing = 10
+end = ["group:g4", "group:g2"]
+margin_edge = 0
+start = ["group:g1", "group:g3"]
 
 [[bar.default.capsule_group]]
 border = "primary"
@@ -136,20 +128,49 @@ padding = 11.0
 border = "primary"
 fill = "surface_variant"
 id = "g2"
-members = ["tray", "bongocat", "notifications", "session"]
+members = ["tray", "bongocat", "battery", "notifications"]
 opacity = 1.0
 padding = 7.0
 
-[widget.active_window]
-max_length = 150
+[[bar.default.capsule_group]]
+border = "primary"
+fill = "surface_variant"
+id = "g3"
+members = ["temp", "cpu"]
+opacity = 1.0
+padding = 7.0
+
+[[bar.default.capsule_group]]
+border = "primary"
+fill = "surface_variant"
+id = "g4"
+members = ["network", "bluetooth", "volume"]
+opacity = 1.0
+padding = 7.0
 
 [widget.bongocat]
 audio_spectrum = true
 capsule_padding = 10.0
 scope = "shared"
 script = "scripts/bongocat.lua"
+input_device = "/dev/input/event2"
 tappy_mode = true
 type = "scripted"
+
+[widget.battery]
+display_mode = "graphic"
+show_label = false
+
+[widget.cpu]
+display = "text"
+show_label = false
+
+[widget.temp]
+display = "text"
+show_label = false
+
+[widget.tray]
+drawer = false
 
 [widget.clock]
 capsule = true
@@ -170,9 +191,6 @@ color = "primary"
 [widget.spacer_2]
 type = "spacer"
 
-[widget.tray]
-drawer = true
-
 # =============================================================================
 # 3. DESKTOP & LOCKSCREEN WIDGETS
 # =============================================================================
@@ -187,15 +205,11 @@ cell_size = 16
 major_interval = 4
 visible = true
 
-[desktop_widgets.widget]
-
-[lockscreen]
-blurred_desktop = true
-
 [lockscreen_widgets]
 enabled = true
 schema_version = 1
 widget_order = [
+  "lockscreen-login-box@eDP-1",
   "lockscreen-widget-0000000000000001",
   "lockscreen-widget-0000000000000002",
   "lockscreen-widget-0000000000000003",
@@ -207,47 +221,53 @@ cell_size = 16
 major_interval = 4
 visible = true
 
+[lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+cx = 768.0
+cy = 741.0
+output = "eDP-1"
+rotation = 0.0
+scale = 1.0
+type = "login_box"
+
 [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
-cx = 224.0
-cy = 200.0
-output = "HDMI-A-1"
+cx = 208.0
+cy = 160.0
+output = "eDP-1"
 rotation = 0.0
 scale = 1.0
 type = "clock"
 
 [lockscreen_widgets.widget.lockscreen-widget-0000000000000002]
-cx = 976.0
-cy = 436.5
-output = "HDMI-A-1"
+cx = 366.0
+cy = 482.0
+output = "eDP-1"
 rotation = 0.0
-scale = 0.95794790983200073
-type = "label"
+scale = 1.0
+type = "sticker"
 
 [lockscreen_widgets.widget.lockscreen-widget-0000000000000002.settings]
-description = "fmt.Println(\"Hello world\")"
-title = "Hello world"
+image_path = "/home/sumit/Pictures/avtar.jpeg"
+opacity = 1.0
 
 [lockscreen_widgets.widget.lockscreen-widget-0000000000000003]
-cx = 964.5
-cy = 216.0
-output = "HDMI-A-1"
+cx = 1052.0
+cy = 258.0
+output = "eDP-1"
 rotation = 0.0
 scale = 1.0
 type = "weather"
 
 [lockscreen_widgets.widget.lockscreen-widget-0000000000000004]
-cx = 302.0
-cy = 378.0
-output = "HDMI-A-1"
+cx = 1078.0
+cy = 608.5
+output = "eDP-1"
 rotation = 0.0
 scale = 1.0
-type = "sticker"
+type = "label"
 
 [lockscreen_widgets.widget.lockscreen-widget-0000000000000004.settings]
-background_padding = 14.0
-background_radius = 22.0
-image_path = "/home/sumit/Pictures/avtar.jpeg"
-opacity = 1.0
+description = "fmt.PrintLn(\"hello world!\")"
+title = "hello world!"
 
 # =============================================================================
 # 4. HARDWARE, ENVIRONMENT, & INPUT CONTROLS
@@ -263,12 +283,6 @@ sidebar_section = "full"
 type = "caffeine"
 
 [[control_center.shortcuts]]
-type = "notification"
-
-[[control_center.shortcuts]]
-type = "dark_mode"
-
-[[control_center.shortcuts]]
 type = "session"
 
 [idle]
@@ -277,7 +291,7 @@ behavior_order = ["lock", "screen-off", "lock-and-suspend"]
 [idle.behavior.lock]
 action = "lock"
 enabled = true
-timeout = 600
+timeout = 300
 
 [idle.behavior.lock-and-suspend]
 action = "lock_and_suspend"
@@ -287,7 +301,7 @@ timeout = 900
 [idle.behavior.screen-off]
 action = "screen_off"
 enabled = true
-timeout = 660
+timeout = 330
 
 [keybinds]
 cancel = ["Escape"]
