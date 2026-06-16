@@ -3,7 +3,7 @@ binds {
   // ─── Spawns ───
   XF86Calculator                       { spawn "gnome-calculator"; }
   XF86Launch2 allow-when-locked=false { spawn-sh "noctalia config-reload"; }
-  Mod+Return                           { spawn "alacritty"; }
+  Mod+Return                           { spawn "wezterm"; }
   Super+Return                         { spawn "kitty"; }
   Mod+C                                { spawn "zeditor"; }
   Mod+Space                            { spawn-sh "noctalia msg panel-toggle launcher"; }
@@ -15,8 +15,8 @@ binds {
   Super+Shift+S                        { spawn-sh "noctalia msg panel-toggle wallpaper"; }
   Super+V                              { spawn-sh "noctalia msg panel-toggle clipboard"; }
   Super+E                              { spawn "nautilus"; }
-  Mod+E                                { spawn "kitty" "-e" "yazi"; }
-  Super+G                              { spawn "kitty" "-e" "rmpc"; }
+  Mod+E                                { spawn "wezterm" "-e" "yazi"; }
+  Super+G                              { spawn "wezterm" "-e" "rmpc"; }
 
   // ─── Media Controls ───
   XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "noctalia msg volume-up"; }

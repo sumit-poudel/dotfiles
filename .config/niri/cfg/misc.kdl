@@ -19,7 +19,7 @@ environment {
 }
 
 cursor {
-  xcursor-theme "Bibata-Modern-Ice"
+  xcursor-theme "Cartoonish-Bold"
   xcursor-size 24 
   hide-when-typing
   hide-after-inactive-ms 2000

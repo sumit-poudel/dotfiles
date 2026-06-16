@@ -1,5 +1,5 @@
 layout {
-  gaps 10 // Gap between windows
+  gaps 5 // Gap between windows
   center-focused-column "never" // Don’t auto-center focused column
   always-center-single-column
 
@@ -26,6 +26,5 @@ layout {
     inactive-color "#000000"
     }
   struts {
-      top -5
     }
 }

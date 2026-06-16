@@ -1,20 +1,22 @@
 # =============================================================================
-# 1. CORE SHELL & INTERFACE THEME
+# 1. CORE SHELL & INTERFACE THEME & PLUGINS	
 # =============================================================================
 
 [shell]
-avatar_path = "/home/sumit/Pictures/avtar.jpeg"
+avatar_path = "/home/sumit/Pictures/avtar.jpg"
 clipboard_history_max_entries = 20
-font_family = "FiraCode Nerd Font Mono"
+font_family = "Monolisa"
 password_style = "random"
 settings_show_advanced = true
 telemetry_enabled = false
 time_format = "{:%H:%M %a}"
+polkit_agent = true
 
 [shell.panel]
 launcher_categories = false
 launcher_compact = true
 transparency_mode = "glass"
+control_center_placement = "floating"
 
 [[shell.session.actions]]
 action = "shutdown"
@@ -52,18 +54,17 @@ source = "community"
 
 [theme.templates]
 builtin_ids = [
-  "alacritty",
   "btop",
   "cava",
   "gtk3",
   "gtk4",
-  "kcolorscheme",
   "kitty",
   "niri",
   "qt",
   "starship",
+  "wezterm",
 ]
-community_ids = ["neovim", "obsidian", "vscode", "zed", "yazi"]
+community_ids = ["neovim", "obsidian", "vscode", "zed", "papirus-icons", "yazi"]
 
 [wallpaper]
 directory = "~/Pictures/Wallpapers"
@@ -95,6 +96,9 @@ palette_source = "community"
 path = "/home/sumit/Pictures/Wallpapers/darkMountain.png"
 theme_mode = "dark"
 
+[plugins]
+enabled = ["noctalia/bongocat"]
+
 # =============================================================================
 # 2. PANEL BAR & PANEL WIDGETS
 # =============================================================================
@@ -104,10 +108,17 @@ order = ["default"]
 
 [bar.default]
 background_opacity = 0.0
-capsule_border = "primary"
+font_family = "MonoLisa"
+capsule_border = ""
 capsule_padding = 7.0
+padding = 5
+radius = 0
+radius_top_left = 0
+radius_top_right = 0
+radius_bottom_left = 0
+radius_bottom_right = 0
 font_weight = 700
-margin_ends = 150
+margin_ends = 0
 shadow = false
 thickness = 25
 scale = 0.90
@@ -117,7 +128,7 @@ margin_edge = 0
 start = ["group:g1", "group:g3"]
 
 [[bar.default.capsule_group]]
-border = "primary"
+border = ""
 fill = "surface_variant"
 id = "g1"
 members = ["launcher", "workspaces"]
@@ -125,15 +136,15 @@ opacity = 1.0
 padding = 11.0
 
 [[bar.default.capsule_group]]
-border = "primary"
+border = ""
 fill = "surface_variant"
 id = "g2"
-members = ["tray", "bongocat", "battery", "notifications"]
+members = ["tray", "cat", "battery", "notifications"]
 opacity = 1.0
 padding = 7.0
 
 [[bar.default.capsule_group]]
-border = "primary"
+border = ""
 fill = "surface_variant"
 id = "g3"
 members = ["temp", "cpu"]
@@ -141,21 +152,17 @@ opacity = 1.0
 padding = 7.0
 
 [[bar.default.capsule_group]]
-border = "primary"
+border = ""
 fill = "surface_variant"
 id = "g4"
 members = ["network", "bluetooth", "volume"]
 opacity = 1.0
 padding = 7.0
 
-[widget.bongocat]
+[widget.cat]
 audio_spectrum = true
-capsule_padding = 10.0
-scope = "shared"
-script = "scripts/bongocat.lua"
-input_device = "/dev/input/event2"
 tappy_mode = true
-type = "scripted"
+type = "noctalia/bongocat:cat"
 
 [widget.battery]
 display_mode = "graphic"
@@ -170,7 +177,7 @@ display = "text"
 show_label = false
 
 [widget.tray]
-drawer = false
+drawer = true
 
 [widget.clock]
 capsule = true
@@ -204,70 +211,8 @@ widget_order = []
 cell_size = 16
 major_interval = 4
 visible = true
-
 [lockscreen_widgets]
-enabled = true
-schema_version = 1
-widget_order = [
-  "lockscreen-login-box@eDP-1",
-  "lockscreen-widget-0000000000000001",
-  "lockscreen-widget-0000000000000002",
-  "lockscreen-widget-0000000000000003",
-  "lockscreen-widget-0000000000000004",
-]
-
-[lockscreen_widgets.grid]
-cell_size = 16
-major_interval = 4
-visible = true
-
-[lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
-cx = 768.0
-cy = 741.0
-output = "eDP-1"
-rotation = 0.0
-scale = 1.0
-type = "login_box"
-
-[lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
-cx = 208.0
-cy = 160.0
-output = "eDP-1"
-rotation = 0.0
-scale = 1.0
-type = "clock"
-
-[lockscreen_widgets.widget.lockscreen-widget-0000000000000002]
-cx = 366.0
-cy = 482.0
-output = "eDP-1"
-rotation = 0.0
-scale = 1.0
-type = "sticker"
-
-[lockscreen_widgets.widget.lockscreen-widget-0000000000000002.settings]
-image_path = "/home/sumit/Pictures/avtar.jpeg"
-opacity = 1.0
-
-[lockscreen_widgets.widget.lockscreen-widget-0000000000000003]
-cx = 1052.0
-cy = 258.0
-output = "eDP-1"
-rotation = 0.0
-scale = 1.0
-type = "weather"
-
-[lockscreen_widgets.widget.lockscreen-widget-0000000000000004]
-cx = 1078.0
-cy = 608.5
-output = "eDP-1"
-rotation = 0.0
-scale = 1.0
-type = "label"
-
-[lockscreen_widgets.widget.lockscreen-widget-0000000000000004.settings]
-description = "fmt.PrintLn(\"hello world!\")"
-title = "hello world!"
+enabled = false
 
 # =============================================================================
 # 4. HARDWARE, ENVIRONMENT, & INPUT CONTROLS
