@@ -2,7 +2,19 @@
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.bun/bin:$PATH"
+export PATH="$HOME/scripts/:$PATH"
 export PATH="$PATH:/opt/lampp/bin"
+export PGDATA=/var/lib/postgres/data
+
+# ── VI MODE ───────────────────────────────────────────────────────────
+bindkey -v
+export KEYTIMEOUT=1
+bindkey '^?' backward-delete-char
+
+# Vi mode navigation bindings for history substring search
+# (Allows Up/Down or k/j arrows to search through history)
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
 
 # ── COMPLETIONS ───────────────────────────────────────────────────────
 autoload -Uz compinit && compinit
@@ -15,7 +27,7 @@ antidote load
 
 # ── INIT ──────────────────────────────────────────────────────────────
 command -v starship &>/dev/null && eval "$(starship init zsh)"
-command -v zoxide  &>/dev/null && eval "$(zoxide init zsh)"
+command -v zoxide   &>/dev/null && eval "$(zoxide init zsh)"
 
 # ── HISTORY ───────────────────────────────────────────────────────────
 HISTFILE=~/.zsh_history
@@ -24,17 +36,21 @@ SAVEHIST=10000
 setopt SHARE_HISTORY HIST_IGNORE_DUPS HIST_IGNORE_SPACE
 
 # ── ALIASES ───────────────────────────────────────────────────────────
-alias pg="ping -c5 google.com"
+alias ping="ping -c5 google.com"
 alias v=nvim vim=nvim :q=exit
 alias ..="cd .." ...="cd ../.."
 alias t=tmux ta="tmux attach" ts="tmux ls" tks="tmux kill-session"
 alias mf="niri msg output HDMI-A-1 off" mo="niri msg output HDMI-A-1 on"
+alias ls='eza --color=always --group-directories-first --icons'
+alias ll='eza -la --icons --octal-permissions --group-directories-first'
+alias l='eza -bGF --header --git --color=always --group-directories-first --icons'
+alias llm='eza -lbGd --header --git --sort=modified --color=always --group-directories-first --icons' 
+alias la='eza --long --all --group --group-directories-first'
+alias lx='eza -lbhHigUmuSa@ --time-style=long-iso --git --color-scale --color=always --group-directories-first --icons'
+
+alias lS='eza -1 --color=always --group-directories-first --icons'
+alias lt='eza --tree --level=2 --color=always --group-directories-first --icons'
+alias l.="eza -a | grep -E '^\.'"
 
 # ── BANNER ────────────────────────────────────────────────────────────
-cat <<'EOF'
-                  _ __
-  ___ __ ____ _  (_) /_
- (_-</ // /  ' \/ / __/
-/___/\_,_/_/_/_/_/\__/
-EOF
-fastfetch
+command -v fastfetch &>/dev/null && fastfetch

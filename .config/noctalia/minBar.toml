@@ -1,0 +1,28 @@
+# =============================================================================
+# PANEL BAR & PANEL WIDGETS
+# =============================================================================
+[bar]
+order = ["mini"]
+
+[bar.mini]
+background_opacity = 0.0
+font_family = "MonoLisa"
+capsule_border = ""
+capsule_padding = 7.0
+capsule_radius = 0
+padding = 5
+radius = 0
+radius_top_left = 0
+radius_top_right = 0
+radius_bottom_left = 0
+radius_bottom_right = 0
+font_weight = 700
+margin_ends = 0
+shadow = false
+thickness = 25
+scale = 0.90
+widget_spacing = 10
+start = ["group:g1", "group:g2"]
+end = ["group:g3", "group:g4"]
+center = ["clock"]
+margin_edge = 0

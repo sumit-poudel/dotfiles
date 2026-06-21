@@ -6,7 +6,7 @@ blur {
 }
 // global rules
 window-rule {
-    geometry-corner-radius 10 // Set every window radius to 20
+    geometry-corner-radius 0 // Set every window radius to 20
     clip-to-geometry true
     open-maximized-to-edges false
     background-effect { 

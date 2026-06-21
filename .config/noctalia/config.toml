@@ -2,54 +2,11 @@
 # 1. CORE SHELL & INTERFACE THEME & PLUGINS	
 # =============================================================================
 
-[shell]
-avatar_path = "/home/sumit/Pictures/avtar.jpg"
-clipboard_history_max_entries = 20
-font_family = "Monolisa"
-password_style = "random"
-settings_show_advanced = true
-telemetry_enabled = false
-time_format = "{:%H:%M %a}"
-polkit_agent = true
-
-[shell.panel]
-launcher_categories = false
-launcher_compact = true
-transparency_mode = "glass"
-control_center_placement = "floating"
-
-[[shell.session.actions]]
-action = "shutdown"
-enabled = true
-shortcut = "1"
-variant = "destructive"
-
-[[shell.session.actions]]
-action = "reboot"
-enabled = true
-shortcut = "2"
-variant = "default"
-
-[[shell.session.actions]]
-action = "logout"
-enabled = true
-shortcut = "3"
-variant = "default"
-
-[[shell.session.actions]]
-action = "lock"
-enabled = true
-shortcut = "4"
-variant = "default"
-
-[[shell.session.actions]]
-action = "suspend"
-enabled = true
-shortcut = "5"
-variant = "default"
+[plugins]
+enabled = ["noctalia/bongocat"]
 
 [theme]
-community_palette = "Monochrome"
+community_palette = "Shien"
 source = "community"
 
 [theme.templates]
@@ -60,7 +17,6 @@ builtin_ids = [
   "gtk4",
   "kitty",
   "niri",
-  "qt",
   "starship",
   "wezterm",
 ]
@@ -73,16 +29,16 @@ directory = "~/Pictures/Wallpapers"
 order = "alphabetical"
 
 [wallpaper.default]
-path = "/home/sumit/Pictures/Wallpapers/darkMountain.png"
+path = "/home/sumit/Pictures/Wallpapers/wallhaven_lmwglr.jpg"
 
 [wallpaper.last]
-path = "/home/sumit/Pictures/Wallpapers/darkMountain.png"
+path = "/home/sumit/Pictures/Wallpapers/wallhaven_lmwglr.jpg"
 
 [wallpaper.monitors.HDMI-A-1]
-path = "/home/sumit/Pictures/Wallpapers/darkMountain.png"
+path = "/home/sumit/Pictures/Wallpapers/wallhaven_lmwglr.jpg"
 
 [wallpaper.monitors.eDP-1]
-path = "/home/sumit/Pictures/Wallpapers/darkMountain.png"
+path = "/home/sumit/Pictures/Wallpapers/wallhaven_lmwglr.jpg"
 
 [[wallpaper.favorite]]
 community_palette = "Monochrome"
@@ -96,123 +52,27 @@ palette_source = "community"
 path = "/home/sumit/Pictures/Wallpapers/darkMountain.png"
 theme_mode = "dark"
 
-[plugins]
-enabled = ["noctalia/bongocat"]
+[[wallpaper.favorite]]
+community_palette = "Shien"
+palette_source = "community"
+path = "/home/sumit/Pictures/Wallpapers/wallhaven_lmwglr.jpg"
+theme_mode = "dark"
 
-# =============================================================================
-# 2. PANEL BAR & PANEL WIDGETS
-# =============================================================================
+[[wallpaper.favorite]]
+community_palette = "Monochrome"
+palette_source = "community"
+path = "/home/sumit/Pictures/Wallpapers/1387138.png"
+theme_mode = "light"
 
-[bar]
-order = ["default"]
+[audio]
+enable_sounds = true
 
-[bar.default]
-background_opacity = 0.0
-font_family = "MonoLisa"
-capsule_border = ""
-capsule_padding = 7.0
-padding = 5
-radius = 0
-radius_top_left = 0
-radius_top_right = 0
-radius_bottom_left = 0
-radius_bottom_right = 0
-font_weight = 700
-margin_ends = 0
-shadow = false
-thickness = 25
-scale = 0.90
-widget_spacing = 10
-end = ["group:g4", "group:g2"]
-margin_edge = 0
-start = ["group:g1", "group:g3"]
+[calendar]
+enabled = true
 
-[[bar.default.capsule_group]]
-border = ""
-fill = "surface_variant"
-id = "g1"
-members = ["launcher", "workspaces"]
-opacity = 1.0
-padding = 11.0
-
-[[bar.default.capsule_group]]
-border = ""
-fill = "surface_variant"
-id = "g2"
-members = ["tray", "cat", "battery", "notifications"]
-opacity = 1.0
-padding = 7.0
-
-[[bar.default.capsule_group]]
-border = ""
-fill = "surface_variant"
-id = "g3"
-members = ["temp", "cpu"]
-opacity = 1.0
-padding = 7.0
-
-[[bar.default.capsule_group]]
-border = ""
-fill = "surface_variant"
-id = "g4"
-members = ["network", "bluetooth", "volume"]
-opacity = 1.0
-padding = 7.0
-
-[widget.cat]
-audio_spectrum = true
-tappy_mode = true
-type = "noctalia/bongocat:cat"
-
-[widget.battery]
-display_mode = "graphic"
-show_label = false
-
-[widget.cpu]
-display = "text"
-show_label = false
-
-[widget.temp]
-display = "text"
-show_label = false
-
-[widget.tray]
-drawer = true
-
-[widget.clock]
-capsule = true
-format = "{:%-I:%M %p | %d %a}"
-
-[widget.launcher]
-glyph = "radioactive"
-
-[widget.media]
-min_length = 150
-
-[widget.network]
-show_label = false
-
-[widget.notifications]
-color = "primary"
-
-[widget.spacer_2]
-type = "spacer"
-
-# =============================================================================
-# 3. DESKTOP & LOCKSCREEN WIDGETS
-# =============================================================================
-
-[desktop_widgets]
-enabled = false
-schema_version = 1
-widget_order = []
-
-[desktop_widgets.grid]
-cell_size = 16
-major_interval = 4
-visible = true
-[lockscreen_widgets]
-enabled = false
+[calendar.account.personal_google]
+name = "gokuChan"
+type = "google"
 
 # =============================================================================
 # 4. HARDWARE, ENVIRONMENT, & INPUT CONTROLS
@@ -228,7 +88,7 @@ sidebar_section = "full"
 type = "caffeine"
 
 [[control_center.shortcuts]]
-type = "session"
+type = "power_profile"
 
 [idle]
 behavior_order = ["lock", "screen-off", "lock-and-suspend"]
@@ -254,7 +114,6 @@ down = ["Ctrl+j"]
 left = ["Ctrl+l"]
 right = ["Ctrl+h"]
 up = ["Ctrl+k"]
-validate = ["Return"]
 
 [location]
 address = "chitwan,Nepal"
@@ -263,7 +122,10 @@ address = "chitwan,Nepal"
 enabled = true
 
 [notification]
-position = "bottom_right"
+position = "top_center"
 
 [osd]
-position = "bottom_right"
+position = "top_center"
+
+[osd.kinds]
+media = false

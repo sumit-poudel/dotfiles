@@ -1,0 +1,51 @@
+# =============================================================================
+# CORE SHELL
+# =============================================================================
+[shell]
+corner_radius_scale = 0.0
+avatar_path = "/home/sumit/Pictures/avtar.jpg"
+clipboard_history_max_entries = 20
+font_family = "Monolisa"
+password_style = "random"
+settings_show_advanced = true
+telemetry_enabled = false
+time_format = "{:%H:%M %a}"
+polkit_agent = true
+
+[shell.panel]
+launcher_categories = false
+launcher_compact = true
+transparency_mode = "glass"
+control_center_placement = "floating"
+
+[[shell.session.actions]]
+action = "shutdown"
+enabled = true
+shortcut = "1"
+variant = "destructive"
+
+[[shell.session.actions]]
+action = "reboot"
+enabled = true
+shortcut = "2"
+variant = "default"
+
+[[shell.session.actions]]
+action = "logout"
+enabled = true
+shortcut = "3"
+variant = "default"
+
+[[shell.session.actions]]
+action = "lock"
+enabled = true
+shortcut = "4"
+variant = "default"
+
+[[shell.session.actions]]
+action = "suspend"
+enabled = true
+shortcut = "5"
+variant = "default"
+
+
