@@ -1,0 +1,49 @@
+[
+  {
+    "label": "Bun Test",
+    "command": "bun test",
+    "args": ["\"$ZED_RELATIVE_FILE\" -t=\"$ZED_SYMBOL\""],
+    "tags": ["js-test", "ts-test", "bun-test", "tsx-test"]
+  },
+  {
+    "label": "File Finder",
+    "command": "zeditor \"$(tv files)\"",
+    "hide": "always",
+    "allow_concurrent_runs": false,
+    "use_new_terminal": true,
+    "shell": {
+      "program": "sh"
+    }
+  },
+  {
+    "label": "Find in File",
+    "command": "zeditor \"$(tv rg)\"",
+    "hide": "always",
+    "allow_concurrent_runs": false,
+    "use_new_terminal": true,
+    "shell": {
+      "program": "sh"
+    }
+  },
+  {
+    "label": "start lazygit",
+    "command": "lazygit -p $ZED_WORKTREE_ROOT",
+    "hide": "on_success",
+    "allow_concurrent_runs": false,
+    "use_new_terminal": true,
+    "shell": {
+      "program": "sh"
+    }
+  },
+  {
+    "label": "start lazygit file log",
+    "command": "lazygit",
+    "args": ["-f", "\"$ZED_RELATIVE_FILE\""],
+    "hide": "on_success",
+    "allow_concurrent_runs": false,
+    "use_new_terminal": true,
+    "shell": {
+      "program": "sh"
+    }
+  }
+]

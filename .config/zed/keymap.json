@@ -1,0 +1,134 @@
+[
+  {
+    "bindings": {
+      "ctrl-/": "terminal_panel::Toggle",
+    },
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-v": "editor::AcceptEditPrediction",
+      "ctrl-[": "editor::Fold",
+      "ctrl-]": "editor::UnfoldLines",
+      "ctrl-alt-[": "editor::FoldAll",
+      "ctrl-alt-]": "editor::UnfoldAll",
+      "ctrl-j": "editor::AddSelectionBelow",
+      "ctrl-k": "editor::AddSelectionAbove",
+    },
+  },
+  {
+    "context": "Editor && editorHasCompletion",
+    "bindings": {
+      "ctrl-n": "editor::NextEditPrediction",
+      "ctrl-p": "editor::PreviousEditPrediction",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == visual",
+    "bindings": {
+      "space c": "editor::ToggleComments",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "U": "editor::Redo",
+      "f f": "editor::Format",
+      "space e": "project_panel::ToggleFocus",
+      "space f p": "projects::OpenRecent",
+      "space f r": "editor::FindAllReferences",
+      "space c": "editor::ToggleComments",
+      "shift-j": "editor::MoveLineDown",
+      "shift-k": "editor::MoveLineUp",
+      "space d": "editor::ToggleInlineDiagnostics",
+      "space j": "editor::GoToDiagnostic",
+      "space '": "editor::GoToPreviousDiagnostic",
+      "space s h": "workspace::ActivatePaneLeft",
+      "space s l": "workspace::ActivatePaneRight",
+      "space s k": "workspace::ActivatePaneUp",
+      "space s j": "workspace::ActivatePaneDown",
+      "shift-h": "pane::ActivatePreviousItem",
+      "shift-l": "pane::ActivateNextItem",
+      "space w": "pane::CloseActiveItem",
+      "space i": "pane::CloseOtherItems",
+      "space q a": "pane::CloseAllItems",
+      "space ;": "workspace::ToggleRightDock",
+      "space ]": "workspace::NewFileSplitHorizontal",
+      "space [": "workspace::NewFileSplitVertical",
+      "space o": "outline::Toggle",
+      "space p": "command_palette::Toggle",
+      "space r": "buffer_search::DeployReplace",
+      "space f f": [
+        "task::Spawn",
+        {
+          "task_name": "File Finder",
+          "reveal_target": "center",
+        },
+      ],
+      "space f g": [
+        "task::Spawn",
+        {
+          "task_name": "Find in File",
+          "reveal_target": "center",
+        },
+      ],
+      "space g g": [
+        "task::Spawn",
+        { "task_name": "start lazygit", "reveal_target": "center" },
+      ],
+      "space g f": [
+        "task::Spawn",
+        { "task_name": "start lazygit file log", "reveal_target": "center" },
+      ],
+    },
+  },
+  {
+    "context": "EmptyPane || SharedScreen",
+    "bindings": {
+      "space f p": "projects::OpenRecent",
+      "space f f": [
+        "task::Spawn",
+        {
+          "task_name": "File Finder",
+          "reveal_target": "center",
+        },
+      ],
+      "space f g": [
+        "task::Spawn",
+        {
+          "task_name": "Find in File",
+          "reveal_target": "center",
+        },
+      ],
+    },
+  },
+  {
+    "context": "!Editor",
+    "bindings": {
+      "ctrl-n": "menu::SelectNext",
+      "ctrl-p": "menu::SelectPrevious",
+    },
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "q": "workspace::ToggleRightDock",
+      "a": "project_panel::NewFile",
+      "A": "project_panel::NewDirectory",
+      "c": "workspace::CopyRelativePath",
+      "r": "project_panel::Rename",
+      "o": "project_panel::RevealInFileManager",
+      "x": "project_panel::Cut",
+      "y": "project_panel::Copy",
+      "p": "project_panel::Paste",
+      "d": "project_panel::Delete",
+    },
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-n": ["terminal::SendKeystroke", "ctrl-n"],
+      "ctrl-p": ["terminal::SendKeystroke", "ctrl-p"],
+    },
+  },
+]
