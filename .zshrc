@@ -28,6 +28,7 @@ antidote load
 # ── INIT ──────────────────────────────────────────────────────────────
 command -v starship &>/dev/null && eval "$(starship init zsh)"
 command -v zoxide   &>/dev/null && eval "$(zoxide init zsh)"
+eval $(thefuck --alias tfk)
 
 # ── HISTORY ───────────────────────────────────────────────────────────
 HISTFILE=~/.zsh_history
@@ -36,6 +37,7 @@ SAVEHIST=10000
 setopt SHARE_HISTORY HIST_IGNORE_DUPS HIST_IGNORE_SPACE
 
 # ── ALIASES ───────────────────────────────────────────────────────────
+alias cat="bat -pp" less="bat --paging=always"
 alias ping="ping -c5 google.com"
 alias v=nvim vim=nvim :q=exit
 alias ..="cd .." ...="cd ../.."
