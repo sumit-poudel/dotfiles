@@ -2,9 +2,6 @@
 # 1. CORE SHELL & INTERFACE THEME & PLUGINS	
 # =============================================================================
 
-[plugins]
-enabled = ["noctalia/bongocat"]
-
 [theme]
 community_palette = "Shien"
 source = "community"
@@ -20,7 +17,15 @@ builtin_ids = [
   "starship",
   "wezterm",
 ]
-community_ids = ["neovim", "obsidian", "vscode", "zed", "papirus-icons", "yazi"]
+community_ids = [
+  "neovim",
+  "obsidian",
+  "vscode",
+  "zed",
+  "papirus-icons",
+  "yazi",
+  "zathura",
+]
 
 [wallpaper]
 directory = "~/Pictures/Wallpapers"
@@ -63,69 +68,3 @@ community_palette = "Monochrome"
 palette_source = "community"
 path = "/home/sumit/Pictures/Wallpapers/1387138.png"
 theme_mode = "light"
-
-[audio]
-enable_sounds = true
-
-[calendar]
-enabled = true
-
-[calendar.account.personal_google]
-name = "gokuChan"
-type = "google"
-
-# =============================================================================
-# 4. HARDWARE, ENVIRONMENT, & INPUT CONTROLS
-# =============================================================================
-
-[brightness]
-enable_ddcutil = true
-
-[control_center]
-sidebar_section = "full"
-
-[[control_center.shortcuts]]
-type = "caffeine"
-
-[[control_center.shortcuts]]
-type = "power_profile"
-
-[idle]
-behavior_order = ["lock", "screen-off", "lock-and-suspend"]
-
-[idle.behavior.lock]
-action = "lock"
-enabled = true
-timeout = 300
-
-[idle.behavior.lock-and-suspend]
-action = "lock_and_suspend"
-enabled = true
-timeout = 900
-
-[idle.behavior.screen-off]
-action = "screen_off"
-enabled = true
-timeout = 330
-
-[keybinds]
-cancel = ["Escape"]
-down = ["Ctrl+j"]
-left = ["Ctrl+l"]
-right = ["Ctrl+h"]
-up = ["Ctrl+k"]
-
-[location]
-address = "chitwan,Nepal"
-
-[nightlight]
-enabled = true
-
-[notification]
-position = "top_center"
-
-[osd]
-position = "top_center"
-
-[osd.kinds]
-media = false

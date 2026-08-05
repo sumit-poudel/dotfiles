@@ -1,22 +1,22 @@
 binds {
 
   // ─── Spawns ───
-  XF86Calculator                       { spawn "gnome-calculator"; }
-  XF86Launch2 allow-when-locked=false { spawn-sh "noctalia config-reload"; }
-  Mod+Return                           { spawn "wezterm"; }
-  Super+Return                         { spawn "kitty"; }
-  Mod+C                                { spawn "zeditor"; }
-  Mod+Space                            { spawn-sh "noctalia msg panel-toggle launcher"; }
-  Super+Space                          { spawn-sh "noctalia msg panel-toggle control-center"; }
-  Super+I                              { spawn-sh "noctalia msg settings-toggle"; }
-  Mod+B                                { spawn "helium-browser"; }
-  Super+B                              { spawn "zen-browser"; }
-  Super+Mod+L                          { spawn-sh "noctalia msg session lock"; }
-  Super+Shift+S                        { spawn-sh "noctalia msg panel-toggle wallpaper"; }
-  Super+V                              { spawn-sh "noctalia msg panel-toggle clipboard"; }
-  Super+E                              { spawn "nautilus"; }
-  Mod+E                                { spawn "wezterm" "-e" "yazi"; }
-  Super+G                              { spawn "wezterm" "-e" "rmpc"; }
+  XF86Calculator repeat=false cooldown-ms=500 { spawn "gnome-calculator"; }
+  XF86Launch2                                 { spawn-sh "noctalia msg caffeine-toggle"; }
+  Mod+Return repeat=false cooldown-ms=500     { spawn "ghostty"; }
+  Super+Return repeat=false cooldown-ms=500   { spawn "kitty"; }
+  Super+C repeat=false cooldown-ms=500        { spawn "zeditor"; }
+  Mod+Space                                   { spawn-sh "noctalia msg panel-toggle launcher"; }
+  Super+Space                                 { spawn-sh "noctalia msg panel-toggle control-center"; }
+  Super+I                                     { spawn-sh "noctalia msg settings-toggle"; }
+  Super+B                                     { spawn "waterfox"; }
+  Mod+B                                       { spawn "helium-browser"; }
+  Super+Mod+L repeat=false cooldown-ms=500    { spawn-sh "noctalia msg session lock"; }
+  Super+Shift+S                               { spawn-sh "noctalia msg panel-toggle wallpaper"; }
+  Super+Period                                { spawn-sh "noctalia msg panel-toggle clipboard"; }
+  Super+E                                     { spawn "nautilus"; }
+  Mod+E repeat=false cooldown-ms=500          { spawn "ghostty" "-e" "yazi"; }
+  Super+G repeat=false cooldown-ms=500        { spawn "ghostty" "-e" "rmpc"; }
 
   // ─── Media Controls ───
   XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "noctalia msg volume-up"; }
@@ -115,16 +115,19 @@ binds {
   // ─── Screenshots ───
   Print                                { screenshot-screen; }
   Super+Shift+P                        { screenshot-window; }
+  Super+Mod+P                          { screenshot-screen; }
   Super+P                              { screenshot; }
 
+  // ─── Mirror ───
+  Super+M repeat=false { spawn-sh "wl-mirror $(niri msg --json focused-output | jq -r .name)"; }
   // ─── ColorPicker ───
-  Super+Shift+C                        { spawn-sh "hyprpicker | wl-copy && notify-send 'color copied'"; }
+  Super+Shift+C repeat=false            { spawn-sh "hyprpicker | wl-copy && notify-send 'color copied'"; }
 
   // ─── Emergency Escape Key ───
   Super+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
   // ─── Exit / Power ───
-  CTRL+ALT+Delete                      { quit; }
-  Super+Shift+L                        { power-off-monitors; }
-  Super+Shift+Escape                   { spawn-sh "noctalia msg panel-toggle session"; }
+  CTRL+ALT+Delete repeat=false         { quit; }
+  Super+Shift+L repeat=false           { power-off-monitors; }
+  Super+Shift+Escape repeat=false      { spawn-sh "noctalia msg panel-toggle session"; }
 }

@@ -1,0 +1,157 @@
+[desktop_widgets]
+schema_version = 2
+widget_order = [
+  "desktop-widget-0000000000000001",
+  "desktop-widget-0000000000000002",
+  "desktop-widget-0000000000000003",
+  "desktop-widget-0000000000000004",
+  "desktop-widget-0000000000000005",
+  "desktop-widget-0000000000000006",
+  "desktop-widget-0000000000000007",
+  "desktop-widget-0000000000000008",
+]
+
+[desktop_widgets.grid]
+cell_size = 16
+major_interval = 4
+visible = true
+
+# eDP-1 desktop widgets
+
+[desktop_widgets.widget.desktop-widget-0000000000000001]
+box_height = 224.0
+box_width = 1072.0
+cx = 768.0
+cy = 176.0
+output = "eDP-1"
+rotation = 0.0
+type = "clock"
+
+
+[desktop_widgets.widget.desktop-widget-0000000000000001.settings]
+background = false
+center_text = true
+font_family = "Anurati"
+format = "{:%^A}"
+
+
+[desktop_widgets.widget.desktop-widget-0000000000000002]
+box_height = 80.0
+box_width = 176.0
+cx = 1044.0
+cy = 276.0
+output = "eDP-1"
+rotation = 0.0
+type = "weather"
+
+[desktop_widgets.widget.desktop-widget-0000000000000002.settings]
+background = false
+font_family = "Inter Light"
+show_forecast = false
+
+[desktop_widgets.widget.desktop-widget-0000000000000003]
+box_height = 112.0
+box_width = 128.0
+cx = 1376.0
+cy = 272.0
+output = "eDP-1"
+rotation = 0.0
+type = "clock"
+
+[desktop_widgets.widget.desktop-widget-0000000000000003.settings]
+background = false
+background_color = "surface"
+background_opacity = 0.80000000000000004
+background_padding = 10
+background_radius = 12
+center_text = false
+circle = true
+clock_style = "digital"
+color = "on_surface"
+font_family = "Inter ExtraBold"
+format = "{:%H}"
+shadow = false
+
+[desktop_widgets.widget.desktop-widget-0000000000000004]
+box_height = 0.0
+box_width = 0.0
+cx = 1446.0
+cy = 344.0
+output = "eDP-1"
+rotation = 0.0
+type = "clock"
+
+[desktop_widgets.widget.desktop-widget-0000000000000004.settings]
+background = false
+font_family = "Inter ExtraBold"
+format = "%M"
+shadow = false
+
+# HDMI-A-1 desktop widgets
+
+[desktop_widgets.widget.desktop-widget-0000000000000005]
+box_height = 224.0
+box_width = 1072.0
+cx = 750.0
+cy = 176.0
+output = "HDMI-A-1"
+rotation = 0.0
+type = "clock"
+
+
+[desktop_widgets.widget.desktop-widget-0000000000000005.settings]
+background = false
+center_text = true
+font_family = "Anurati"
+format = "{:%^A}"
+
+[desktop_widgets.widget.desktop-widget-0000000000000006]
+box_height = 80.0
+box_width = 176.0
+cx = 1044.0
+cy = 276.0
+output = "HDMI-A-1"
+rotation = 0.0
+type = "weather"
+
+[desktop_widgets.widget.desktop-widget-0000000000000006.settings]
+background = false
+font_family = "Anurati"
+show_forecast = false
+
+[desktop_widgets.widget.desktop-widget-0000000000000007]
+box_height = 112.0
+box_width = 128.0
+cx = 1300.0
+cy = 272.0
+output = "HDMI-A-1"
+rotation = 0.0
+type = "clock"
+
+[desktop_widgets.widget.desktop-widget-0000000000000007.settings]
+background = false
+background_color = "surface"
+background_opacity = 0.80000000000000004
+background_padding = 10
+background_radius = 12
+center_text = false
+circle = true
+clock_style = "digital"
+color = "on_surface"
+font_family = "Anurati"
+format = "{:%H}"
+shadow = false
+
+[desktop_widgets.widget.desktop-widget-0000000000000008]
+box_height = 0.0
+box_width = 0.0
+cx = 1350.0
+cy = 344.0
+output = "HDMI-A-1"
+rotation = 0.0
+type = "clock"
+
+[desktop_widgets.widget.desktop-widget-0000000000000008.settings]
+background = false
+format = "%M"
+shadow = false

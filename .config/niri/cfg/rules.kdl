@@ -4,20 +4,19 @@ blur {
   noise 0.03      // grain overlay (default: 0.02)
   saturation 1.0  // color saturation boost (default: 1.5)
 }
-// global rules
+
 window-rule {
-    geometry-corner-radius 0 // Set every window radius to 20
+    geometry-corner-radius 5 
     clip-to-geometry true
-    open-maximized-to-edges false
-    background-effect { 
-        blur true 
+    background-effect {
+        blur true
         xray false
     }
     draw-border-with-background false
 }
 // Noctalia Rules
 window-rule {
-  match app-id="dev.noctalia.Noctalia.Settings"
+  match app-id="dev.noctalia.Noctalia"
   open-floating true
 }
 layer-rule {
@@ -31,14 +30,33 @@ layer-rule {
     //blur false
   }
 }
+layer-rule {
+    match namespace="^noctalia-notification$"
+    block-out-from "screencast"
+}
 // Application Rules
 window-rule {
+   match app-id="^helium$"
+   match app-id="^io.ente.auth$"
+   match app-id="^Bitwarden$"
+   block-out-from "screencast"
+}
+window-rule {
     match app-id="^org.gnome.Calculator$"
-    match title="^Picture-in-Picture$"
     open-floating true
+}
+window-rule {
+    match app-id="^owte$"
+    focus-ring{
+        off
+    }
+    background-effect {
+        blur false
+    }
 }
 window-rule {
     match title="^Picture-in-Picture$"
     open-floating true
     default-floating-position x=16 y=48 relative-to="bottom-left"
 }
+

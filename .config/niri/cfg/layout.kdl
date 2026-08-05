@@ -1,7 +1,7 @@
 layout {
-  gaps 5 // Gap between windows
+  gaps 10 // Gap between windows
   center-focused-column "never" // Don’t auto-center focused column
-  always-center-single-column
+  // always-center-single-column
 
   background-color "transparent" // <- needed for noctalia-shell to set wallpaper
 
@@ -9,13 +9,11 @@ layout {
     proportion 0.4
     proportion 0.6
     proportion 0.8
-    proportion 1.0
     }
   preset-window-heights {
     proportion 0.33333
     proportion 0.5
     proportion 0.66667
-    proportion 1.0
     }
   default-column-width 
 
@@ -26,5 +24,18 @@ layout {
     inactive-color "#000000"
     }
   struts {
+    }
+}
+recent-windows {
+    debounce-ms 750
+    open-delay-ms 150
+    highlight{
+        corner-radius 5 
+    }
+    binds {
+        Mod+R         { next-window     scope="output"; }
+        Mod+Shift+R   { previous-window scope="output"; }
+        Mod+Tab       { next-window     scope="output" filter="app-id"; }
+        Mod+Shift+Tab { previous-window scope="output" filter="app-id"; }
     }
 }

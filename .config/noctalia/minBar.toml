@@ -5,24 +5,32 @@
 order = ["mini"]
 
 [bar.mini]
-background_opacity = 0.0
-font_family = "MonoLisa"
+show_on_workspace_switch = true
+position = "bottom"
+background_opacity = 1.0
+border_width = 0.0
+font_weight = 900
 capsule_border = ""
-capsule_padding = 7.0
-capsule_radius = 0
-padding = 5
-radius = 0
-radius_top_left = 0
-radius_top_right = 0
-radius_bottom_left = 0
-radius_bottom_right = 0
-font_weight = 700
-margin_ends = 0
-shadow = false
-thickness = 25
-scale = 0.90
-widget_spacing = 10
-start = ["group:g1", "group:g2"]
-end = ["group:g3", "group:g4"]
-center = ["clock"]
+capsule_radius = 5.0
+thickness = 20 
+padding = 10
 margin_edge = 0
+margin_ends = 0
+margin_opposite_edge = 0
+radius = 0
+concave_edge_corners = false
+shadow = false
+scale = 1
+widget_spacing = 12
+start = ["launcher", "workspaces"]
+center = []
+end = [
+  "tray",
+  "notifications",
+  "temp",
+  "ram",
+  "battery",
+  "network",
+  "volume",
+  "clock",
+]

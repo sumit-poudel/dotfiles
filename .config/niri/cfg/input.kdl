@@ -11,23 +11,20 @@ input {
         }
         numlock // Enable numlock on startup
     }
-
     mouse {
         accel-profile "flat"
         accel-speed 0.2
         scroll-factor 1 
     }
-
     touchpad {
         dwt
         tap
         natural-scroll
-        accel-profile "adaptive"   // ← was "flat"; adaptive mimics Windows curve
-        accel-speed 0.0            // ← was 0.2; Windows default is neutral speed
-        scroll-factor 0.4
+        accel-profile "adaptive"    // Matches your mouse for 1:1 linear tracking
+        accel-speed 0.3        // Matches your mouse sensitivity
+        scroll-factor 0.4      // Returns scroll speed to standard 1:1 feel
     }
-
-    focus-follows-mouse // Automatically focus windows under the mouse pointer
+    focus-follows-mouse  
     workspace-auto-back-and-forth // Enable workspace back & forth switching
 }
 gestures {

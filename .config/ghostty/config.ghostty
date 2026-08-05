@@ -1,0 +1,37 @@
+# --- Font Settings ---
+font-family = "Maple Mono NF"
+font-size = 13.0
+
+# --- Window & Appearance ---
+background-opacity = 0.8 
+window-padding-x = 4
+window-padding-y = 4
+window-padding-balance = true
+window-decoration = false
+resize-overlay = never
+
+# --- Cursor & Behavior ---
+cursor-style = block
+cursor-style-blink = true
+mouse-hide-while-typing = true
+scrollback-limit = 100_000
+
+# --- Clipboard & Tmux Compatibility ---
+clipboard-read = allow
+clipboard-write = allow
+
+# --- Disable Ghostty Hotkeys (Pass Everything to Tmux) ---
+keybind = clear
+keybind = ctrl+shift+v=paste_from_clipboard
+keybind = ctrl+shift+c=copy_to_clipboard
+keybind = ctrl+shift+comma=reload_config
+
+# --- Shell Integration & Notifications ---
+shell-integration = detect
+shell-integration-features = no-cursor,sudo,title
+copy-on-select = true
+right-click-action = paste
+desktop-notifications = true
+
+# --- Color Theme ---
+theme = noctalia

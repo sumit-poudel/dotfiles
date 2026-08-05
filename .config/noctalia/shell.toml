@@ -2,10 +2,10 @@
 # CORE SHELL
 # =============================================================================
 [shell]
-corner_radius_scale = 0.0
+corner_radius_scale = 0.8
 avatar_path = "/home/sumit/Pictures/avtar.jpg"
-clipboard_history_max_entries = 20
-font_family = "Monolisa"
+clipboard_history_max_entries = 40
+font_family = "Maple Mono NF CN"
 password_style = "random"
 settings_show_advanced = true
 telemetry_enabled = false
@@ -13,10 +13,17 @@ time_format = "{:%H:%M %a}"
 polkit_agent = true
 
 [shell.panel]
-launcher_categories = false
-launcher_compact = true
-transparency_mode = "glass"
+launcher_placement       = "floating" # attached | floating | centered
 control_center_placement = "floating"
+clipboard_placement      = "floating"
+polkit_placement = "floating"
+transparency_mode = "solid"
+
+
+[shell.launcher]
+categories = false
+compact = true
+fetch_exchange_rates = false
 
 [[shell.session.actions]]
 action = "shutdown"
@@ -48,4 +55,85 @@ enabled = true
 shortcut = "5"
 variant = "default"
 
+[battery]
+warning_threshold = 50
 
+[notification]
+enable_daemon = true
+layer = "top"
+position = "top_right"
+
+[osd]
+position = "top_right"
+
+[osd.kinds]
+media = false
+
+[system.monitor]
+cpu_temp_activity_threshold = 75
+cpu_temp_critical_threshold = 95
+
+[audio]
+enable_sounds = true
+
+[calendar]
+enabled = true
+
+[calendar.account.personal_google]
+name = "gokuChan"
+type = "google"
+
+[brightness]
+enable_ddcutil = true
+
+[control_center]
+sidebar_section = "full"
+
+[[control_center.shortcuts]]
+type = "wifi"
+
+[[control_center.shortcuts]]
+type = "bluetooth"
+
+[[control_center.shortcuts]]
+type = "caffeine"
+
+[[control_center.shortcuts]]
+type = "nightlight"
+
+[[control_center.shortcuts]]
+type = "notification"
+
+[[control_center.shortcuts]]
+type = "power_profile"
+
+[idle]
+behavior_order = ["lock", "screen-off", "lock-and-suspend"]
+
+[idle.behavior.lock]
+action = "lock"
+enabled = true
+timeout = 300
+
+[idle.behavior.lock-and-suspend]
+action = "lock_and_suspend"
+enabled = true
+timeout = 900
+
+[idle.behavior.screen-off]
+action = "screen_off"
+enabled = true
+timeout = 330
+
+[keybinds]
+cancel = ["Escape"]
+down = ["Ctrl+n"]
+left = ["Ctrl+h"]
+right = ["Ctrl+l"]
+up = ["Ctrl+p"]
+
+[location]
+address = "chitwan,Nepal"
+
+[nightlight]
+enabled = true
