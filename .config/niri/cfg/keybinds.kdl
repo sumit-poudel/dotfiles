@@ -3,8 +3,8 @@ binds {
   // ─── Spawns ───
   XF86Calculator repeat=false cooldown-ms=500 { spawn "gnome-calculator"; }
   XF86Launch2                                 { spawn-sh "noctalia msg caffeine-toggle"; }
-  Mod+Return repeat=false cooldown-ms=500     { spawn "ghostty"; }
-  Super+Return repeat=false cooldown-ms=500   { spawn "kitty"; }
+  Mod+Return                                  { spawn "footclient"; }
+  Super+Return                                { spawn "kitty"; }
   Super+C repeat=false cooldown-ms=500        { spawn "zeditor"; }
   Mod+Space                                   { spawn-sh "noctalia msg panel-toggle launcher"; }
   Super+Space                                 { spawn-sh "noctalia msg panel-toggle control-center"; }
@@ -15,8 +15,8 @@ binds {
   Super+Shift+S                               { spawn-sh "noctalia msg panel-toggle wallpaper"; }
   Super+Period                                { spawn-sh "noctalia msg panel-toggle clipboard"; }
   Super+E                                     { spawn "nautilus"; }
-  Mod+E repeat=false cooldown-ms=500          { spawn "ghostty" "-e" "yazi"; }
-  Super+G repeat=false cooldown-ms=500        { spawn "ghostty" "-e" "rmpc"; }
+  Mod+E repeat=false cooldown-ms=500          { spawn "footclient" "-e" "yazi"; }
+  Super+G repeat=false cooldown-ms=500        { spawn "footclient" "-e" "rmpc"; }
 
   // ─── Media Controls ───
   XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "noctalia msg volume-up"; }

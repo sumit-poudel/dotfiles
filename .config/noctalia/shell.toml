@@ -1,6 +1,10 @@
 # =============================================================================
 # CORE SHELL
 # =============================================================================
+
+[wallpaper]
+directory = "/home/sumit/Pictures/Wallpapers"
+
 [shell]
 corner_radius_scale = 0.8
 avatar_path = "/home/sumit/Pictures/avtar.jpg"
@@ -13,9 +17,9 @@ time_format = "{:%H:%M %a}"
 polkit_agent = true
 
 [shell.panel]
-launcher_placement       = "floating" # attached | floating | centered
+launcher_placement       = "attached " # attached | floating | centered
 control_center_placement = "floating"
-clipboard_placement      = "floating"
+clipboard_placement      = "attached "
 polkit_placement = "floating"
 transparency_mode = "solid"
 
@@ -64,7 +68,9 @@ layer = "top"
 position = "top_right"
 
 [osd]
-position = "top_right"
+position = "top_left"
+position_vertical = "center_left"
+border = false
 
 [osd.kinds]
 media = false
@@ -72,16 +78,6 @@ media = false
 [system.monitor]
 cpu_temp_activity_threshold = 75
 cpu_temp_critical_threshold = 95
-
-[audio]
-enable_sounds = true
-
-[calendar]
-enabled = true
-
-[calendar.account.personal_google]
-name = "gokuChan"
-type = "google"
 
 [brightness]
 enable_ddcutil = true

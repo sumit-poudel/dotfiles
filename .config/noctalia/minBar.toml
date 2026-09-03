@@ -6,7 +6,7 @@ order = ["mini"]
 
 [bar.mini]
 show_on_workspace_switch = true
-position = "bottom"
+position = "top"
 background_opacity = 1.0
 border_width = 0.0
 font_weight = 900
@@ -28,9 +28,7 @@ end = [
   "tray",
   "notifications",
   "temp",
-  "ram",
+  "cat",
   "battery",
-  "network",
-  "volume",
-  "clock",
+  "group:g1",
 ]

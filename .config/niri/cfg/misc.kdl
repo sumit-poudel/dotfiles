@@ -2,8 +2,6 @@ prefer-no-csd
 screenshot-path "~/Pictures/screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png" 
 
 environment {
-EDITOR "nvim"
-VISUAL "nvim"
 XDG_CURRENT_DESKTOP "niri"
 XDG_SESSION_TYPE "wayland"
 GDK_BACKEND "wayland"
@@ -31,7 +29,7 @@ debug {
 honor-xdg-activation-with-invalid-serial
 emulate-zero-presentation-time
 disable-cursor-plane
-render-drm-device "/dev/dri/renderD129"
+// render-drm-device "/dev/dri/renderD129"
 }
 
 hotkey-overlay {

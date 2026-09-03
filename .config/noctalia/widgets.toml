@@ -1,30 +1,37 @@
+[[bar.mini.capsule_group]]
+id      = "g1"
+members = ["clock", "network", "bluetooth", "volume"]
+fill    = "surface"
+enabled = true
+accordion = true                         # optional: collapse to the first widget, reveal on hover
+accordion_direction = "start"              # "end" (default) or "start"
+
 [widget.workspaces]
-display = "id"
 style = "focus_hint"
 
 [widget.battery]
 display_mode = "graphic"
 show_label = false
 
-[widget.volume]
-show_label = false
+[widget.cat]
+type = "dotnetrob/cat:cat"
+
 
 [widget.cpu]
 display = "text"
-show_label = false
 
 [widget.temp]
 display = "text"
-show_label = false
+visualization = "none"
 
 [widget.ram]
 display = "text"
-show_label = false
+visualization = "none"
 stat = "ram_pct"
 
 [widget.clock]
 color = "primary"
-format = "| {:%H:%M  %d:%a}"
+format = "| {:%I:%M  %d:%a}"
 tooltip_format = "{:%A, %B %d, %Y}"
 
 [widget.launcher]
@@ -35,6 +42,9 @@ color = "primary"
 min_length = 150
 
 [widget.network]
+show_label = false
+
+[widget.volume]
 show_label = false
 
 [widget.notifications]

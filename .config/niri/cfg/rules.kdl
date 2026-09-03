@@ -36,6 +36,10 @@ layer-rule {
 }
 // Application Rules
 window-rule {
+   match app-id="^kitty$"
+   match app-id="^footclient$"
+}
+window-rule {
    match app-id="^helium$"
    match app-id="^io.ente.auth$"
    match app-id="^Bitwarden$"
@@ -44,15 +48,6 @@ window-rule {
 window-rule {
     match app-id="^org.gnome.Calculator$"
     open-floating true
-}
-window-rule {
-    match app-id="^owte$"
-    focus-ring{
-        off
-    }
-    background-effect {
-        blur false
-    }
 }
 window-rule {
     match title="^Picture-in-Picture$"
