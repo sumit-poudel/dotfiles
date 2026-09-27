@@ -1,4 +1,5 @@
 [desktop_widgets]
+enabled = false
 schema_version = 2
 widget_order = [ "desktop-widget-eDPclock", "desktop-widget-eDPweather", "desktop-widget-HDMIclock", "desktop-widget-HDMIweather" ]
 
@@ -10,11 +11,11 @@ widget_order = [ "desktop-widget-eDPclock", "desktop-widget-eDPweather", "deskto
     [desktop_widgets.widget.desktop-widget-HDMIclock]
     box_height = 224.0
     box_width = 1072.0
-    cx = 768.0
-    cy = 176.0
+    cx = 1024.0
+    cy = 211.20001220703125
     output = "HDMI-A-1"
-    placement_height = 900.0
-    placement_width = 1440.0
+    placement_height = 1080.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "clock"
 
@@ -23,16 +24,16 @@ widget_order = [ "desktop-widget-eDPclock", "desktop-widget-eDPweather", "deskto
         center_text = true
         font_family = "Maple Mono"
         format = "{:%^A}"
-        shadow = false
+        shadow = true
 
     [desktop_widgets.widget.desktop-widget-HDMIweather]
     box_height = 80.0
     box_width = 176.0
-    cx = 1044.0
-    cy = 276.0
+    cx = 1392.0
+    cy = 331.20001220703125
     output = "HDMI-A-1"
-    placement_height = 900.0
-    placement_width = 1440.0
+    placement_height = 1080.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "weather"
 
@@ -58,7 +59,7 @@ widget_order = [ "desktop-widget-eDPclock", "desktop-widget-eDPweather", "deskto
         center_text = true
         font_family = "Maple Mono"
         format = "{:%^A}"
-        shadow = false
+        shadow = true
 
     [desktop_widgets.widget.desktop-widget-eDPweather]
     box_height = 80.0
@@ -76,3 +77,4 @@ widget_order = [ "desktop-widget-eDPclock", "desktop-widget-eDPweather", "deskto
         font_family = "Maple Mono"
         shadow = false
         show_forecast = false
+

@@ -1,3 +1,6 @@
+[lockscreen]
+fingerprint = false
+
 [lockscreen_widgets]
 enabled = true
 schema_version = 2
@@ -20,11 +23,11 @@ widget_order = [
     [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
     box_height = 70.0
     box_width = 432.0
-    cx = 768.0
-    cy = 448.0
+    cx = 1024.0
+    cy = 537.60003662109375
     output = "HDMI-A-1"
-    placement_height = 900.0
-    placement_width = 1440.0
+    placement_height = 1080.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "login_box"
 
@@ -76,11 +79,11 @@ widget_order = [
     [lockscreen_widgets.widget.lockscreen-widget-HDMIclock]
     box_height = 256.0
     box_width = 992.0
-    cx = 768.0
-    cy = 176.0
+    cx = 1024.0
+    cy = 211.20001220703125
     output = "HDMI-A-1"
-    placement_height = 900.0
-    placement_width = 1440.0
+    placement_height = 1080.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "clock"
 
@@ -93,11 +96,11 @@ widget_order = [
     [lockscreen_widgets.widget.lockscreen-widget-HDMIdate]
     box_height = 48.0
     box_width = 496.0
-    cx = 768.0
-    cy = 288.0
+    cx = 1024.0
+    cy = 345.60000610351562
     output = "HDMI-A-1"
-    placement_height = 900.0
-    placement_width = 1440.0
+    placement_height = 1080.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "clock"
 
@@ -110,11 +113,11 @@ widget_order = [
     [lockscreen_widgets.widget.lockscreen-widget-HDMIplayer]
     box_height = 208.0
     box_width = 528.0
-    cx = 784.0
-    cy = 656.0
+    cx = 1045.3333740234375
+    cy = 787.20001220703125
     output = "HDMI-A-1"
-    placement_height = 900.0
-    placement_width = 1440.0
+    placement_height = 1080.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "media_player"
 
@@ -172,4 +175,3 @@ widget_order = [
         background = false
         hide_when_no_media = false
         shadow = false
-

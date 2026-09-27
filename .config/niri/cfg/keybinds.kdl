@@ -9,13 +9,15 @@ binds {
   Mod+Space                                   { spawn-sh "noctalia msg panel-toggle launcher"; }
   Super+Space                                 { spawn-sh "noctalia msg panel-toggle control-center"; }
   Super+I                                     { spawn-sh "noctalia msg settings-toggle"; }
-  Super+B                                     { spawn "waterfox"; }
-  Mod+B                                       { spawn "helium-browser"; }
+//   Mod+B                                       { spawn "zen-browser"; }
+  Super+B                                       { spawn "zen-browser"; }
+//   Super+B                                     { spawn "helium-browser"; }
+  Mod+B                                     { spawn "helium-browser"; }
   Super+Mod+L repeat=false cooldown-ms=500    { spawn-sh "noctalia msg session lock"; }
   Super+Shift+S                               { spawn-sh "noctalia msg panel-toggle wallpaper"; }
   Super+Period                                { spawn-sh "noctalia msg panel-toggle clipboard"; }
   Super+E                                     { spawn "nautilus"; }
-  Mod+E repeat=false cooldown-ms=500          { spawn "footclient" "-e" "yazi"; }
+  Mod+E repeat=false cooldown-ms=500          { spawn "kitty" "-e" "yazi"; }
   Super+G repeat=false cooldown-ms=500        { spawn "footclient" "-e" "rmpc"; }
 
   // ─── Media Controls ───
@@ -114,8 +116,11 @@ binds {
 
   // ─── Screenshots ───
   Print                                { screenshot-screen; }
-  Super+Shift+P                        { screenshot-window; }
+  Ctrl+Print                           { screenshot-screen write-to-disk=false; }
   Super+Mod+P                          { screenshot-screen; }
+  Ctrl+Super+Mod+P                     { screenshot-screen write-to-disk=false; }
+  Super+Shift+P                        { screenshot-window; }
+  Ctrl+Super+Shift+P                   { screenshot-window write-to-disk=false; }
   Super+P                              { screenshot; }
 
   // ─── Mirror ───

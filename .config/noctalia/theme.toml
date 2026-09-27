@@ -3,68 +3,51 @@
 # =============================================================================
 
 [theme]
-community_palette = "Shien"
+community_palette = "Monochrome"
 source = "community"
 
 [theme.templates]
 builtin_ids = [
   "btop",
   "cava",
+  "foot",
   "gtk3",
   "gtk4",
   "kitty",
   "niri",
+  "qt",
   "starship",
-  "wezterm",
 ]
 community_ids = [
+  "zen-browser",
   "neovim",
   "obsidian",
   "vscode",
   "zed",
-  "papirus-icons",
-  "yazi",
+  "fastfetch",
   "zathura",
+  "papirus-icons",
+  "bat",
+  "fzf",
+  "tmux",
+  "yazi",
 ]
 
-[wallpaper]
-directory = "~/Pictures/Wallpapers"
-
-[wallpaper.automation]
-order = "alphabetical"
+[plugins]
+enabled = [
+  "cleboost/zed-provider",
+  "cleboost/jetbrains-provider",
+  "nightwatch75/file-search",
+]
 
 [wallpaper.default]
-path = "/home/sumit/Pictures/Wallpapers/wallhaven_lmwglr.jpg"
+path = "/home/sumit/Pictures/Wallpapers/monochrome-sword-mastery-backiee-HD.jpg"
 
 [wallpaper.last]
-path = "/home/sumit/Pictures/Wallpapers/wallhaven_lmwglr.jpg"
+path = "/home/sumit/Pictures/Wallpapers/monochrome-sword-mastery-backiee-HD.jpg"
 
 [wallpaper.monitors.HDMI-A-1]
-path = "/home/sumit/Pictures/Wallpapers/wallhaven_lmwglr.jpg"
+path = "/home/sumit/Pictures/Wallpapers/monochrome-sword-mastery-backiee-HD.jpg"
 
 [wallpaper.monitors.eDP-1]
-path = "/home/sumit/Pictures/Wallpapers/wallhaven_lmwglr.jpg"
-
-[[wallpaper.favorite]]
-community_palette = "Monochrome"
-palette_source = "community"
-path = "/home/sumit/Pictures/Wallpapers/1387138.png"
-theme_mode = "light"
-
-[[wallpaper.favorite]]
-community_palette = "Monochrome"
-palette_source = "community"
-path = "/home/sumit/Pictures/Wallpapers/darkMountain.png"
-theme_mode = "dark"
-
-[[wallpaper.favorite]]
-community_palette = "Shien"
-palette_source = "community"
-path = "/home/sumit/Pictures/Wallpapers/wallhaven_lmwglr.jpg"
-theme_mode = "dark"
-
-[[wallpaper.favorite]]
-community_palette = "Monochrome"
-palette_source = "community"
-path = "/home/sumit/Pictures/Wallpapers/1387138.png"
-theme_mode = "light"
+path = "/home/sumit/Pictures/Wallpapers/monochrome-sword-mastery-backiee-HD.jpg"

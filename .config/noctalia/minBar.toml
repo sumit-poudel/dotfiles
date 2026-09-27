@@ -9,11 +9,11 @@ show_on_workspace_switch = true
 position = "top"
 background_opacity = 1.0
 border_width = 0.0
-font_weight = 900
+font_weight = 600
 capsule_border = ""
-capsule_radius = 5.0
-thickness = 20 
-padding = 10
+capsule_radius = 0.0
+thickness = 30
+padding = 12
 margin_edge = 0
 margin_ends = 0
 margin_opposite_edge = 0
@@ -21,14 +21,19 @@ radius = 0
 concave_edge_corners = false
 shadow = false
 scale = 1
-widget_spacing = 12
-start = ["launcher", "workspaces"]
-center = []
+widget_spacing = 10
+start = ["group:g2", "bar", "hostname","temp", "bar", "tray"]
+center = ["audio-vis"]
 end = [
-  "tray",
-  "notifications",
-  "temp",
-  "cat",
-  "battery",
-  "group:g1",
+  "group:sys",
+  "bar",
+  "brightness",
+  "bar",
+  "volume",
+  "bar",
+  "network",
+  "bar",
+  "bluetooth",
+  "bar",
+  "clock",
 ]

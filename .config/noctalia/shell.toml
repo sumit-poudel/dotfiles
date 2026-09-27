@@ -5,11 +5,14 @@
 [wallpaper]
 directory = "/home/sumit/Pictures/Wallpapers"
 
+[backdrop]
+enabled = true
+
 [shell]
 corner_radius_scale = 0.8
 avatar_path = "/home/sumit/Pictures/avtar.jpg"
 clipboard_history_max_entries = 40
-font_family = "Maple Mono NF CN"
+font_family = "MartianMono Nerd Font Propo"
 password_style = "random"
 settings_show_advanced = true
 telemetry_enabled = false
@@ -17,10 +20,13 @@ time_format = "{:%H:%M %a}"
 polkit_agent = true
 
 [shell.panel]
-launcher_placement       = "attached " # attached | floating | centered
+launcher_placement = "floating"       # attached | floating | centered
+launcher_position = "auto"
 control_center_placement = "floating"
-clipboard_placement      = "attached "
+clipboard_placement = "floating"
+clipboard_position = "auto"
 polkit_placement = "floating"
+polkit_position = "auto"
 transparency_mode = "solid"
 
 
@@ -69,6 +75,7 @@ position = "top_right"
 
 [osd]
 position = "top_left"
+orientation = "vertical"
 position_vertical = "center_left"
 border = false
 

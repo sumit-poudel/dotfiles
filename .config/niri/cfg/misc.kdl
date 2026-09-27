@@ -18,7 +18,9 @@ _JAVA_AWT_WM_NONREPARENTING "1"
 }
 
 cursor {
-xcursor-theme "Cartoonish-Bold"
+//xcursor-theme "Cartoonish-Bold"
+xcursor-theme "Notwaita-Gray"
+//xcursor-theme "BrushBuddy"
 xcursor-size 24 
 hide-when-typing
 hide-after-inactive-ms 2000
@@ -28,7 +30,7 @@ debug {
 // Allows notification actions and window activation from Noctalia.
 honor-xdg-activation-with-invalid-serial
 emulate-zero-presentation-time
-disable-cursor-plane
+// disable-cursor-plane
 // render-drm-device "/dev/dri/renderD129"
 }
 

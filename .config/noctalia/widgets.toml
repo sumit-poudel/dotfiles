@@ -1,54 +1,88 @@
 [[bar.mini.capsule_group]]
-id      = "g1"
-members = ["clock", "network", "bluetooth", "volume"]
-fill    = "surface"
+id = "g2"
+members = ["workspaces", "colon", "active_window"]
+fill = "primary"
 enabled = true
-accordion = true                         # optional: collapse to the first widget, reveal on hover
-accordion_direction = "start"              # "end" (default) or "start"
+
+[[bar.mini.capsule_group]]
+id = "sys"
+members = ["battery","cpu", "ram"]
+fill = "surface"
+enabled = true
+collapsible = true
+collapsed_by_default = false
+collapse_icon = "▸"
+expand_icon = "▾"
 
 [widget.workspaces]
-style = "focus_hint"
+style = "minimal"
+focused_color = "on_primary"
+hide_when_empty = true
+occupied_color = "on_surface"
+show_icons = false
 
-[widget.battery]
-display_mode = "graphic"
-show_label = false
+[widget.active_window]
+display = "text_only"
+color = "on_primary"
+min_length = 80
+max_length = 150
 
-[widget.cat]
-type = "dotnetrob/cat:cat"
-
-
-[widget.cpu]
-display = "text"
+[widget.audio-vis]
+type       = "audio_visualizer"
+width      = 200
+bands      = 16
+centered   = true
+show_when_idle = true
+color_1 = "primary"
+color_2 = "secondary"
+[widget.audio-vis.actions]
+left = "panel-toggle control-center media"
+right = "media toggle"
 
 [widget.temp]
-display = "text"
+type = "sysmon"
+stat = "cpu_temp"
+show_glyph = false
 visualization = "none"
+color = "on_surface"
+
+[widget.cpu]
+type = "sysmon"
+stat = "cpu_pct"
+show_glyph = true
+visualization = "none"
+color = "on_surface"
 
 [widget.ram]
-display = "text"
-visualization = "none"
+type = "sysmon"
 stat = "ram_pct"
+show_glyph = true
+visualization = "none"
+color = "on_surface"
 
-[widget.clock]
-color = "primary"
-format = "| {:%I:%M  %d:%a}"
-tooltip_format = "{:%A, %B %d, %Y}"
+[widget.brightness]
+show_label = false
 
-[widget.launcher]
-glyph = "pacman"
-color = "primary"
+[widget.volume]
+type = "volume"
+show_label = false
 
-[widget.media]
-min_length = 150
+[widget.bluetooth]
+show_label = false
 
 [widget.network]
 show_label = false
 
-[widget.volume]
-show_label = false
+[widget.clock]
+color = "primary"
+format = "{:%I:%M} "
+tooltip_format = "{:%A, %B %d, %Y}"
 
-[widget.notifications]
+[widget.hostname]
+type = "text"
+text = "MEOW"
 color = "primary"
 
-[widget.spacer_2]
-type = "spacer"
+[widget.bar]
+type = "text"
+text = "|"
