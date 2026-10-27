@@ -62,7 +62,7 @@ color = "on_surface"
 
 [widget.cpu]
 type = "sysmon"
-stat = "cpu_pct"
+stat = "cpu_usage"
 show_glyph = true
 visualization = "none"
 color = "on_surface"
