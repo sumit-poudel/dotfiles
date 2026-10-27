@@ -16,7 +16,6 @@ builtin_ids = [
   "kitty",
   "niri",
   "qt",
-  "starship",
 ]
 
 community_ids = [
@@ -33,7 +32,6 @@ community_ids = [
     "bat",
     "fzf",
     "herdr",
-    "starship",
     "tmux",
     "yazi"
 ]

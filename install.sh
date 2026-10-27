@@ -26,6 +26,8 @@ packages=(
 	pipewire
 	xdg-desktop-portal-gnome
 	pavucontrol
+	mpd
+	mpd-mpris
 	nwg-look
 	qt6ct
 	adw-gtk-theme
@@ -38,6 +40,8 @@ packages=(
 	x265
 	libvpx
 	libdvdcss
+    helium-browser-bin
+    waterfox
 )
 
 aur_packages=(
@@ -141,6 +145,25 @@ install_tpm() {
 	fi
 }
 
+user_services=(
+	foot-server.service
+	mpd.service
+	mpd-mpris.service
+)
+
+enable_user_services() {
+	local unit
+	command -v systemctl >/dev/null 2>&1 || return 0
+	if ! systemctl --user show-environment >/dev/null 2>&1; then
+		echo "skipping user services: no systemd user session" >&2
+		return 0
+	fi
+	echo "enabling user services"
+	for unit in "${user_services[@]}"; do
+		systemctl --user enable --now "$unit" || echo "could not enable $unit" >&2
+	done
+}
+
 install_nvim() {
 	local dest="$config/nvim"
 	local url="https://github.com/sumit-poudel/nvim.git"
@@ -221,4 +244,5 @@ install_fisher
 install_yazi
 install_tpm
 install_nvim
+enable_user_services
 echo "configs follow $repo — git pull updates them"

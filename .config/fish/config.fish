@@ -5,7 +5,7 @@ if status is-interactive
     # fzf integration
     command -v fzf &> /dev/null && fzf --fish | source 
 
-    # fzf integration
+    # thefuck integration
     command -v thefuck &> /dev/null && thefuck --alias fk | source
 
     # Starship custom prompt
