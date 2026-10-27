@@ -1,13 +1,9 @@
 #!/usr/bin/env bash
-# Install CachyOS packages, keep this repo in ~/.local/share/dotfiles,
-# and symlink configs into place. Later changes are just git pull.
 set -euo pipefail
 
-share="${XDG_DATA_HOME:-$HOME/.local/share}/dotfiles"
 config="${XDG_CONFIG_HOME:-$HOME/.config}"
-repo=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)
+repo=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 
-# Apps only. CachyOS already picks the hardware drivers.
 packages=(
 	noctalia
 	git
@@ -84,8 +80,6 @@ install_packages() {
 set_fish() {
 	local fish_bin current candidate
 	fish_bin=""
-	# chsh matches the path text in /etc/shells. command -v can print
-	# /usr/sbin/fish, which is the same binary and is not listed.
 	local -a candidates=(/usr/bin/fish /bin/fish)
 	if command -v fish >/dev/null 2>&1; then
 		candidates+=("$(command -v fish)")
@@ -109,7 +103,7 @@ set_fish() {
 install_fisher() {
 	command -v fish >/dev/null || return 0
 	fish -c 'functions -q fisher' || return 0
-	local list="$share/.config/fish/fisher.list"
+	local list="$repo/.config/fish/fisher.list"
 	[[ -f "$list" ]] || return 0
 	local plugins=()
 	mapfile -t plugins < <(grep -v '^[[:space:]]*$' "$list" || true)
@@ -187,25 +181,24 @@ link_one() {
 link_configs() {
 	local path name dot
 	shopt -s nullglob
-	for path in "$share"/.config/*; do
+	for path in "$repo"/.config/*; do
 		name=$(basename "$path")
 		link_one "$path" "$config/$name"
 	done
 	shopt -u nullglob
 	for dot in "${root_dots[@]}"; do
-		[[ -e "$share/$dot" ]] || continue
-		link_one "$share/$dot" "$HOME/$dot"
+		[[ -e "$repo/$dot" ]] || continue
+		link_one "$repo/$dot" "$HOME/$dot"
 	done
 }
 
-# Noctalia reads these paths from .config/noctalia/shell.toml.
 link_pictures() {
 	local pictures="$HOME/Pictures"
-	if [[ -d "$share/wallpapers" ]]; then
-		link_one "$share/wallpapers" "$pictures/Wallpapers"
+	if [[ -d "$repo/wallpapers" ]]; then
+		link_one "$repo/wallpapers" "$pictures/Wallpapers"
 	fi
-	if [[ -e "$share/avtar.jpg" ]]; then
-		link_one "$share/avtar.jpg" "$pictures/avtar.jpg"
+	if [[ -e "$repo/avtar.jpg" ]]; then
+		link_one "$repo/avtar.jpg" "$pictures/avtar.jpg"
 	fi
 }
 
@@ -220,18 +213,6 @@ for arg in "$@"; do
 	esac
 done
 
-if [[ "$repo" != "$share" ]]; then
-	if [[ -e "$share" || -L "$share" ]]; then
-		echo "refusing to move: $share already exists" >&2
-		exit 1
-	fi
-	mkdir -p "$(dirname "$share")"
-	mv "$repo" "$share"
-	ln -s "$share" "$repo"
-	echo "moved repo to $share"
-	exec "$share/install.sh" "$@"
-fi
-
 install_packages
 set_fish
 link_configs
@@ -240,4 +221,4 @@ install_fisher
 install_yazi
 install_tpm
 install_nvim
-echo "configs follow $share — git pull updates them"
+echo "configs follow $repo — git pull updates them"

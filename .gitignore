@@ -1,1 +1,12 @@
 *.webm
+
+# Files copied in by fisher. fish_plugins stays tracked so plugins can be reinstalled.
+.config/fish/completions/*
+.config/fish/conf.d/*
+.config/fish/functions/*
+.config/fish/themes/*
+
+!.config/fish/conf.d/flipper.fish
+!.config/fish/functions/fish_greeting.fish
+!.config/fish/functions/history_keybinds.fish
+!.config/fish/functions/x.fish
