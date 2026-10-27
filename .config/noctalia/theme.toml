@@ -3,7 +3,7 @@
 # =============================================================================
 
 [theme]
-community_palette = "Monochrome"
+community_palette = "Gruvbox Material Hard"
 source = "community"
 
 [theme.templates]
@@ -18,19 +18,24 @@ builtin_ids = [
   "qt",
   "starship",
 ]
+
 community_ids = [
-  "zen-browser",
-  "neovim",
-  "obsidian",
-  "vscode",
-  "zed",
-  "fastfetch",
-  "zathura",
-  "papirus-icons",
-  "bat",
-  "fzf",
-  "tmux",
-  "yazi",
+    "zen-browser",
+    "neovim",
+    "obsidian",
+    "vscode",
+    "zed",
+    "steam",
+    "fastfetch",
+    "obs",
+    "zathura",
+    "papirus-icons",
+    "bat",
+    "fzf",
+    "herdr",
+    "starship",
+    "tmux",
+    "yazi"
 ]
 
 [plugins]
@@ -38,16 +43,5 @@ enabled = [
   "cleboost/zed-provider",
   "cleboost/jetbrains-provider",
   "nightwatch75/file-search",
+  "dunarand/tmux-provider",
 ]
-
-[wallpaper.default]
-path = "/home/sumit/Pictures/Wallpapers/monochrome-sword-mastery-backiee-HD.jpg"
-
-[wallpaper.last]
-path = "/home/sumit/Pictures/Wallpapers/monochrome-sword-mastery-backiee-HD.jpg"
-
-[wallpaper.monitors.HDMI-A-1]
-path = "/home/sumit/Pictures/Wallpapers/monochrome-sword-mastery-backiee-HD.jpg"
-
-[wallpaper.monitors.eDP-1]
-path = "/home/sumit/Pictures/Wallpapers/monochrome-sword-mastery-backiee-HD.jpg"

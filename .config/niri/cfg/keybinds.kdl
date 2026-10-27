@@ -10,7 +10,7 @@ binds {
   Super+Space                                 { spawn-sh "noctalia msg panel-toggle control-center"; }
   Super+I                                     { spawn-sh "noctalia msg settings-toggle"; }
 //   Mod+B                                       { spawn "zen-browser"; }
-  Super+B                                       { spawn "zen-browser"; }
+  Super+B                                       { spawn "waterfox"; }
 //   Super+B                                     { spawn "helium-browser"; }
   Mod+B                                     { spawn "helium-browser"; }
   Super+Mod+L repeat=false cooldown-ms=500    { spawn-sh "noctalia msg session lock"; }

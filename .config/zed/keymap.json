@@ -1,5 +1,8 @@
 [
   {
+    "unbind": {
+      "ctrl-s": "workspace::Save",
+    },
     "bindings": {
       "ctrl-/": "terminal_panel::Toggle",
     },
@@ -53,25 +56,15 @@
       "space i": "pane::CloseOtherItems",
       "space q a": "pane::CloseAllItems",
       "space ;": "workspace::ToggleRightDock",
-      "space ]": "workspace::NewFileSplitHorizontal",
-      "space [": "workspace::NewFileSplitVertical",
+      "space -": "workspace::NewFileSplitHorizontal",
+      "space |": "workspace::NewFileSplitVertical",
+      "space space p": "workspace::Open",
       "space o": "outline::Toggle",
+      "space space o": "outline_panel::Toggle",
       "space p": "command_palette::Toggle",
       "space r": "buffer_search::DeployReplace",
-      "space f f": [
-        "task::Spawn",
-        {
-          "task_name": "File Finder",
-          "reveal_target": "center",
-        },
-      ],
-      "space f g": [
-        "task::Spawn",
-        {
-          "task_name": "Find in File",
-          "reveal_target": "center",
-        },
-      ],
+      "space f f": "file_finder::Toggle",
+      "space f g": "text_finder::Toggle",
       "space g g": [
         "task::Spawn",
         { "task_name": "start lazygit", "reveal_target": "center" },
@@ -86,20 +79,8 @@
     "context": "EmptyPane || SharedScreen",
     "bindings": {
       "space f p": "projects::OpenRecent",
-      "space f f": [
-        "task::Spawn",
-        {
-          "task_name": "File Finder",
-          "reveal_target": "center",
-        },
-      ],
-      "space f g": [
-        "task::Spawn",
-        {
-          "task_name": "Find in File",
-          "reveal_target": "center",
-        },
-      ],
+      "space f f": "file_finder::Toggle",
+      "space f g": "text_finder::Toggle",
     },
   },
   {

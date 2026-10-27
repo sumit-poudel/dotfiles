@@ -1,18 +1,32 @@
 [[bar.mini.capsule_group]]
-id = "g2"
+id = "windows"
+accordion = false
 members = ["workspaces", "colon", "active_window"]
-fill = "primary"
+foreground = "on_primary"
 enabled = true
+fill = "primary"
+
+[[bar.mini.capsule_group]]
+accordion = true
+fill = "primary"
+foreground = "on_primary"
+id = "clk"
+members = ["clock", "clock-date"]
+
+[[bar.mini.capsule_group]]
+id = "uname"
+members = ["topCorner", "hostname", "temp", "bottomCorner"]
+widget_spacing = 7
+padding = 0
+enabled = true
+opacity = 0.0
 
 [[bar.mini.capsule_group]]
 id = "sys"
-members = ["battery","cpu", "ram"]
-fill = "surface"
+members = ["battery", "cpu", "ram"]
+widget_spacing = 15
 enabled = true
-collapsible = true
-collapsed_by_default = false
-collapse_icon = "▸"
-expand_icon = "▾"
+opacity = 0.0
 
 [widget.workspaces]
 style = "minimal"
@@ -23,18 +37,18 @@ show_icons = false
 
 [widget.active_window]
 display = "text_only"
-color = "on_primary"
-min_length = 80
+min_length = 10
 max_length = 150
 
 [widget.audio-vis]
-type       = "audio_visualizer"
-width      = 200
-bands      = 16
-centered   = true
+type = "audio_visualizer"
+width = 200
+bands = 16
+centered = true
 show_when_idle = true
 color_1 = "primary"
 color_2 = "secondary"
+
 [widget.audio-vis.actions]
 left = "panel-toggle control-center media"
 right = "media toggle"
@@ -55,7 +69,7 @@ color = "on_surface"
 
 [widget.ram]
 type = "sysmon"
-stat = "ram_pct"
+stat = "ram_used"
 show_glyph = true
 visualization = "none"
 color = "on_surface"
@@ -74,9 +88,11 @@ show_label = false
 show_label = false
 
 [widget.clock]
-color = "primary"
-format = "{:%I:%M} "
-tooltip_format = "{:%A, %B %d, %Y}"
+format = "{:%I:%M %A}"
+
+[widget.clock-date]
+type = "clock"
+format = "{:%d %b %Y}"
 
 [widget.hostname]
 type = "text"
@@ -86,3 +102,13 @@ color = "primary"
 [widget.bar]
 type = "text"
 text = "|"
+
+[widget.topCorner]
+type = "text"
+scale = 1.5
+text = "˹"
+
+[widget.bottomCorner]
+type = "text"
+scale = 1.5
+text = "˼"

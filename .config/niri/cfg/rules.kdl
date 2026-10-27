@@ -41,8 +41,8 @@ window-rule {
 }
 window-rule {
    match app-id="^helium$"
-   match app-id="^io.ente.auth$"
-   match app-id="^Bitwarden$"
+   match app-id="^waterfox$"
+   open-maximized true
    // block-out-from "screencast"
 }
 window-rule {

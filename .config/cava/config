@@ -38,6 +38,7 @@ ignore = 0
 7 = 1     # high treble
 
 [color]
+theme = "noctalia"
 background = '#1e1e2e'
 
 gradient = 1

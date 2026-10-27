@@ -16,7 +16,7 @@ if status is-interactive
     command -v zoxide &> /dev/null && zoxide init fish --cmd cd | source
 
     # Better ls
-    command -v eza &> /dev/null && alias ls='eza --color=always --group-directories-first --icons'
+    command -v eza &> /dev/null && alias ls='eza --color=always --group-directories-first --icons=auto'
     command -v nvim &> /dev/null &&  alias vim='nvim' 
     command -v bat &> /dev/null && { alias cat='bat -pp'; alias less='bat --paging=always'; }
 

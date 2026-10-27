@@ -6,24 +6,27 @@ order = ["mini"]
 
 [bar.mini]
 show_on_workspace_switch = true
+smart_auto_hide    =  true 
+reserve_space      = false
 position = "top"
-background_opacity = 1.0
+background_opacity = 1.0 
 border_width = 0.0
 font_weight = 600
+capsule = false
 capsule_border = ""
 capsule_radius = 0.0
-thickness = 30
-padding = 12
-margin_edge = 0
-margin_ends = 0
+thickness = 30 
+padding = 0
+margin_edge = 5 
+margin_ends = 5
 margin_opposite_edge = 0
-radius = 0
+radius = 0 
 concave_edge_corners = false
 shadow = false
 scale = 1
 widget_spacing = 10
-start = ["group:g2", "bar", "hostname","temp", "bar", "tray"]
-center = ["audio-vis"]
+start = ["group:windows", "bar", "group:uname", "tray"]
+center = ["topCorner", "audio-vis", "bottomCorner"]
 end = [
   "group:sys",
   "bar",
@@ -35,5 +38,5 @@ end = [
   "bar",
   "bluetooth",
   "bar",
-  "clock",
+  "group:clk",
 ]

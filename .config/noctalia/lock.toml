@@ -1,177 +1,220 @@
 [lockscreen]
 fingerprint = false
+blur_intensity = 0.50
+tint_intensity = 0.50
 
 [lockscreen_widgets]
 enabled = true
 schema_version = 2
 widget_order = [
-    "lockscreen-login-box@eDP-1",
-    "lockscreen-login-box@HDMI-A-1",
     "lockscreen-widget-eDPclock",
     "lockscreen-widget-eDPdate",
+    "lockscreen-widget-eDPweather",
     "lockscreen-widget-eDPplayer",
+    "lockscreen-login-box@eDP-1",
     "lockscreen-widget-HDMIclock",
     "lockscreen-widget-HDMIdate",
-    "lockscreen-widget-HDMIplayer"
+    "lockscreen-widget-HDMIweather",
+    "lockscreen-widget-HDMIplayer",
+    "lockscreen-login-box@HDMI-A-1",
 ]
 
-    [lockscreen_widgets.grid]
-    cell_size = 16
-    major_interval = 4
-    visible = true
+[lockscreen_widgets.grid]
+cell_size = 16
+major_interval = 4
+visible = true
 
-    [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
-    box_height = 70.0
-    box_width = 432.0
-    cx = 1024.0
-    cy = 537.60003662109375
-    output = "HDMI-A-1"
-    placement_height = 1080.0
-    placement_width = 1920.0
-    rotation = 0.0
-    type = "login_box"
+# =========================
+# eDP-1 — 1536 x 864
+# =========================
 
-        [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1".settings]
-        background_color = "surface_variant"
-        background_opacity = 0.0
-        background_radius = 12.0
-        center_password_text = true
-        input_opacity = 1.0
-        input_radius = 6.0
-        layout = "compact"
-        shadow = false
-        show_caps_lock = false
-        show_keyboard_layout = false
-        show_login_button = false
-        show_media = true
-        show_session_buttons = true
-        show_unlock_hint = false
-        show_weather = true
+[lockscreen_widgets.widget."lockscreen-widget-eDPclock"]
+box_height = 224.0
+box_width = 432.0
+cx = 280.0
+cy = 160.0
+output = "eDP-1"
+placement_height = 864.0
+placement_width = 1536.0
+rotation = 0.0
+type = "clock"
 
-    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
-    box_height = 70.0
-    box_width = 432.0
-    cx = 768.0
-    cy = 448.0
-    output = "eDP-1"
-    placement_height = 864.0
-    placement_width = 1536.0
-    rotation = 0.0
-    type = "login_box"
+[lockscreen_widgets.widget."lockscreen-widget-eDPclock".settings]
+background = false
+font_family = ""
+format = "{:%H:%M}"
+shadow = false
 
-        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
-        background_color = "surface_variant"
-        background_opacity = 0.0
-        background_radius = 12.0
-        center_password_text = true
-        input_opacity = 1.0
-        input_radius = 6.0
-        layout = "compact"
-        shadow = false
-        show_caps_lock = false
-        show_keyboard_layout = false
-        show_login_button = false
-        show_media = true
-        show_session_buttons = true
-        show_unlock_hint = false
-        show_weather = true
+[lockscreen_widgets.widget."lockscreen-widget-eDPdate"]
+box_height = 80.0
+box_width = 432.0
+cx = 280.0
+cy = 288.0
+output = "eDP-1"
+placement_height = 864.0
+placement_width = 1536.0
+rotation = 0.0
+type = "clock"
 
-    [lockscreen_widgets.widget.lockscreen-widget-HDMIclock]
-    box_height = 256.0
-    box_width = 992.0
-    cx = 1024.0
-    cy = 211.20001220703125
-    output = "HDMI-A-1"
-    placement_height = 1080.0
-    placement_width = 1920.0
-    rotation = 0.0
-    type = "clock"
+[lockscreen_widgets.widget."lockscreen-widget-eDPdate".settings]
+background = false
+font_family = ""
+format = "{:%A,%d %b %Y}"
+shadow = false
 
-        [lockscreen_widgets.widget.lockscreen-widget-HDMIclock.settings]
-        background = false
-        font_family = "Maple Mono"
-        format = "{:%H:%M}"
-        shadow = false
+[lockscreen_widgets.widget."lockscreen-widget-eDPweather"]
+box_height = 128.0
+box_width = 192.0
+cx = 408.0
+cy = 376.0
+output = "eDP-1"
+placement_height = 864.0
+placement_width = 1536.0
+rotation = 0.0
+type = "weather"
 
-    [lockscreen_widgets.widget.lockscreen-widget-HDMIdate]
-    box_height = 48.0
-    box_width = 496.0
-    cx = 1024.0
-    cy = 345.60000610351562
-    output = "HDMI-A-1"
-    placement_height = 1080.0
-    placement_width = 1920.0
-    rotation = 0.0
-    type = "clock"
+[lockscreen_widgets.widget."lockscreen-widget-eDPweather".settings]
+background = false
+shadow = false
 
-        [lockscreen_widgets.widget.lockscreen-widget-HDMIdate.settings]
-        background = false
-        font_family = "Maple Mono"
-        format = "{:%A,%d %b %Y}"
-        shadow = false
+[lockscreen_widgets.widget."lockscreen-widget-eDPplayer"]
+box_height = 144.0
+box_width = 400.0
+cx = 1272.0
+cy = 672.0
+output = "eDP-1"
+placement_height = 864.0
+placement_width = 1536.0
+rotation = 0.0
+type = "media_player"
 
-    [lockscreen_widgets.widget.lockscreen-widget-HDMIplayer]
-    box_height = 208.0
-    box_width = 528.0
-    cx = 1045.3333740234375
-    cy = 787.20001220703125
-    output = "HDMI-A-1"
-    placement_height = 1080.0
-    placement_width = 1920.0
-    rotation = 0.0
-    type = "media_player"
+[lockscreen_widgets.widget."lockscreen-widget-eDPplayer".settings]
+background = false
+hide_when_no_media = false
+shadow = false
 
-        [lockscreen_widgets.widget.lockscreen-widget-HDMIplayer.settings]
-        background = false
-        hide_when_no_media = false
-        shadow = false
+[lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+box_height = 70.0
+box_width = 416.0
+cx = 1280.0
+cy = 797.0
+output = "eDP-1"
+placement_height = 864.0
+placement_width = 1536.0
+rotation = 0.0
+type = "login_box"
 
-    [lockscreen_widgets.widget.lockscreen-widget-eDPclock]
-    box_height = 256.0
-    box_width = 992.0
-    cx = 768.0
-    cy = 176.0
-    output = "eDP-1"
-    placement_height = 864.0
-    placement_width = 1536.0
-    rotation = 0.0
-    type = "clock"
+[lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+background_color = "surface_container"
+background_opacity = 0.0
+background_radius = 12.0
+center_password_text = true
+input_opacity = 1.0
+input_radius = 6.0
+layout = "compact"
+shadow = false
+show_caps_lock = false
+show_keyboard_layout = false
+show_login_button = false
+show_media = true
+show_session_buttons = true
+show_unlock_hint = false
+show_weather = true
 
-        [lockscreen_widgets.widget.lockscreen-widget-eDPclock.settings]
-        background = false
-        font_family = "Maple Mono"
-        format = "{:%H:%M}"
-        shadow = false
+# =========================
+# HDMI-A-1 — 1920 x 1080
+# Proportionally scaled from eDP-1
+# =========================
 
-    [lockscreen_widgets.widget.lockscreen-widget-eDPdate]
-    box_height = 48.0
-    box_width = 496.0
-    cx = 768.0
-    cy = 288.0
-    output = "eDP-1"
-    placement_height = 864.0
-    placement_width = 1536.0
-    rotation = 0.0
-    type = "clock"
+[lockscreen_widgets.widget."lockscreen-widget-HDMIclock"]
+box_height = 280.0
+box_width = 540.0
+cx = 350.0
+cy = 200.0
+output = "HDMI-A-1"
+placement_height = 1080.0
+placement_width = 1920.0
+rotation = 0.0
+type = "clock"
 
-        [lockscreen_widgets.widget.lockscreen-widget-eDPdate.settings]
-        background = false
-        font_family = "Maple Mono"
-        format = "{:%A,%d %b %Y}"
-        shadow = false
+[lockscreen_widgets.widget."lockscreen-widget-HDMIclock".settings]
+background = false
+font_family = ""
+format = "{:%H:%M}"
+shadow = false
 
-    [lockscreen_widgets.widget.lockscreen-widget-eDPplayer]
-    box_height = 208.0
-    box_width = 528.0
-    cx = 784.0
-    cy = 656.0
-    output = "eDP-1"
-    placement_height = 864.0
-    placement_width = 1536.0
-    rotation = 0.0
-    type = "media_player"
+[lockscreen_widgets.widget."lockscreen-widget-HDMIdate"]
+box_height = 100.0
+box_width = 540.0
+cx = 350.0
+cy = 360.0
+output = "HDMI-A-1"
+placement_height = 1080.0
+placement_width = 1920.0
+rotation = 0.0
+type = "clock"
 
-        [lockscreen_widgets.widget.lockscreen-widget-eDPplayer.settings]
-        background = false
-        hide_when_no_media = false
-        shadow = false
+[lockscreen_widgets.widget."lockscreen-widget-HDMIdate".settings]
+background = false
+font_family = ""
+format = "{:%A,%d %b %Y}"
+shadow = false
+
+[lockscreen_widgets.widget."lockscreen-widget-HDMIweather"]
+box_height = 160.0
+box_width = 240.0
+cx = 510.0
+cy = 470.0
+output = "HDMI-A-1"
+placement_height = 1080.0
+placement_width = 1920.0
+rotation = 0.0
+type = "weather"
+
+[lockscreen_widgets.widget."lockscreen-widget-HDMIweather".settings]
+background = false
+shadow = false
+
+[lockscreen_widgets.widget."lockscreen-widget-HDMIplayer"]
+box_height = 180.0
+box_width = 500.0
+cx = 1590.0
+cy = 840.0
+output = "HDMI-A-1"
+placement_height = 1080.0
+placement_width = 1920.0
+rotation = 0.0
+type = "media_player"
+
+[lockscreen_widgets.widget."lockscreen-widget-HDMIplayer".settings]
+background = false
+hide_when_no_media = false
+shadow = false
+
+[lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
+box_height = 87.5
+box_width = 520.0
+cx = 1600.0
+cy = 996.0
+output = "HDMI-A-1"
+placement_height = 1080.0
+placement_width = 1920.0
+rotation = 0.0
+type = "login_box"
+
+[lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1".settings]
+background_color = "surface_container"
+background_opacity = 0.0
+background_radius = 12.0
+center_password_text = true
+input_opacity = 1.0
+input_radius = 6.0
+layout = "compact"
+shadow = false
+show_caps_lock = false
+show_keyboard_layout = false
+show_login_button = false
+show_media = true
+show_session_buttons = true
+show_unlock_hint = false
+show_weather = true

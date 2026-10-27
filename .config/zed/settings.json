@@ -1,15 +1,19 @@
 {
-  "buffer_font_family": "MonoLisa",
-  "ui_font_family": "MonoLisa",
+  "icon_theme": "Material Icon Theme",
+  "buffer_font_family": "Ioskeley Mono",
+  "ui_font_family": "Ioskeley Mono",
   "theme": {
     "mode": "dark",
-    "light": "Noctalia Light",
-    "dark": "Ashwood",
+    "light": "Ayu Light",
+    "dark": "Noctalia Dark",
   },
   "theme_overrides": {
     "Noctalia Dark": {
-      "error": "#d07277ff",
-      "error.background": "#d072771a",
+      "border": "#161616",
+      "border.variant": "#161616",
+       "toolbar.background": "#161616",
+      "title_bar.inactive_background": "#161616",
+      "terminal.background": "#161616",
       "syntax": {
         "comment": {
           "font_style": "italic",
@@ -17,6 +21,27 @@
       },
     },
     "Noctalia Light": {
+      "editor.gutter.background": "#DEDEDE",
+      "border": "#DEDEDE",
+      "border.variant": "#DEDEDE",
+      "title_bar.background": "#DEDEDE",
+      "title_bar.inactive_background": "#DEDEDE",
+      "status_bar.background": "#DEDEDE",
+      "panel.background": "#DEDEDE",
+      "syntax": {
+        "comment": {
+          "font_style": "italic",
+        },
+      },
+    },
+    "Ayu Darker": {
+      "editor.gutter.background": "#080808",
+      "border": "#080808",
+      "border.variant": "#080808",
+      "title_bar.background": "#080808",
+      "title_bar.inactive_background": "#080808",
+      "status_bar.background": "#080808",
+      "panel.background": "#080808",
       "syntax": {
         "comment": {
           "font_style": "italic",
@@ -28,6 +53,7 @@
   "buffer_font_size": 15,
   "buffer_line_height": "standard",
   "cursor_shape": "bar",
+  "cursor_blink": false,
   "tab_size": 2,
   "auto_indent": "syntax_aware",
   "soft_wrap": "editor_width",
@@ -35,12 +61,12 @@
   "use_smartcase_search": true,
   "selection_highlight": false,
   "multi_cursor_modifier": "cmd_or_ctrl",
-  "show_edit_predictions": false,
+  "show_edit_predictions": true,
   "code_lens": "on",
   "vertical_scroll_margin": 2,
   "horizontal_scroll_margin": 2,
   "autoscroll_on_clicks": true,
-  "restore_on_startup":"empty_tab",
+  "restore_on_startup": "empty_tab",
   "restore_on_file_reopen": false,
   "remove_trailing_whitespace_on_save": true,
   "hover_popover_enabled": false,
@@ -62,6 +88,11 @@
     "button_layout": "platform_default",
     "show_onboarding_banner": false,
     "show_branch_name": false,
+    "show_sign_in": false,
+    "show_user_picture": false,
+    "show_worktree_name": false,
+    "show_user_menu": false,
+    "show_project_items": false,
   },
   "tab_bar": {
     "show": false,
@@ -83,7 +114,7 @@
     "regex": true,
   },
   "file_finder": {
-    "modal_max_width": "large",
+    "modal_max_width": "full",
     "file_icons": true,
   },
   "project_panel": {
@@ -109,15 +140,39 @@
     "toggle_relative_line_numbers": true,
   },
   "terminal": {
-    "font_family": "MonoLisa",
+    "font_family": "Ioskeley Mono Term",
+    "dock": "right",
     "shell": {
       "with_arguments": {
-        "program": "/bin/zsh",
+        "program": "/bin/fish",
         "args": ["-c", "tmux new-session -A -s \"$(basename \"$PWD\")\""],
       },
     },
   },
+  "prettier": {
+    "printWidth": 80,
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "bracketSpacing": true,
+    "jsxBracketSameLine": false,
+    "arrowParens": "avoid",
+    "proseWrap": "preserve",
+    "endOfLine": "lf",
+    "plugins": ["prettier-plugin-go-template"],
+  },
+
   "languages": {
+    "HTML": {
+      "formatter": {
+        "external": {
+          "command": "prettier",
+          "arguments": ["--stdin-filepath", "{buffer_path}"],
+        },
+      },
+    },
     "TypeScript": {
       "show_edit_predictions": true,
     },
@@ -140,10 +195,11 @@
     },
   },
   "edit_predictions": {
-    "provider": "zed",
+    "mode": "subtle",
+    "provider": "open_ai_compatible_api",
     "open_ai_compatible_api": {
-      "api_url": "http://localhost:1234/v1/completions",
-      "model": "deepseek-r1-distill-qwen-1.5b",
+      "api_url": "http://localhost:8080/v1/completions",
+      "model": "bocalan/Qwen2.5-Coder-3B-Instruct-Q4_K_M-GGUF",
       "prompt_format": "qwen",
       "max_output_tokens": 64,
     },
@@ -179,8 +235,11 @@
     },
   },
   "agent_servers": {
+    "github-copilot-cli": {
+      "type": "registry",
+    },
     "devin": {
-      "type": "registry"
+      "type": "registry",
     },
     "opencode": {
       "type": "registry",

@@ -1,5 +1,5 @@
 layout {
-  gaps 10 // Gap between windows
+  gaps 8 // Gap between windows
   center-focused-column "never" // Don’t auto-center focused column
   // always-center-single-column
 
@@ -18,7 +18,7 @@ layout {
   default-column-width 
 
   focus-ring {
-    width 2
+    width 3
     }
   tab-indicator {
     inactive-color "#000000"

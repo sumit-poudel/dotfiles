@@ -21,7 +21,7 @@ cursor {
 //xcursor-theme "Cartoonish-Bold"
 xcursor-theme "Notwaita-Gray"
 //xcursor-theme "BrushBuddy"
-xcursor-size 24 
+xcursor-size 32 
 hide-when-typing
 hide-after-inactive-ms 2000
 }

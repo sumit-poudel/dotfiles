@@ -9,30 +9,37 @@ directory = "/home/sumit/Pictures/Wallpapers"
 enabled = true
 
 [shell]
-corner_radius_scale = 0.8
+corner_radius_scale = 0.0
 avatar_path = "/home/sumit/Pictures/avtar.jpg"
 clipboard_history_max_entries = 40
-font_family = "MartianMono Nerd Font Propo"
+font_family = "Ioskeley Mono"
 password_style = "random"
 settings_show_advanced = true
 telemetry_enabled = false
 time_format = "{:%H:%M %a}"
 polkit_agent = true
+button_borders = false
+card_borders = true
+input_borders = false
+popup_borders = false
+popup_shadow = false
+launch_apps_as_systemd_services = true
 
 [shell.panel]
 launcher_placement = "floating"       # attached | floating | centered
-launcher_position = "auto"
+launcher_position = "center"
 control_center_placement = "floating"
 clipboard_placement = "floating"
 clipboard_position = "auto"
 polkit_placement = "floating"
 polkit_position = "auto"
 transparency_mode = "solid"
-
+shadow = false
 
 [shell.launcher]
 categories = false
-compact = true
+compact = false
+show_icons = false
 fetch_exchange_rates = false
 
 [[shell.session.actions]]
@@ -60,7 +67,7 @@ shortcut = "4"
 variant = "default"
 
 [[shell.session.actions]]
-action = "suspend"
+action = "lock_and_suspend"
 enabled = true
 shortcut = "5"
 variant = "default"
@@ -140,3 +147,15 @@ address = "chitwan,Nepal"
 
 [nightlight]
 enabled = true
+
+[calendar]
+enabled = true
+event_time_format = "{:%-I:%M %p}"
+
+[calendar.account.001_google]
+name = "001"
+type = "google"
+
+[calendar.account.me_google]
+name = "me"
+type = "google"
