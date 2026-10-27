@@ -107,7 +107,7 @@ set_fish() {
 install_fisher() {
 	command -v fish >/dev/null || return 0
 	fish -c 'functions -q fisher' || return 0
-	local list="$repo/.config/fish/fisher.list"
+	local list="$config/fish/fisher.list"
 	[[ -f "$list" ]] || return 0
 	local plugins=()
 	mapfile -t plugins < <(grep -v '^[[:space:]]*$' "$list" || true)
@@ -172,57 +172,44 @@ install_nvim() {
 		GIT_TERMINAL_PROMPT=0 git -C "$dest" pull --ff-only
 		return
 	fi
-	if [[ -e "$dest" || -L "$dest" ]]; then
-		stash "$dest"
-	fi
+	backup "$dest"
 	echo "cloning nvim"
 	GIT_TERMINAL_PROMPT=0 git clone "$url" "$dest"
 }
 
-stash() {
-	local dest=$1
-	if [[ -e "$dest.bck" || -L "$dest.bck" ]]; then
-		rm -rf -- "$dest.bck"
+backup() {
+	local dest=$1 saved
+	[[ -e "$dest" || -L "$dest" ]] || return 0
+	saved="$dest.bck"
+	if [[ -e "$saved" || -L "$saved" ]]; then
+		saved="$dest.bck.$(date +%Y%m%d%H%M%S)"
 	fi
-	mv -T "$dest" "$dest.bck"
-	echo "backed up $dest.bck"
+	mv -T -- "$dest" "$saved"
+	echo "backed up $saved"
 }
 
-link_one() {
+copy_one() {
 	local src=$1 dest=$2
-	if [[ -L "$dest" && "$(readlink -f "$dest")" == "$(readlink -f "$src")" ]]; then
-		return 0
-	fi
-	if [[ -e "$dest" || -L "$dest" ]]; then
-		stash "$dest"
-	fi
+	[[ -e "$src" || -L "$src" ]] || return 0
+	backup "$dest"
 	mkdir -p "$(dirname "$dest")"
-	ln -s "$src" "$dest"
-	echo "linked $dest"
+	cp -a -- "$src" "$dest"
+	echo "copied $dest"
 }
 
-link_configs() {
-	local path name dot
+copy_configs() {
+	local path dot pictures="$HOME/Pictures"
+	mkdir -p "$config"
 	shopt -s nullglob
 	for path in "$repo"/.config/*; do
-		name=$(basename "$path")
-		link_one "$path" "$config/$name"
+		copy_one "$path" "$config/$(basename "$path")"
 	done
 	shopt -u nullglob
 	for dot in "${root_dots[@]}"; do
-		[[ -e "$repo/$dot" ]] || continue
-		link_one "$repo/$dot" "$HOME/$dot"
+		copy_one "$repo/$dot" "$HOME/$dot"
 	done
-}
-
-link_pictures() {
-	local pictures="$HOME/Pictures"
-	if [[ -d "$repo/wallpapers" ]]; then
-		link_one "$repo/wallpapers" "$pictures/Wallpapers"
-	fi
-	if [[ -e "$repo/avtar.jpg" ]]; then
-		link_one "$repo/avtar.jpg" "$pictures/avtar.jpg"
-	fi
+	copy_one "$repo/wallpapers" "$pictures/Wallpapers"
+	copy_one "$repo/avtar.jpg" "$pictures/avtar.jpg"
 }
 
 noconfirm=()
@@ -238,11 +225,10 @@ done
 
 install_packages
 set_fish
-link_configs
-link_pictures
+copy_configs
 install_fisher
 install_yazi
 install_tpm
 install_nvim
 enable_user_services
-echo "configs follow $repo — git pull updates them"
+echo "copied configs into $config"
