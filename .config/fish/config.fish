@@ -33,7 +33,12 @@ if status is-interactive
     set -gx EDITOR nvim
     set -gx VISUAL nvim
     set -gx LLAMACPP_API_KEY noop
-    set -gx LLAMACPP_BASE_URL http://localhost:8080/v1
+    set -gx LLAMACPP_BASE_URL http://localhost:9090/v1
+    set -gx LLAMA_ARG_N_PARALLEL 1
+    set -gx BW_SESSION BWKDJFKFKJDKFJ_FLAG_LOL 
+
+    # Alias
+    alias bw="flatpak run --command=bw com.bitwarden.desktop"
 
     # Abbrs
     abbr v 'vim'
