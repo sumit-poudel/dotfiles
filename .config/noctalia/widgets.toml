@@ -1,32 +1,72 @@
 [[bar.mini.capsule_group]]
-id = "windows"
 accordion = false
-members = ["workspaces", "colon", "active_window"]
-foreground = "on_primary"
+accordion_direction = "end"
+border_width = 1.0
 enabled = true
 fill = "primary"
+foreground = "on_primary"
+id = "windows"
+members = ["workspaces", "colon", "active_window"]
+opacity = 1.0
+padding = 6.0
 
 [[bar.mini.capsule_group]]
 accordion = true
+accordion_direction = "end"
+border_width = 1.0
+enabled = true
 fill = "primary"
 foreground = "on_primary"
 id = "clk"
 members = ["clock", "clock-date"]
+opacity = 1.0
+padding = 6.0
 
 [[bar.mini.capsule_group]]
+accordion = false
+accordion_direction = "end"
+border_width = 1.0
+enabled = true
+fill = "surface_container"
 id = "uname"
-members = ["topCorner", "hostname", "temp", "bottomCorner"]
-widget_spacing = 7
-padding = 0
-enabled = true
+members = ["hostname", "temp"]
 opacity = 0.0
+padding = 0.0
+widget_spacing = 7
 
 [[bar.mini.capsule_group]]
-id = "sys"
-members = ["battery", "cpu", "ram"]
-widget_spacing = 15
+accordion = false
+accordion_direction = "end"
+border_width = 1.0
 enabled = true
+fill = "surface_container"
+id = "sys"
+members = ["cpu", "ram"]
 opacity = 0.0
+padding = 6.0
+widget_spacing = 17
+
+[[bar.mini.capsule_group]]
+accordion = false
+accordion_direction = "end"
+enabled = true
+fill = "surface_container"
+id = "controls"
+members = [
+  "bar",
+  "brightness",
+  "bar",
+  "volume",
+  "bar",
+  "network",
+  "bar",
+  "bluetooth",
+  "bar",
+]
+opacity = 0.0
+padding = 6.0
+widget_spacing = 7
+
 
 [widget.workspaces]
 style = "minimal"
@@ -42,12 +82,12 @@ max_length = 150
 
 [widget.audio-vis]
 type = "audio_visualizer"
-width = 200
-bands = 16
-centered = true
+width = 150
+bands = 10
+mirrored = false
+centered = false
 show_when_idle = true
 color_1 = "primary"
-color_2 = "secondary"
 
 [widget.audio-vis.actions]
 left = "panel-toggle control-center media"
@@ -58,21 +98,29 @@ type = "sysmon"
 stat = "cpu_temp"
 show_glyph = false
 visualization = "none"
-color = "on_surface"
 
 [widget.cpu]
 type = "sysmon"
-stat = "cpu_usage"
-show_glyph = true
+# stat = "cpu_used"
+show_glyph = false
+custom_label = "cpu"
 visualization = "none"
-color = "on_surface"
+color = "secondary"
+
+[widget.battery]
+type = "battery"
+device = "auto"
+scale = 0.75
+display_mode = "graphic"
 
 [widget.ram]
 type = "sysmon"
 stat = "ram_used"
-show_glyph = true
+show_glyph = false
+custom_label = "mem"
+label_show_units = false
 visualization = "none"
-color = "on_surface"
+color = "secondary"
 
 [widget.brightness]
 show_label = false

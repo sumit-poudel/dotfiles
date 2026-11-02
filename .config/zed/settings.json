@@ -5,52 +5,15 @@
   "theme": {
     "mode": "dark",
     "light": "Ayu Light",
-    "dark": "Noctalia Dark",
+    "dark": "Everforest Material Dark",
   },
   "theme_overrides": {
-    "Noctalia Dark": {
-      "border": "#161616",
-      "border.variant": "#161616",
-       "toolbar.background": "#161616",
-      "title_bar.inactive_background": "#161616",
-      "terminal.background": "#161616",
-      "syntax": {
-        "comment": {
-          "font_style": "italic",
-        },
-      },
-    },
-    "Noctalia Light": {
-      "editor.gutter.background": "#DEDEDE",
-      "border": "#DEDEDE",
-      "border.variant": "#DEDEDE",
-      "title_bar.background": "#DEDEDE",
-      "title_bar.inactive_background": "#DEDEDE",
-      "status_bar.background": "#DEDEDE",
-      "panel.background": "#DEDEDE",
-      "syntax": {
-        "comment": {
-          "font_style": "italic",
-        },
-      },
-    },
-    "Ayu Darker": {
-      "editor.gutter.background": "#080808",
-      "border": "#080808",
-      "border.variant": "#080808",
-      "title_bar.background": "#080808",
-      "title_bar.inactive_background": "#080808",
-      "status_bar.background": "#080808",
-      "panel.background": "#080808",
-      "syntax": {
-        "comment": {
-          "font_style": "italic",
-        },
-      },
+    "Zedbox Material Hard Dark": {
+      "border": "#1D2021",
     },
   },
-  "ui_font_size": 15,
-  "buffer_font_size": 15,
+  "ui_font_size": 16,
+  "buffer_font_size": 16,
   "buffer_line_height": "standard",
   "cursor_shape": "bar",
   "cursor_blink": false,
@@ -196,7 +159,7 @@
   },
   "edit_predictions": {
     "mode": "subtle",
-    "provider": "open_ai_compatible_api",
+    "provider": "copilot",
     "open_ai_compatible_api": {
       "api_url": "http://localhost:8080/v1/completions",
       "model": "bocalan/Qwen2.5-Coder-3B-Instruct-Q4_K_M-GGUF",
@@ -219,7 +182,7 @@
       "api_url": "http://127.0.0.1:1234/v1",
       "available_models": [
         {
-          "name": "qwen2.5-coder-3b-instruct",
+          "name": "qwen2.5-coder-1.5b-go-fim:Q8_0",
           "max_tokens": 16384,
         },
       ],
@@ -242,6 +205,9 @@
       "type": "registry",
     },
     "opencode": {
+      "default_config_options": {
+        "model": "opencode/deepseek-v4.1-flash-free",
+      },
       "type": "registry",
     },
   },

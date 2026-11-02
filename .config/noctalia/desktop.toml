@@ -1,2 +1,49 @@
 [desktop_widgets]
-enabled = false
+enabled = true
+schema_version = 2
+widget_order = ["desktop-widget-eDPday","desktop-widget-HDMIday"]
+
+[desktop_widgets.grid]
+cell_size = 16
+major_interval = 4
+visible = true
+
+# =========================
+# eDP-1 — 1536 x 864
+# =========================
+
+[desktop_widgets.widget.desktop-widget-eDPday]
+box_height = 281.6
+box_width = 1113.6
+cx = 569.6
+cy = 176.0
+output = "eDP-1"
+placement_height = 864.0
+placement_width = 1536.0
+rotation = 0.0
+type = "clock"
+
+[desktop_widgets.widget.desktop-widget-eDPday.settings]
+background = false
+format = "{:%^A}"
+shadow = false
+
+# =========================
+# HDMI-A-5 — 1920 x 1080 
+# =========================
+
+[desktop_widgets.widget.desktop-widget-HDMIday]
+box_height = 352.0
+box_width = 1392.0
+cx = 712.0
+cy = 220.0
+output = "HDMI-A-1"
+placement_height = 1080.0
+placement_width = 1920.0
+rotation = 0.0
+type = "clock"
+
+[desktop_widgets.widget.desktop-widget-HDMIday.settings]
+background = false
+format = "{:%^A}"
+shadow = false

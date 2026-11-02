@@ -6,37 +6,25 @@ order = ["mini"]
 
 [bar.mini]
 show_on_workspace_switch = true
-smart_auto_hide    =  true 
-reserve_space      = false
+smart_auto_hide = false
+reserve_space = true
 position = "top"
-background_opacity = 1.0 
+background_opacity = 1.0
 border_width = 0.0
-font_weight = 600
+font_weight = 700
 capsule = false
 capsule_border = ""
 capsule_radius = 0.0
-thickness = 30 
+thickness = 25 
 padding = 0
-margin_edge = 5 
-margin_ends = 5
+margin_edge = 0
+margin_ends = 0
 margin_opposite_edge = 0
-radius = 0 
+radius = 0
 concave_edge_corners = false
 shadow = false
 scale = 1
-widget_spacing = 10
+widget_spacing = 7
 start = ["group:windows", "bar", "group:uname", "tray"]
 center = ["topCorner", "audio-vis", "bottomCorner"]
-end = [
-  "group:sys",
-  "bar",
-  "brightness",
-  "bar",
-  "volume",
-  "bar",
-  "network",
-  "bar",
-  "bluetooth",
-  "bar",
-  "group:clk",
-]
+end = ["group:sys", "group:controls", "group:clk"]
